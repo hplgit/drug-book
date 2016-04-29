@@ -1,0 +1,1566 @@
+* articles
+** Contribution of {I}$_{Kr}$ and {I}$_{K1}$ to Ventricular Repolarization in Canine and Human Myocytes: Is There Any Influence of Action Potential Duration?
+   key:       Jost2009
+   author:    Norbert Jost, K{\'a}roly Acsai, Bal{\'a}zs Horv{\'a}th, Tam{\'a}s B{\'a}ny{\'a}sz, Istv{\'a}n Baczk{\'o}, Mikl{\'o}s Bitay, G{\'a}bor Bog{\'a}ts, P{\'eter} P. N{\'a}n{\'a}si
+   year:      2009
+   journal:   Basic Research in Cardiology
+   volume:    104
+   pages:     33--41
+   status:    published
+   entrytype: article
+** Reciprocal Relations in Irreversible Processes. I.
+   key:       Onsager1931
+   author:    Lars Onsager
+   year:      1931
+   journal:   Physical Review B: Condensed Matter and Materials Physics
+   publisher: APS
+   volume:    37
+   number:    4
+   pages:     405
+   status:    published
+   entrytype: article
+** Testing for Microscopic Reversibility in the Gating of Maxi K+ Channels Using Two-Dimensional Dwell-Time Distributions.
+   key:       Song1994
+   author:    Lu Song, Karl L. Magleby
+   year:      1994
+   journal:   Biophysical Journal
+   publisher: The Biophysical Society
+   volume:    67
+   number:    1
+   pages:     91
+   status:    published
+   entrytype: article
+** A Data-Driven Model of a Modal Gated Ion Channel: the Inositol 1, 4, 5-Trisphosphate Receptor in Insect Sf9 Cells
+   key:       Ullah2012
+   author:    Ghanim Ullah, Don-On Daniel Mak, John E. Pearson
+   year:      2012
+   journal:   The Journal of general physiology
+   publisher: Rockefeller Univ Press
+   volume:    140
+   number:    2
+   pages:     159--173
+   status:    published
+   entrytype: article
+** Bayesian Inference for Ion-Channel Gating Mechanisms Directly From Single-Channel Recordings, Using {Markov} Chain Monte Carlo
+   key:          Ball1999
+   author:       FG Ball, Y. Cai, JB Kadane, A. O'hagan
+   year:         1999
+   journal:      Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences
+   volume:       455
+   number:       1988
+   pages:        2879--2932
+   status:       published
+   entrytype:    article
+   organization: The Royal Society
+** Bayesian Restoration of Ion Channel Records Using Hidden {Markov} Models
+   key:       Rosales2001
+   author:    Rafael Rosales, J. Alex Stark, William J. Fitzgerald, Stephen B. Hladky
+   year:      2001
+   journal:   Biophysical Journal
+   publisher: Elsevier
+   volume:    80
+   number:    3
+   pages:     1088--1103
+   status:    published
+   entrytype: article
+** MCMC for Hidden {Markov} Models Incorporating Aggregation of States and Filtering
+   key:       Rosales2004
+   author:    Rafael A. Rosales
+   year:      2004
+   journal:   Bulletin of mathematical biology
+   publisher: Springer
+   volume:    66
+   number:    5
+   pages:     1173--1199
+   status:    published
+   entrytype: article
+** On the Accuracy of Operator Splitting for the Monodomain Model of Electrophysiology
+   key:       Schroll2007
+   author:    H. Joachim Schroll, Glenn T. Lines, Aslak Tveito
+   year:      2007
+   journal:   International Journal of Computer Mathematics
+   publisher: Taylor \& Francis
+   volume:    84
+   number:    6
+   pages:     871--885
+   status:    published
+   entrytype: article
+** An Operator Splitting Method for Solving the Bidomain Equations Coupled to a Volume Conductor Model for the Torso
+   key:       Sundnes2005
+   author:    Joakim Sundnes, Glenn Terje Lines, Aslak Tveito
+   year:      2005
+   journal:   Mathematical Biosciences
+   publisher: Elsevier
+   volume:    194
+   number:    2
+   pages:     233--248
+   status:    published
+   entrytype: article
+** An Advanced Algorithm for Solving Partial Differential Equation in Cardiac Conduction
+   key:       Qu1999
+   author:    Zhilin Qu, Alan Garfinkel
+   year:      1999
+   journal:   IEEE Transactions on Biomedical Engineering
+   volume:    46
+   number:    9
+   pages:     1166--1168
+   status:    published
+   entrytype: article
+** {Simulation of the Undiseased Human Cardiac Ventricular Action Potential: Model Formulation and Experimental Validation}
+   key:       Ohara2011
+   author:    Thomas O'Hara, L{\'a}szl{\'o} Vir{\'a}g, Andr{\'a}s Varr{\'o}, Yoram Rudy
+   year:      2011
+   journal:   PLoS Computational Biology
+   volume:    7
+   number:    5
+   pages:     e1002061
+   status:    published
+   entrytype: article
+** Computational Modelling of the Initiation and Development of Spontaneous Intracellular {Ca}$^{2+}$ Waves in Ventricular Myocytes
+   key:       Li2010
+   author:    Pan Li, Wenjie Wei, Xing Cai, Christian Soeller, Mark B. Cannell, Arun V. Holden
+   year:      2010
+   journal:   Philosophical Transactions of the Royal Society of London A: Mathematical, Physical and Engineering Sciences
+   publisher: The Royal Society
+   volume:    368
+   number:    1925
+   pages:     3953--3965
+   status:    published
+   entrytype: article
+** Intracellular {Ca}$^{2+}$ Nonlinear Wave Behaviours in a Three Dimensional Ventricular Cell Model
+   key:       Li2009
+   author:    Pan Li, Arun V. Holden
+   year:      2009
+   journal:   Physica D: Nonlinear Phenomena
+   publisher: Elsevier
+   volume:    238
+   number:    11
+   pages:     992--999
+   status:    published
+   entrytype: article
+** Towards Simulation of Subcellular Calcium Dynamics at Nanometre Resolution
+   key:       Chai2013
+   author:    Jun Chai, Johan Hake, Nan Wu, Mei Wen, Xing Cai, Glenn T. Lines, Jing Yang, Huayou Su, Chunyuan Zhang, Xiangke Liao
+   year:      2013
+   journal:   International Journal of High Performance Computing Applications
+   publisher: SAGE Publications
+   volume:    29
+   number:    1
+   pages:     51--63
+   status:    published
+   entrytype: article
+** Modelling Cardiac Calcium Sparks in a Three-Dimensional Reconstruction of a Calcium Release Unit
+   key:       Hake2012
+   author:    Johan Hake, Andrew G. Edwards, Zeyun Yu, Peter M. Kekenes-Huskey, Anushka P. Michailova, J. Andrew McCammon, Michael J. Holst, Masahiko Hoshijima, Andrew D. McCulloch
+   year:      2012
+   journal:   Journal of Physiology
+   publisher: Wiley Online Library
+   volume:    590
+   number:    18
+   pages:     4403--4422
+   status:    published
+   entrytype: article
+** {From Genes and Molecules to Organs and Organisms: Heart}
+   key:       Rudy2012
+   author:    Yoram Rudy
+   year:      2012
+   journal:   Comprehensive Biophysics
+   publisher: Academic Press Oxford
+   volume:    9
+   pages:     268--327
+   status:    published
+   entrytype: article
+** Computational Biology in the Study of Cardiac Ion Channels and Cell Electrophysiology
+   key:       Rudy2006
+   author:    Yoram Rudy, Jonathan R. Silva
+   year:      2006
+   journal:   Quarterly Reviews of Biophysics
+   volume:    39
+   number:    1
+   pages:     57--116
+   status:    published
+   entrytype: article
+** {Nonlinear and Stochastic Dynamics in the Heart}
+   key:       Qu2014
+   author:    Zhilin Qu, Gang Hu, Alan Garfinkel, James N. Weiss
+   year:      2014
+   journal:   Physics Reports
+   volume:    543
+   number:    2
+   pages:     61--162
+   status:    published
+   entrytype: article
+   keywords:  Arrhythmias,Control,Dynamics,Electrical turbulence,Excitable medium,Heart rhythm
+** A Simplex Method for Function Minimization
+   key:       Nelder1965
+   author:    John A. Nelder, Roger Mead
+   year:      1965
+   journal:   Computer Journal
+   publisher: Br Computer Soc
+   volume:    7
+   number:    4
+   pages:     308--313
+   status:    published
+   entrytype: article
+** {Convergence Properties of the Nelder-Mead Simplex Method in Low Dimensions}
+   key:       Lagarias1998
+   author:    Jeffrey C. Lagarias, James A. Reeds, Margaret H. Wright, Paul E. Wright
+   year:      1998
+   journal:   SIAM Journal on Optimization
+   publisher: SIAM
+   volume:    9
+   number:    1
+   pages:     112--147
+   status:    published
+   entrytype: article
+** A Quantitative Description of Membrane Current and Its Application to Conduction and Excitation in Nerve
+   key:       Hodgkin1952
+   author:    Alan L. Hodgkin, Andrew F. Huxley
+   year:      1952
+   journal:   Journal of Physiology
+   publisher: Wiley Online Library
+   volume:    117
+   number:    4
+   pages:     500--544
+   status:    published
+   entrytype: article
+** Cardiac Action and Pacemaker Potentials Based on the {H}odgkin-{H}uxley Equations
+   key:       Noble1960
+   author:    Denis Noble
+   year:      1960
+   journal:   Nature
+   volume:    188
+   pages:     495--497
+   status:    published
+   entrytype: article
+** A Modification of the {H}odgkin-{H}uxley Equations Applicable to {P}urkinje Fibre Action and Pacemaker Potentials
+   key:       Noble1962
+   author:    Denis Noble
+   year:      1962
+   journal:   Journal of Physiology
+   volume:    160
+   pages:     317--352
+   status:    published
+   entrytype: article
+** Exact Stochastic Simulation of Coupled Chemical Reactions
+   key:       Gillespie1977
+   author:    Daniel T. Gillespie
+   year:      1977
+   journal:   Journal of Physical Chemistry
+   publisher: ACS Publications
+   volume:    81
+   number:    25
+   pages:     2340--2361
+   status:    published
+   entrytype: article
+** A Numerical Method for the Solution of the Bidomain Equations in Cardiac Tissue
+   key:       Keener1998
+   author:    James P. Keener, Kristina Bogar
+   year:      1998
+   journal:   Chaos: An Interdisciplinary Journal of Nonlinear Science
+   publisher: AIP Publishing
+   volume:    8
+   number:    1
+   pages:     234--241
+   status:    published
+   entrytype: article
+** On the Convergence of Operator Splitting Applied to Conservation Laws With Source Terms
+   key:       Langseth1996
+   author:    JO Langseth, A. Tveito, R. Winther
+   year:      1996
+   journal:   SIAM Journal on Numerical Analysis
+   publisher: SIAM
+   volume:    33
+   number:    3
+   pages:     843--863
+   status:    published
+   entrytype: article
+** Local Anesthetics: Hydrophilic and Hydrophobic Pathways for the Drug-Receptor Reaction.
+   key:       Hille1977
+   author:    Bertil Hille
+   year:      1977
+   journal:   Journal of General Physiology
+   publisher: Rockefeller Univ Press
+   volume:    69
+   number:    4
+   pages:     497--515
+   status:    published
+   entrytype: article
+** How to Impose Microscopic Reversibility in Complex Reaction Mechanisms
+   key:       Colquhoun2004
+   author:    David Colquhoun, Kathryn A. Dowsland, Marco Beato, Andrew J. R. Plested
+   year:      2004
+   journal:   Biophysical Journal
+   publisher: Elsevier
+   volume:    86
+   number:    6
+   pages:     3510--3518
+   status:    published
+   entrytype: article
+** {Markov Chain Monte Carlo Fitting of Single-Channel Data From Inositol Trisphosphate Receptors}
+   key:       Gin2009
+   author:    Elan Gin, Martin Falcke, Larry E. Wagner, David I. Yule, James Sneyd
+   year:      2009
+   journal:   Journal of General Physiology
+   volume:    257
+   number:    3
+   pages:     460--474
+   status:    published
+   entrytype: article
+** A Direct Optimization Approach to Hidden {Markov} Modeling for Single Channel Kinetics
+   key:       Qin2000
+   author:    Feng Qin, Anthony Auerbach, Frederick Sachs
+   year:      2000
+   journal:   Biophysical Journal
+   volume:    79
+   pages:     1915--1927
+   status:    published
+   entrytype: article
+** Estimating Single-Channel Kinetic Parameters From Idealized Patch-Clamp Data Containing Missed Events
+   key:       Qin1996
+   author:    Feng Qin, Anthony Auerbach, Frederick Sachs
+   year:      1996
+   journal:   Biophysical Journal
+   volume:    70
+   pages:     264--280
+   status:    published
+   entrytype: article
+** {Solving Ion Channel Kinetics With the QuB Software}
+   key:       Nicolai2013
+   author:    Christopher Nicolai, Frederick Sachs
+   year:      2013
+   journal:   Biophysical Reviews and Letters
+   volume:    8
+   number:    03n04
+   pages:     191--211
+   status:    published
+   entrytype: article
+** Measuring Kinetics of Complex Single Ion Channel Data Using Mean-Variance Histograms
+   key:       Patlak1993
+   author:    Joseph B. Patlak
+   year:      1993
+   journal:   Biophysical Journal
+   volume:    65
+   pages:     29 --42
+   status:    published
+   entrytype: article
+** {MCMC Can Detect Nonidentifiable Models}
+   key:       Siekmann2012
+   author:    Ivo Siekmann, James Sneyd, Edmund J. Crampin
+   year:      2012
+   journal:   Biophysical Journal
+   volume:    103
+   number:    11
+   pages:     2275--2286
+   status:    published
+   entrytype: article
+** {MCMC Estimation of {Markov} Models for Ion Channels}
+   key:       Siekmann2011
+   author:    Ivo Siekmann, Larry E. Wagner II, David Yule, Colin Fox, David Bryant, Edmund J. Crampin, James Sneyd
+   year:      2011
+   journal:   Biophysical Journal
+   volume:    100
+   number:    8
+   pages:     1919--1929
+   status:    published
+   entrytype: article
+** Patch Clamp Techniques for Studying Ionic Channels in Excitable Membranes
+   key:       Sakmann1984
+   author:    Bert Sakmann, Erwin Neher
+   year:      1984
+   journal:   Annual Review of Physiology
+   publisher: Ann. Rev. Physiol.
+   volume:    46
+   number:    1
+   pages:     455--472
+   status:    published
+   entrytype: article
+** The Quantitative Analysis of Drug-Receptor Interactions: a Short History
+   key:       Colquhoun2006
+   author:    D. Colquhoun
+   year:      2006
+   journal:   Trends in Pharmacological Sciences
+   volume:    27
+   number:    3
+   pages:     149--157
+   status:    published
+   entrytype: article
+** The Quality of Maximum Likelihood Estimates of Ion Channel Rate Constants
+   key:       Colquhoun2003
+   author:    D. Colquhoun, C. J. Hatton, A. G. Hawkes
+   year:      2003
+   journal:   Journal of Physiology
+   volume:    547
+   number:    3
+   pages:     699--728
+   status:    published
+   entrytype: article
+** On the Stochastic Properties of Bursts of Single Ion Channel Openings and of Clusters of Bursts
+   key:       Colquhoun1982
+   author:    David Colquhoun, Alan G. Hawkes
+   year:      1982
+   journal:   Philosophical Transactions of the Royal Society of London A: Mathematical, Physical and Engineering Sciences
+   volume:    300
+   pages:     1--59
+   status:    published
+   entrytype: article
+** {There Goes the Neighborhood: Pathological Alterations in T-Tubule Morphology and Consequences for Cardiomyocyte \Ca Handling}
+   key:       Louch2010
+   author:    William E. Louch, Ole M. Sejersted, Fredrik Swift
+   year:      2010
+   journal:   BioMed Research International
+   publisher: Hindawi Publishing Corporation
+   status:    published
+   entrytype: article
+** {Calcium Signalling in Developing Cardiomyocytes: Implications for Model Systems and Disease}
+   key:       Louch2015
+   author:    William E. Louch, Jussi T. Koivum{\{a}ki, Pasi Tavi
+   year:      2015
+   journal:   Journal of Physiology
+   publisher: Wiley Online Library
+   volume:    593
+   number:    5
+   pages:     1047--1063
+   status:    published
+   entrytype: article
+** Relaxation and Fluctuations of Membrane Currents That Flow Through Drug-Operated Channels
+   key:       Colquhoun1977
+   author:    David Colquhoun, Alan G. Hawkes
+   year:      1977
+   journal:   Proceedings of the Royal Society of London B: Biological Sciences
+   volume:    199
+   number:    1135
+   pages:     23--262
+   status:    published
+   entrytype: article
+** {Linking Exponential Components to Kinetic States in {Markov} Models for Single-Channel Gating}
+   key:       Shelley2008
+   author:    Christopher Shelley, Karl L. Magleby
+   year:      2008
+   journal:   The Journal of General Physiology
+   volume:    132
+   number:    2
+   pages:     295--312
+   status:    published
+   entrytype: article
+** L-Type $\mbox{Ca}^{2+}$ Channel Mutations and T-Wave Alternans: a Model Study
+   key:       Zhou2007
+   author:    Zheng I. Zhu, Colleen E. Clancy
+   year:      2007
+   journal:   AJP: Heart and Circulatory Physiology
+   volume:    293
+   number:    6
+   pages:     H3480--H3489
+   status:    published
+   entrytype: article
+** {Markov} Models of Use-Dependence and Reverse Use-Dependence During the Mouse Cardiac Action Potential
+   key:       Zhou2012
+   author:    Qinlian Zhou, Glenna C. L. Bett, Randall L. Rasmusson
+   year:      2012
+   journal:   PLoS ONE
+   volume:    7
+   number:    8
+   pages:     e42295
+   status:    published
+   entrytype: article
+** {Computational Methods for Drug Design and Discovery: Focus on China}
+   key:       Zheng2013
+   author:    Mingyue Zheng, Xian Liu, Yuan Xu, Honglin Li, Cheng Luo, Hualiang Jiang
+   year:      2013
+   journal:   Trends in Pharmacological Sciences
+   volume:    34
+   number:    10
+   pages:     549--559
+   status:    published
+   entrytype: article
+** {The Timothy Syndrome Mutation of Cardiac CaV1.2 (L-Type) Channels: Multiple Altered Gating Mechanisms and Pharmacological Restoration of Inactivation}
+   key:       Yarotskyy2009
+   author:    Viktor Yarotskyy, Guofeng Gao, Blaise Z. Peterson, Keith S. Elmslie
+   year:      2009
+   journal:   Journal of Physiology
+   volume:    587
+   number:    3
+   pages:     551--565
+   status:    published
+   entrytype: article
+** {The Role of Stochastic and Modal Gating of Cardiac L-Type $\mbox{Ca}^{2+}$ Channels on Early After-Depolarizations}
+   key:       Tanskanen2005
+   author:    Antti J. Tanskanen, Joseph L. Greenstein, Brian O’Rourke, Raimond L. Winslow
+   year:      2005
+   journal:   Biophysical Journal
+   volume:    88
+   pages:     85--95
+   status:    published
+   entrytype: article
+** Local Control Models of Cardiac Excitation-Contraction Coupling. {A} Possible Role for Allosteric Interactions Between Ryanodine Receptors
+   key:       Stern1999
+   author:    Michael D. Stern, Long-Sheng Song, Heping Cheng, James S. K. Sham, Huang Tian Yang, Kenneth R. Boheler, Eduardo R{\'\i}os
+   year:      1999
+   journal:   Journal of General Physiology
+   volume:    113
+   number:    3
+   pages:     469–-489
+   status:    published
+   entrytype: article
+** How Antiarrhythmic Drugs Increase the Rate of Sudden Cardiac Death
+   key:       Starmer2002
+   author:    C. Frank Starmer
+   year:      2002
+   journal:   International Journal of Bifurcation and Chaos
+   volume:    12
+   number:    9
+   pages:     1953–-1968
+   status:    published
+   entrytype: article
+** An Emergent Model of Orientation Selectivity in Cat Visual Cortical Simple Cells
+   key:       Somers1995
+   author:    David C. Somers, Sacha B. Nelson, Mriganka Sur
+   year:      1995
+   journal:   The Journal of Neuroscience
+   volume:    15
+   number:    8
+   pages:     5448--5465
+   status:    published
+   entrytype: article
+** Late Sodium Current in Failing Heart: Friend Or Foe?
+   key:       Maltsev2008
+   author:    Victor A. Maltsev, Albertas Undrovinas
+   year:      2008
+   journal:   Progress in Biophysics and Molecular Biology
+   volume:    96
+   pages:     421--451
+   status:    published
+   entrytype: article
+** A Rabbit Ventricular Action Potential Model Replicating Cardiac Dynamics at Rapid Heart Rates
+   key:       Mahajan2008
+   author:    Aman Mahajan, Yohannes Shiferaw, Daisuke Sato, Ali Baher, Riccardo Olcese, Lai-Hua Xie, Ming-Jim Yang, Peng-Sheng Chen, Juan G. Restrepo, Alain Karma, Alan Garfinkel, Zhilin Qu, James N. Weiss
+   year:      2008
+   journal:   Biophysical Journal
+   volume:    94
+   number:    2
+   pages:     392 -- 410
+   status:    published
+   entrytype: article
+** Ranolazine Reduces Neuronal Excitability by Interacting With Inactivated States of Brain Sodium Channels
+   key:       Kahlig2014
+   author:    Kristopher M. Kahlig, Ryoko Hirakawa, Lynda Liu, Jr. Alfred L. George, Luiz Belardinelli, Sridharan Rajamani
+   year:      2014
+   journal:   Molecular Pharmacology
+   volume:    85
+   number:    1
+   pages:     162 -- 174
+   status:    published
+   entrytype: article
+** A Paradoxical Effect of Lidocaine for the N406S Mutation of SCN5A Associated With Brugada Syndrome
+   key:       Itoh2007
+   author:    Hideki Itoh, Keiko Tsuji, Tomoko Sakaguchi, Iori Nagaoka, Yuko Oka, Yuko Nakazawa, Takenori Yao, Hikari Jo, Takashi Ashihara, Makoto Ito, Minoru Horie, Keiji Imoto
+   year:      2007
+   journal:   International Journal of Cardiology
+   volume:    121
+   number:    3
+   pages:     239 -- 248
+   status:    published
+   entrytype: article
+** Estimating Kinetic Constants From Single Channel Data
+   key:       Horn1983
+   author:    Richard Horn, Kenneth Lange
+   year:      1983
+   journal:   Biophysical Journal
+   volume:    43
+   number:    2
+   pages:     207 -- 223
+   status:    published
+   entrytype: article
+** Antiarrhythmic Agents: the Modulated Receptor Mechanism of Action of Sodium and Calcium Channel-Blocking Drugs
+   key:       Hondeghem1984
+   author:    L. M. Hondeghem, B. G. Katzung
+   year:      1984
+   journal:   Annual Review of Pharmacology and Toxicology
+   volume:    24
+   pages:     387 -- 423
+   status:    published
+   entrytype: article
+** Time- and Voltage-Dependent Interactions of Antiarrhythmic Drugs With Cardiac Sodium Channels
+   key:       Hondeghem1977
+   author:    Luc M. Hondeghem, Bertram G. Katzung
+   year:      1977
+   journal:   Biochimica et Biophysica Acta
+   volume:    472
+   number:    3-4
+   pages:     373--398
+   status:    published
+   entrytype: article
+** The What and Where of Adding Channel Noise to the Hodgkin-Huxley Equations
+   key:       Goldwyn2011
+   author:    Joshua H. Goldwyn, Eric Shea-Brown
+   year:      2011
+   journal:   PLoS Computational Biology
+   volume:    7
+   number:    11
+   status:    published
+   entrytype: article
+** Emergent Collective Behavior in Large Numbers of Globally Coupled Independently Stochastic Ion Channels
+   key:       Fox1994
+   author:    Ronald F. Fox, Yan-nan Lu
+   year:      1994
+   journal:   Physical Review E
+   volume:    49
+   number:    4
+   pages:     3421 -- 3431
+   status:    published
+   entrytype: article
+** Contributions of HERG $\mbox{K}^{+}$ Current to Repolarization of the Human Ventricular Action Potential
+   key:       Fink2008
+   author:    Martin Fink, Denis Noble, Laszlo Virag, Andras Varro, Wayne R. Giles
+   year:      2008
+   journal:   Progress in Biophysics and Molecular Biology
+   volume:    96
+   pages:     357 -- 376
+   status:    published
+   entrytype: article
+** A Theory for the Membrane Potential of Living Cells
+   key:       Endresen2000
+   author:    L.P. Endresen, K. Hall, J.S. H{\o}ye, J. Myrheim
+   year:      2000
+   journal:   European Biophysics Journal
+   volume:    29
+   pages:     90 -- 103
+   status:    published
+   entrytype: article
+** On the Stochastic Properties of Single Ion Channels
+   key:       Colquhoun1981
+   author:    David Colquhoun, Alan G. Hawkes
+   year:      1981
+   journal:   Proceedings of the Royal Society of London B: Biological Sciences
+   volume:    211
+   number:    1183
+   pages:     205--235
+   status:    published
+   entrytype: article
+** Theoretical Investigation of the Neuronal $\mbox{Na}^{+}$ Channel SCN1A: Abnormal Gating and Epilepsy
+   key:       Clancy2004
+   author:    Colleen E. Clancy, Robert S. Kass
+   year:      2004
+   journal:   Biophysical Journal
+   volume:    86
+   pages:     2606 -- 2614
+   status:    published
+   entrytype: article
+** A Population Study of Integrate-and-Fire-Or-Burst Neurons
+   key:       Casti2002
+   author:    A.R.R. Casti, A. Omurtag, A. Sornborger, E. Kaplan, B. Knight, J. Victor, L. Sirovich
+   year:      2002
+   journal:   Neural Computation
+   volume:    14
+   pages:     957 -- 986
+   status:    published
+   entrytype: article
+** Population Dynamics of Synaptic Release Sites
+   key:       Bertram1998
+   author:    Richard Bertram, Arthur Sherman
+   year:      1998
+   journal:   SIAM Journal on Applied Mathematics
+   volume:    58
+   number:    1
+   pages:     142 -- 169
+   status:    published
+   entrytype: article
+** Comparing High Performance Techniques for the Automatic Generation of Efficient Solvers of Cardiac Cell Models
+   key:       Campos2013
+   author:    Ricardo Silva Campos, Fernando Otaviano Campos, Johnny Moreira Gomes, Ciro de Barros Barbosa, Marcelo Lobosco, Rodrigo Weber Dos Santos
+   year:      2013
+   journal:   Computing
+   publisher: Springer
+   volume:    95
+   number:    1
+   pages:     639--660
+   status:    published
+   entrytype: article
+** The Secrets to the Success of the {R}ush-{L}arsen Method and Its Generalizations
+   key:       Marsh2012
+   author:    Megan E. Marsh, Saeed T. Ziaratgahi, Raymond J. Spiteri
+   year:      2012
+   journal:   IEEE Transactions on Biomedical Engineering
+   publisher: IEEE
+   volume:    59
+   number:    9
+   pages:     2506--2515
+   status:    published
+   entrytype: article
+** A Practical Algorithm for Solving Dynamic Membrane Equations
+   key:       Rush1978
+   author:    Stanley Rush, Hugh Larsen
+   year:      1978
+   journal:   IEEE Transactions on Biomedical Engineering
+   publisher: IEEE
+   volume:    BME-25
+   number:    4
+   pages:     389--392
+   status:    published
+   entrytype: article
+** {Exponential Integrators for a {Markov} Chain Model of the Fast Sodium Channel of Cardiomyocytes}
+   key:       Stary2015
+   author:    Tomas Stary, Vadim N. Biktashev
+   year:      2015
+   journal:   IEEE Transactions on Biomedical Engineering
+   volume:    62
+   number:    4
+   pages:     1070--1076
+   status:    published
+   entrytype: article
+** A Second Order Algorithm for Solving Dynamic Cell Membrane Equations
+   key:       Sundnes2009
+   author:    Joakim Sundnes, Robert Artebrant, Ola Skavhaug, Aslak Tveito
+   year:      2009
+   journal:   IEEE Transactions on Biomedical Engineering
+   volume:    56
+   number:    10
+   pages:     2546-2548
+   status:    published
+   abstract:  This paper describes an extension of the so-called Rush-Larsen scheme, which is a widely used numerical method for solving dynamic models of cardiac cell electrophysiology. The proposed method applies a local linearization of non-linear terms in combination with the analytical solution of linear ordinary differential equations, to obtain a second order accurate numerical scheme. We compare the error and computational load of the second order scheme to the original Rush-Larsen method. For a given error tolerance, the second order method is from nine to 500 times faster than the original scheme, depending on the choice of model and tolerance.
+   entrytype: article
+** {A Novel Computational Model of the Human Ventricular Action Potential and Ca Transient}
+   key:       Grandi2010B
+   author:    Eleonora Grandi, Francesco S. Pasqualini, Donald M. Bers
+   year:      2010
+   journal:   Journal of Molecular and Cellular Cardiology
+   volume:    48
+   number:    1
+   pages:     112--121
+   status:    published
+   entrytype: article
+** Unstable Eigenmodes As Possible Drivers for Cardiac Arrhythmias
+   key:       Tveito2011
+   author:    Aslak Tveito, Glenn Terje Lines, Ola Skavhaug, Mary M. Maleckar
+   year:      2011
+   journal:   Journal of the Royal Society Interface
+   volume:    8
+   number:    61
+   pages:     1212--1216
+   status:    published
+   abstract:  
+   entrytype: article
+** A Model of Propagating Calcium-Induced Calcium Release Mediated by 	calcium Diffusion.
+   key:       Backx1989
+   author:    P. H. Backx, P. P. {de Tombe}, J. H. {Van Deen}, B. J. Mulder, H. E. {ter Keurs}
+   year:      1989
+   journal:   J Gen Physiol
+   volume:    93
+   number:    5
+   pages:     963--977
+   status:    published
+   entrytype: article
+** Optical Single-Channel Resolution Imaging of the Ryanodine Receptor 	distribution in Rat Cardiac Myocytes.
+   key:       Baddeley2009
+   author:    David Baddeley, Isuru D. Jayasinghe, Leo Lam, Sabrina Rossberger and Mark B. {C}annell, Christian Soeller
+   year:      2009
+   journal:   Proc Natl Acad Sci U S A
+   volume:    106
+   number:    52
+   pages:     22275--22280
+   url:       http://dx.doi.org/10.1073/pnas.0908971106
+   status:    published
+   entrytype: article
+** {Calcium and Cardiac Rhythms: Physiological and Pathophysiological.}
+   key:       Bers2002
+   author:    Donald M. Bers
+   year:      2002
+   journal:   Circulation research
+   volume:    90
+   number:    1
+   pages:     14--17
+   status:    published
+   entrytype: article
+** Calcium Cycling and Signaling in Cardiac Myocytes
+   key:       Bers2008
+   author:    Donald M. Bers
+   year:      2008
+   journal:   Annual Review of Physiology
+   publisher: Annual Reviews
+   volume:    70
+   pages:     23--49
+   status:    published
+   entrytype: article
+** Cardiac Excitation-Contraction Coupling
+   key:       Bers2002N
+   author:    Donald M. Bers
+   year:      2002
+   journal:   Nature
+   publisher: Nature Publishing Group
+   volume:    415
+   number:    6868
+   pages:     198--205
+   status:    published
+   entrytype: article
+** Intercellular Propagation of Calcium Waves Mediated by Inositol Trisphosphate.
+   key:         Boitano1992
+   author:      S. Boitano, E. R. Dirksen, M. J. Sanderson
+   year:        1992
+   journal:     Science
+   institution: Department of Anatomy, UCLA School of Medicine, CA 90024.
+   volume:      258
+   number:      5080
+   pages:       292--295
+   status:      published
+   entrytype:   article
+** Frequency Modulation and Synchronization of Spontaneous Oscillations 	in Cardiac Cells.
+   key:                Capogrossi1985
+   author:             M. C. Capogrossi, E. G. Lakatta
+   year:               1985
+   journal:            Am J Physiol
+   volume:             248
+   number:             3 Pt 2
+   pages:              H412--H418
+   status:             published
+   allowed_duplicates: {C}apogrossi1985
+   entrytype:          article
+   language:           eng
+   medline-pst:        ppublish
+   owner:              hake
+   pmid:               4038857
+   timestamp:          2012.01.12
+** Frequency Modulation and Synchronization of Spontaneous Oscillations 	in Cardiac Cells.
+   key:                {C}apogrossi1985
+   author:             M. C. {C}apogrossi, E. G. Lakatta
+   year:               1985
+   journal:            Am J Physiol
+   volume:             248
+   number:             3 Pt 2
+   pages:              H412--H418
+   status:             published
+   allowed_duplicates: Capogrossi1985
+   entrytype:          article
+** {C}alcium Sparks and [{C}a$^{2+}$]i Waves in Cardiac Myocytes.
+   key:       Cheng1996
+   author:    H. Cheng, M. R. Lederer, W. J. Lederer, M. B. {C}annell
+   year:      1996
+   journal:   Am J Physiol
+   volume:    270
+   number:    1 Pt 1
+   pages:     C148--C159
+   status:    published
+   entrytype: article
+** {C}alcium Sparks: Elementary Events Underlying Excitation-Contraction 	coupling in Heart Muscle.
+   key:       Cheng1993
+   author:    H. Cheng, W. J. Lederer, M. B. {C}annell
+   year:      1993
+   journal:   Science
+   volume:    262
+   number:    5134
+   pages:     740--744
+   status:    published
+   entrytype: article
+** Spontaneous Contractions in Rat Cardiac Trabeculae: Trigger Mechanism 	and Propagation Velocity.
+   key:       Daniels1990
+   author:    M. C. Daniels, H. E. {ter Keurs}
+   year:      1990
+   journal:   J Gen Physiol
+   volume:    95
+   number:    6
+   pages:     1123--1137
+   status:    published
+   entrytype: article
+** Role of the Sarcolemma in Triggered Propagated Contractions in Rat 	cardiac Trabeculae.
+   key:       Daniels1991
+   author:    M. C. Daniels, D. Fedida, C. Lamont, H. E. {ter Keurs}
+   year:      1991
+   journal:   Circ Res
+   volume:    68
+   number:    5
+   pages:     1408--1421
+   status:    published
+   entrytype: article
+** {Total Excitation of the Isolated Human Heart.}
+   key:       Durrer1970
+   author:    D. Durrer, R. T. van Dam, G. E. Freud, M. J. Janse, F. L. Meijler, R. C. Arzbaecher
+   year:      1970
+   journal:   Circulation
+   volume:    41
+   number:    6
+   pages:     899--912
+   status:    published
+   entrytype: article
+** Shape, Size, and Distribution of {C}a$^{2+}$ Release Units and Couplons 	in Skeletal and Cardiac Muscles.
+   key:       Franzini-Armstrong1999
+   author:    C. Franzini-Armstrong, F. Protasi, V. Ramesh
+   year:      1999
+   journal:   Biophys. J.
+   volume:    77
+   number:    3
+   pages:     1528--1539
+   url:       http://www.biophysj.org/cgi/content/full/77/3/1528
+   status:    published
+   entrytype: article
+** Burst Emergence of Intracellular {C}a$^{2+}$ Waves Evokes Arrhythmogenic 	oscillatory Depolarization Via the Na+-{C}a$^{2+}$ Exchanger: Simultaneous 	confocal Recording of Membrane Potential and Intracellular {C}a$^{2+}$ 	in the Heart.
+   key:         Fujiwara2008
+   author:      Katsuji Fujiwara, Hideo Tanaka, Hiroki Mani, Takuo Nakagami, Tetsuro Takamatsu
+   year:        2008
+   journal:     Circ Res
+   institution: Department of Pathology and Cell Regulation, Kyoto Prefectural University 	of Medicine Graduate School of Medical Science, Kawaramachi-Hirokoji, 	Kamigyo-Ku, Kyoto 602-8566, Japan.
+   volume:      103
+   number:      5
+   pages:       509--518
+   doi:         10.1161/CIRCRESAHA.108.176677
+   url:         http://dx.doi.org/10.1161/CIRCRESAHA.108.176677
+   status:      published
+   abstract:    Intracellular {C}a$^{2+}$ waves ({C}aWs) of cardiomyocytes are spontaneous 	events of {C}a$^{2+}$ release from the sarcoplasmic reticulum that 	are regarded as an important substrate for triggered arrhythmias 	and delayed afterdepolarizations. However, little is known regarding 	whether or how {C}aWs within the heart actually produce arrhythmogenic 	membrane oscillation because of the lack of data confirming direct 	correlation between {C}aWs and membrane potentials (V(m)) in the heart. 	On the hypothesis that {C}aWs evoke arrhythmogenic oscillatory depolarization 	when they emerge synchronously and intensively in the heart, we conducted 	simultaneous fluorescence recording of intracellular {C}a$^{2+}$ ([{C}a$^{2+}$](i)) 	dynamics and V(m) of ventricular myocytes on subepicardial surfaces 	of Langendorff-perfused rat hearts using in situ dual-view, rapid-scanning 	confocal microscopy. In intact hearts loaded with fluo4/acetoxymethyl 	ester and RH237 under perfusion with cytochalasin D at room temperature, 	individual myocytes exhibited {C}a$^{2+}$ transients and action potentials 	uniformly on ventricular excitation, whereas low-K(+)-perfused (2.4 	mmol/L) hearts exhibited {C}aWs sporadically between {C}a$^{2+}$ transients 	without discernible membrane depolarization. Further [{C}a$^{2+}$](i) 	loading of the heart, produced by rapid pacing and addition of isoproterenol, 	evoked triggered activity and subsequent oscillatory V(m), which 	are caused by burst emergence of {C}aWs in individual myocytes. Such 	arrhythmogenic membrane oscillation was abolished by ryanodine or 	the Na(+)-{C}a$^{2+}$ exchanger inhibitor SEA0400, indicating an essential 	role of {C}aWs and resultant Na(+)-{C}a$^{2+}$ exchanger-mediated depolarization 	in triggered activity. In summary, we demonstrate a mechanistic link 	between intracellular {C}aWs and arrhythmogenic oscillatory depolarizations 	in the heart. Our findings provide a cellular perspective on abnormal 	[{C}a$^{2+}$](i) handling in the genesis of triggered arrhythmias in 	the heart.
+   entrytype:   article
+   file:        :Fuji_2008_509.pdf:PDF
+   keywords:    Action Potentials, drug effects/physiology; Aniline Compounds, pharmacology; 	Animals; Arrhythmias, {C}ardiac, physiopathology; {C}alcium Signaling, 	physiology; {C}alcium, metabolism/pharmacology; {C}ardiotonic Agents, 	pharmacology; Heart, physiology; Isoproterenol, pharmacology; Microscopy, 	Confocal; Myocytes, {C}ardiac, physiology; Periodicity; Phenyl Ethers, 	pharmacology; Potassium, pharmacology; Rats; Rats, Wistar; Sarcoplasmic 	Reticulum, metabolism; Sodium-{C}alcium Exchanger, antagonists /&/ 	inhibitors/physiology
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pii:         CIRCRESAHA.108.176677
+   pmid:        18635824
+   timestamp:   2012.01.10
+** Three-Dimensional Electron Microscopy Reveals New Details of Membrane 	systems for {C}a$^{2+}$ Signaling in the Heart.
+   key:         Hayashi2009
+   author:      Takeharu Hayashi, Maryann E. Martone, Zeyun Yu, Andrea Thor and Masahiro Doi, Michael J. Holst, Mark H. Ellisman, Masahiko Hoshijima
+   year:        2009
+   journal:     J Cell Sci
+   institution: The Center for Research in Biological Systems, University of {C}alifornia 	San Diego, La Jolla, CA 92093, USA.
+   volume:      122
+   number:      Pt 7
+   pages:       1005--1013
+   doi:         10.1242/jcs.028175
+   url:         http://dx.doi.org/10.1242/jcs.028175
+   status:      published
+   abstract:    In the current study, the three-dimensional (3D) topologies of dyadic 	clefts and associated membrane organelles were mapped in mouse ventricular 	myocardium using electron tomography. The morphological details and 	the distribution of membrane systems, including transverse tubules 	(T-tubules), junctional sarcoplasmic reticulum (SR) and vicinal mitochondria, 	were determined and presumed to be crucial for controlling cardiac 	{C}a$^{2+}$ dynamics. The geometric complexity of T-tubules that varied 	in diameter with frequent branching was clarified. Dyadic clefts 	were intricately shaped and remarkably small (average 4.39x10(5) 	nm(3), median 2.81x10(5) nm(3)). Although a dyadic cleft of average 	size could hold maximum 43 ryanodine receptor (RyR) tetramers, more 	than one-third of clefts were smaller than the size that is able 	to package as many as 15 RyR tetramers. The dyadic clefts were also 	adjacent to one another (average end-to-end distance to the nearest 	dyadic cleft, 19.9 nm) and were distributed irregularly along T-tubule 	branches. Electron-dense structures that linked membrane organelles 	were frequently observed between mitochondrial outer membranes and 	SR or T-tubules. We, thus, propose that the topology of dyadic clefts 	and the neighboring cellular micro-architecture are the major determinants 	of the local control of {C}a$^{2+}$ in the heart, including the establishment 	of the quantal nature of SR {C}a$^{2+}$ releases (e.g. {C}a$^{2+}$ sparks).
+   entrytype:   article
+   file:        :Haya_2009_1005.pdf:PDF
+   keywords:    Animals; {C}alcium Signaling; Cell Separation; Electrons; Mice; Microscopy, 	Electron, methods; Mitochondrial Membranes, metabolism/ultrastructure; 	Models, Biological; Myocardium, metabolism/ultrastructure; Myocytes, 	{C}ardiac, cytology/metabolism/ultrastructure; Organelles, ultrastructure; 	Ryanodine Receptor {C}alcium Release Channel, metabolism; Sarcoplasmic 	Reticulum, metabolism/ultrastructure
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pii:         122/7/1005
+   pmid:        19295127
+   timestamp:   2009.11.23
+** Spontaneous Calcium Release in Tissue From the Failing Canine Heart.
+   key:         Hoeker2009
+   author:      Gregory S. Hoeker, Rodolphe P. Katra, Lance D. Wilson, Bradley N. Plummer, Kenneth R. Laurita
+   year:        2009
+   journal:     Am J Physiol Heart Circ Physiol
+   institution: Department of Biomedical Engineering, {C}aseWestern Reserve University, 	The Heart and Vascular Research Center, Cleveland, Ohio 44109-1998, 	USA.
+   volume:      297
+   number:      4
+   pages:       H1235--H1242
+   doi:         10.1152/ajpheart.01320.2008
+   url:         http://dx.doi.org/10.1152/ajpheart.01320.2008
+   status:      published
+   abstract:    Abnormalities in calcium handling have been implicated as a significant 	source of electrical instability in heart failure (HF). While these 	abnormalities have been investigated extensively in isolated myocytes, 	how they manifest at the tissue level and trigger arrhythmias is 	not clear. We hypothesize that in HF, triggered activity (TA) is 	due to spontaneous calcium release from the sarcoplasmic reticulum 	that occurs in an aggregate of myocardial cells (an SRC) and that 	peak SCR amplitude is what determines whether TA will occur. {C}alcium 	and voltage optical mapping was performed in ventricular wedge preparations 	from canines with and without tachycardia-induced HF. In HF, steady-state 	calcium transients have reduced amplitude [135 vs. 170 ratiometric 	units (RU), P < 0.05] and increased duration (252 vs. 229 s, P < 	0.05) compared with those of normal. Under control conditions and 	during beta-adrenergic stimulation, TA was more frequent in HF (53\% 	and 93\%, respectively) compared with normal (0\% and 55\%, respectively, 	P < 0.025). The mechanism of arrhythmias was SCRs, leading to delayed 	afterdepolarization-mediated triggered beats. Interestingly, the 	rate of SCR rise was greater for events that triggered a beat (0.41 	RU/ms) compared with those that did not (0.18 RU/ms, P < 0.001). 	In contrast, there was no difference in SCR amplitude between the 	two groups. In conclusion, TA in HF tissue is associated with abnormal 	calcium regulation and mediated by the spontaneous release of calcium 	from the sarcoplasmic reticulum in aggregates of myocardial cells 	(i.e., an SCR), but importantly, it is the rate of SCR rise rather 	than amplitude that was associated with TA.
+   entrytype:   article
+   file:        Hoek_2009_1235.pdf:pdf/Hoek_2009_1235.pdf:PDF
+   keywords:    Action Potentials; Adrenergic beta-Agonists, pharmacology; Animals; 	Arrhythmias, {C}ardiac, etiology/metabolism/physiopathology; {C}alcium 	Signaling, drug effects; {C}ardiac Pacing, Artificial; Disease Models, 	Animal; Dogs; Electrocardiography; Electrophysiologic Techniques, 	{C}ardiac; Heart Failure, complications/metabolism/physiopathology; 	Heart Rate, drug effects; Heart Ventricles, metabolism/physiopathology; 	Kinetics; Male; Myocytes, {C}ardiac, drug effects/metabolism; Sarcoplasmic 	Reticulum, drug effects/metabolism
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pii:         01320.2008
+   pmid:        19648256
+   timestamp:   2012.01.10
+** {Propagation and Collision Characteristics of Calcium Waves in Rat Myocytes.}
+   key:       Ishide1990
+   author:    N. Ishide, T. Urayama, K. Inoue, T. Komaru, T. Takishima
+   year:      1990
+   journal:   Am J Physiol
+   volume:    259
+   number:    3 Pt 2
+   pages:     H940--50
+   status:    published
+   entrytype: article
+** Three Distinct Types of {C}a$^{2+}$ Waves in Langendorff-Perfused Rat 	heart Revealed by Real-Time Confocal Microscopy.
+   key:         Kaneko2000
+   author:      T. Kaneko, H. Tanaka, M. Oyamada, S. Kawata, T. Takamatsu
+   year:        2000
+   journal:     Circ Res
+   institution: Department of Pathology and Cell Regulation, Kyoto Prefectural University 	of Medicine, Kyoto, Japan.
+   volume:      86
+   number:      10
+   pages:       1093--1099
+   status:      published
+   abstract:    Although {C}a$^{2+}$ waves in cardiac myocytes are regarded as arrhythmogenic 	substrates, their properties in the heart in situ are poorly understood. 	On the hypothesis that {C}a$^{2+}$ waves in the heart behave diversely 	and some of them influence the cardiac function, we analyzed their 	incidence, propagation velocity, and intercellular propagation at 	the subepicardial myocardium of fluo 3-loaded rat whole hearts using 	real-time laser scanning confocal microscopy. We classified {C}a$^{2+}$ 	waves into 3 types. In intact regions showing homogeneous {C}a$^{2+}$ 	transients under sinus rhythm (2 mmol/L [{C}a$^{2+}$](o)), {C}a$^{2+}$ 	waves did not occur. Under quiescence, the waves occurred sporadically 	(3.8 waves. min(-1) x cell(-1)), with a velocity of 84 microm/s, 	a decline half-time (t(1/2)) of 0.16 seconds, and rare intercellular 	propagation (propagation ratio <0.06) (sporadic wave). In contrast, 	in presumably {C}a$^{2+}$-overloaded regions showing higher fluorescent 	intensity (113\% versus the intact regions), {C}a$^{2+}$ waves occurred 	at 28 waves x min(-1) x cell(-1) under quiescence with a higher velocity 	(116 microm/s), longer decline time (t(1/2) = 0.41 second), and occasional 	intercellular propagation (propagation ratio = 0.23) ({C}a$^{2+}$-overloaded 	wave). In regions with much higher fluorescent intensity (124\% versus 	the intact region), {C}a$^{2+}$ waves occurred with a high incidence 	(133 waves x min(-1) x cell(-1)) and little intercellular propagation 	(agonal wave). We conclude that the spatiotemporal properties of 	{C}a$^{2+}$ waves in the heart are diverse and modulated by the {C}a$^{2+}$-loading 	state. The sporadic waves would not affect cardiac function, but 	prevalent {C}a$^{2+}$-overloaded and agonal waves may induce contractile 	failure and arrhythmias.
+   entrytype:   article
+   file:        :Kane_2000_1093.pdf:PDF
+   keywords:    Aniline Compounds; Animals; {C}alcium, metabolism; Computer Systems; 	Electrocardiography; Fluorescent Dyes; Heart Rate; Heart, physiology; 	Microscopy, Confocal, methods; Myocardium, metabolism; Osmolar Concentration; 	Perfusion; Rats; Xanthenes
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pmid:        10827140
+   timestamp:   2012.01.17
+** {In the RyR2R4496C Mouse Model of CPVT, -Adrenergic Stimulation Induces Ca Waves by Increasing SR Ca Content and Not by Decreasing the Threshold for Ca Waves}
+   key:       Kashimura2010
+   author:    T. Kashimura, S. J. Briston, A. W. Trafford, C. Napolitano, S. G. Priori, D. A. Eisner, L. A. Venetucci
+   year:      2010
+   journal:   Circulation research
+   volume:    107
+   number:    12
+   pages:     1483--1489
+   status:    published
+   entrytype: article
+** {Aberrant Cell-to-Cell Coupling in Ca2+-Overloaded Guinea Pig Ventricular Muscles}
+   key:       Kurebayashi2008
+   author:    N. Kurebayashi, H. Nishizawa, Y. Nakazato, H. Kurihara, S. Matsushita, H. Daida, Y. Ogawa
+   year:      2008
+   journal:   AJP: Cell Physiology
+   volume:    294
+   number:    6
+   pages:     C1419--C1429
+   status:    published
+   entrytype: article
+** Intercellular {C}a$^{2+}$ Waves in Rat Heart Muscle.
+   key:         Lamont1998
+   author:      C. Lamont, P. W. Luther, C. W. Balke, W. G. Wier
+   year:        1998
+   journal:     J Physiol
+   institution: Departments of Physiology and Medicine, School of Medicine, University 	of Maryland, 655 West Baltimore Street, Baltimore, MD 21201, USA.
+   volume:      512 ( Pt 3)
+   pages:       669--676
+   status:      published
+   abstract:    1. Confocal laser scanning microscopy was used to visualize intercellular 	transmission of {C}a$^{2+}$ waves in intact rat ventricular trabeculae 	micro-injected with the calcium indicator fluo-3. 2. {C}a$^{2+}$ waves 	usually failed to be transmitted from cell to cell. At identified 	individual end-to-end cell contacts, successful transmission interspersed 	with failure, which sometimes occurred despite an apparent small 	spritz of {C}a$^{2+}$ between cells. The probability of cell to cell 	transmission (Ptran) was 0.13. 3. {C}a$^{2+}$ waves arose preferentially 	near junctions of connected cells, where connexin-43 was found, but 	randomly in enzymatically disconnected heart cells. 4. beta-Adrenergic 	stimulation significantly increased Ptran (to 0.22) and heptanol, 	an uncoupler of gap junction channels, significantly decreased it 	(to 0.045). 5. In regions of high [{C}a$^{2+}$]i due to damage, wave 	frequency decreased markedly with each cell-cell junction passed. 	6. The {C}a$^{2+}$ permeability of cardiac gap junctions may be regulated, 	and the low ability of cardiac gap junctions to transmit {C}a$^{2+}$ 	may help control the spread of {C}a$^{2+}$ from damaged regions.
+   entrytype:   article
+   file:        :Lamo_1998_669.pdf:PDF
+   keywords:    Adrenergic beta-Agonists, pharmacology; Aniline Compounds; Animals; 	{C}alcium, metabolism; Cell Communication, physiology; Connexins, metabolism; 	Fluorescent Dyes; Gap Junctions, drug effects/metabolism; Heart, 	physiology; Image Processing, Computer-Assisted; Microscopy, Confocal; 	Myocardium, metabolism; Rats; Rats, Inbred BN; Uncoupling Agents, 	pharmacology; Xanthenes
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pmid:        9769412
+   timestamp:   2012.01.04
+** {Arrhythmogenesis in Catecholaminergic Polymorphic Ventricular Tachycardia: Insights From a RyR2 R4496C Knock-In Mouse Model.}
+   key:       Liu2006
+   author:    Nian Liu, Barbara Colombi, Mirella Memmi, Spyros Zissimopoulos, Nicoletta Rizzi, Sara Negri, Marcello Imbriani, Carlo Napolitano, F. Anthony Lai, Silvia G. Priori
+   year:      2006
+   journal:   Circulation research
+   volume:    99
+   number:    3
+   pages:     292--298
+   status:    published
+   entrytype: article
+** {C}a$^{2+}$ Waves During Triggered Propagated Contractions in Intact 	trabeculae. Determinants of the Velocity of Propagation.
+   key:         Miura1999
+   author:      M. Miura, P. A. Boyden, H. E. {ter Keurs}
+   year:        1999
+   journal:     Circ Res
+   institution: Department of Medicine, University of {C}algary, {C}algary, {C}anada.
+   volume:      84
+   number:      12
+   pages:       1459--1468
+   status:      published
+   abstract:    During triggered propagated contractions, {C}a$^{2+}$ waves travel along 	cardiac trabeculae with a constant velocity (Vprop) ranging from 	0. 34 to 5.47 mm/s. To explore the determinants of Vprop, we studied 	(1) the relationship between [{C}a$^{2+}$]i and Vprop and (2) the effect 	of low concentrations of caffeine on Vprop. Trabeculae were dissected 	from the right ventricle of rat hearts. [{C}a$^{2+}$]i was measured 	using electrophoretically injected fura-2 and an image-intensified 	CCD camera. Force was measured using a silicon strain gauge, and 	sarcomere length was measured using laser diffraction techniques. 	After induction of reproducible {C}a$^{2+}$ waves by trains of electrical 	stimuli (2.5 Hz) at 21.9+/-0.2 degrees C, the number of stimuli or 	[{C}a$^{2+}$]o was varied in 9 trabeculae. In 5 trabeculae, the effects 	of caffeine (0.1 to 1.0 mmol/L) at [{C}a$^{2+}$]o of 2.2+/-0.3 mmol/L 	were determined. All images were recorded under stable conditions 	of wave propagation. The increment in [{C}a$^{2+}$]i during the last 	electrically stimulated transient (Delta{C}aT) and [{C}a$^{2+}$]i just 	before onset of the {C}a$^{2+}$ waves ({C}aD) were used to estimate the 	{C}a$^{2+}$ loading of the sarcoplasmic reticulum (SR) and the myoplasm, 	respectively. The ratio (Delta{C}aW/Delta{C}aT) of the [{C}a$^{2+}$]i increment 	during the waves (Delta{C}aW) to Delta{C}aT was used to estimate the 	probability of opening of the SR-{C}a$^{2+}$ release channel during 	wave propagation. As a result of an increase of the number of stimuli 	or [{C}a$^{2+}$]o, Vprop increased in proportion to (1) Delta{C}aT (r=0.82); 	(2) {C}aD (r=0.88); (3) Delta{C}aW (r=0.85); and (4) Delta{C}aW/Delta{C}aT 	(r=0.74). The addition of caffeine (</=0.3 mmol/L) increased Vprop 	for any Delta{C}aT and any Delta{C}aW, revealing an increased sensitivity 	of Vprop to Delta{C}aT and Delta{C}aW. In contrast, caffeine had little 	effect on the relationship between Vprop and {C}aD and no effect on 	that between Vprop and Delta{C}aW/Delta{C}aT. These results suggest that 	both the cellular {C}a$^{2+}$ loading and open probability of the SR-{C}a$^{2+}$ 	release channels determine the velocity of propagation of {C}a$^{2+}$ 	waves.
+   entrytype:   article
+   file:        :Miur_1999_1459.pdf:PDF
+   keywords:    Animals; Biological Transport, drug effects/physiology; {C}affeine, 	pharmacology; {C}alcium, pharmacokinetics; Fluorescent Dyes; Fura-2; 	Kinetics; Muscle Fibers, Skeletal, metabolism/physiology; Myocardial 	Contraction, drug effects/physiology; Myocardium, cytology/metabolism; 	Periodicity; Phosphodiesterase Inhibitors, pharmacology; Rats; Rats, 	Inbred Lew
+   language:    eng
+   medline-pst: ppublish
+   owner:       hake
+   pmid:        10381899
+   timestamp:   2012.01.16
+** {Abnormalities in Gap Junctions and Ca2+ Dynamics in Cardiomyocytes at the Border Zone of Myocardial Infarcts.}
+   key:       Oyamada2001
+   author:    M. Oyamada, E. Tsujii, H. Tanaka, T. Matsushita, T. Takamatsu
+   year:      2001
+   journal:   Cell communication {\&} adhesion
+   volume:    8
+   number:    4-6
+   pages:     335--338
+   status:    published
+   entrytype: article
+** {Mechanisms Underlying Spontaneous and Induced Ventricular Arrhythmias in Patients With Idiopathic Dilated Cardiomyopathy.}
+   key:       Pogwizd1998
+   author:    S.M. Pogwizd, J. P. McKenzie, M.E. Cain
+   year:      1998
+   journal:   Circulation
+   volume:    98
+   number:    22
+   pages:     2404--2414
+   status:    published
+   entrytype: article
+** {Cellular Basis of Triggered Arrhythmias in Heart Failure.}
+   key:       Pogwizd2004
+   author:    Steven M. Pogwizd, Donald M. Bers
+   year:      2004
+   journal:   Trends in cardiovascular medicine
+   volume:    14
+   number:    2
+   pages:     61--66
+   status:    published
+   entrytype: article
+** {Imaging of Calcium Wave Propagation in Guinea-Pig Ventricular Cell Pairs by Confocal Laser Scanning Microscopy.}
+   key:       Takamatsu1991
+   author:    T. Takamatsu, T. Minamikawa, H. Kawachi, S. Fujita
+   year:      1991
+   journal:   Cell structure and function
+   volume:    16
+   number:    4
+   pages:     341--346
+   status:    published
+   entrytype: article
+** {Arrhythmogenesis and Contractile Dysfunction in Heart Failure : Roles of Sodium-Calcium Exchange, Inward Rectifier Potassium Current, and Residual -Adrenergic Responsiveness}
+   key:       Pogwizd2001
+   author:    S.M. Pogwizd, K. Schlotthauer, L. Li, W. Yuan, D. M. Bers
+   year:      2001
+   journal:   Circulation research
+   volume:    88
+   number:    11
+   pages:     1159--1167
+   status:    published
+   entrytype: article
+** {Remodeling of Cell-Cell and Cell-Extracellular Matrix Interactions at the Border Zone of Rat Myocardial Infarcts.}
+   key:       Matsushita1999
+   author:    T. Matsushita, M. Oyamada, K. Fujimoto, Y. Yasuda, S. Masuda, Y. Wada, T. Oka, T. Takamatsu
+   year:      1999
+   journal:   Circulation research
+   volume:    85
+   number:    11
+   pages:     1046--1055
+   status:    published
+   entrytype: article
+** {In Situ Visualization of the Intracellular Ca2+ Dynamics at the Border of the Acute Myocardial Infarct.}
+   key:       Tsujii2003
+   author:    Eiji Tsujii, Hideo Tanaka, Masahito Oyamada, Katsumasa Fujita, Tetsu Hamamoto, Tetsuro Takamatsu
+   year:      2003
+   journal:   Molecular and cellular biochemistry
+   volume:    248
+   number:    1-2
+   pages:     135--139
+   status:    published
+   entrytype: article
+** {Excitation-Dependent Intracellular Ca2+ Waves at the Border Zone of the Cryo-Injured Rat Heart Revealed by Real-Time Confocal Microscopy}
+   key:       Tanaka2002
+   author:    Hideo Tanaka, Masahito Oyamada, Eiji Tsujii, Takuya Nakajo, Tetsuro Takamatsu
+   year:      2002
+   journal:   Journal of Molecular and Cellular Cardiology
+   volume:    34
+   number:    11
+   pages:     1501--1512
+   status:    published
+   entrytype: article
+** Flecainide Therapy Reduces Exercise-Induced Ventricular Arrhythmias in Patients With Catecholaminergic Polymorphic Ventricular Tachycardia
+   key:       van2011
+   author:    C. van der Werf, P.J. Kannankeril, F. Sacher, A.D. Krahn, S. Viskin, A. Leenhardt, W. Shimizu, N. Sumitomo, F.A. Fish, Z.A. Bhuiyan, others
+   year:      2011
+   journal:   Journal of the American College of Cardiology
+   publisher: Am Coll Cardio Found
+   volume:    57
+   number:    22
+   pages:     2244
+   status:    published
+   entrytype: article
+** {A Computational Model to Predict the Effects of Class I Anti-Arrhythmic Drugs on Ventricular Rhythms}
+   key:       moreno2011
+   author:    Jonathan D. Moreno, Z. Iris Zhu, Pei-Chi Yang, John R. Bankston, Mao-Tsuen Jeng, Chaoyi Kang, Lianguo Wang, Jason D. Bayer, David J. Christini, Natalia A. Trayanova, others
+   year:      2011
+   journal:   Science Translational Medicine
+   publisher: NIH Public Access
+   volume:    3
+   number:    98
+   pages:     98ra83
+   status:    published
+   entrytype: article
+** Synergy Between {C}a{MKII} Substrates and $\beta$-Adrenergic Signaling in Regulation of Cardiac Myocyte {C}a$^{2+}$ Handling
+   key:       soltis2010
+   author:    Anthony R. Soltis, Jeffrey J. Saucerman
+   year:      2010
+   journal:   Biophysical Journal
+   publisher: Elsevier
+   volume:    99
+   number:    7
+   pages:     2038--2047
+   status:    published
+   entrytype: article
+** Calmodulin {M}ediates {D}ifferential {S}ensitivity of {C}a{MKII} and {C}alcineurin to {L}ocal {C}a$^{2+}$ in {C}ardiac {M}yocytes
+   key:       saucerman2008
+   author:    Jeffrey J. Saucerman, Donald M. Bers
+   year:      2008
+   journal:   Biophysical Journal
+   publisher: Elsevier
+   volume:    95
+   number:    10
+   pages:     4597--4612
+   status:    published
+   entrytype: article
+** Proarrhythmic Consequences of a KCNQ1 AKAP-Binding Domain Mutation Computational Models of Whole Cells and Heterogeneous Tissue
+   key:       saucerman2004
+   author:    Jeffrey J. Saucerman, Sarah N. Healy, Mary E. Belik, Jose L. Puglisi, Andrew D. McCulloch
+   year:      2004
+   journal:   Circulation research
+   publisher: Am Heart Assoc
+   volume:    95
+   number:    12
+   pages:     1216--1224
+   status:    published
+   entrytype: article
+** {A Mathematical Treatment of Integrated Ca Dynamics Within the Ventricular Myocyte}
+   key:       shannon2004
+   author:    Thomas R. Shannon, Fei Wang, Jos{\'e} Puglisi, Christopher Weber, Donald M. Bers
+   year:      2004
+   journal:   Biophysical Journal
+   publisher: Elsevier
+   volume:    87
+   number:    5
+   pages:     3351--3371
+   status:    published
+   entrytype: article
+** Multiscale Modeling of Calcium Signaling in the Cardiac Dyad
+   key:       Winslow2006
+   author:    Raimond L. Winslow, Antti Tanskanen, Mindao Chen, Joseph L. Greenstein
+   year:      2006
+   journal:   Annals of the New York Academy of Sciences
+   volume:    1080
+   pages:     362–375
+   status:    published
+   entrytype: article
+** Subunit Composition Determines the Single Channel Kinetics of the Epithelial Sodium Channel.
+   key:       Fyfe1998
+   author:    Fyfe GK, Canessa C. M.
+   year:      1998
+   journal:   J Gen Physiol.
+   volume:    112
+   number:    4
+   pages:     423-432
+   status:    published
+   entrytype: article
+** {$\mbox{Na}^{+}$ Channel Mutation That Causes Both Brugada and Long-QT Syndrome Phenotypes: a Simulation Study of Mechanism}
+   key:       Clancy2002
+   author:    Colleen E. Clancy, Yoram Rudy
+   year:      2002
+   journal:   Circulation
+   volume:    105
+   number:    10
+   pages:     1208-1213
+   status:    published
+   entrytype: article
+** {A Population Density Approach That Facilitates Large-Scale Modeling of Neural Networks: Analysis and an Application to Orientation Tuning}
+   key:       Nykamp2000
+   author:    Duane Q. Nykamp, Daniel Tranchina
+   year:      2000
+   journal:   Journal of Computational Neuroscience
+   volume:    8
+   number:    1
+   pages:     19--50
+   status:    published
+   entrytype: article
+** Voltage-Gated Sodium Channel ({N}a$_\text{V}$) Protein Dissection Creates a Set of Functional Pore-Only Proteins
+   key:       Shaya2011
+   author:    David Shaya, Mohamed Kreir, Rebecca A. Robbins, Stephanie Wong, Justus Hammon, Andrea Br{\"u}ggemann, Daniel L. Minor Jr.
+   year:      2011
+   journal:   Proceedings of the National Academy of Sciences
+   volume:    108
+   number:    30
+   pages:     12313--12318
+   status:    published
+   entrytype: article
+** {Multiple Effects of KPQ Deletion Mutation on Gating of Human Cardiac $\mbox{Na}^{+}$ Channels Expressed in Mammalian Cells}
+   key:       Chandra1998
+   author:    Rashmi Chandra, C. Frank Starmer, Augustus O. Grant
+   year:      1998
+   journal:   AJP: Heart and Circulatory Physiology
+   volume:    274
+   number:    5
+   pages:     H1643--H1654
+   status:    published
+   entrytype: article
+** A Quantitative Description of {KcsA} Gating {I}: {M}acroscopic Currents
+   key:       Chakrapani2007a
+   author:    Sudha Chakrapani, Julio F. Cordero-Morales, Eduardo Perozo
+   year:      2007
+   journal:   Journal of General Physiology
+   publisher: Rockefeller Univ Press
+   volume:    130
+   number:    5
+   pages:     465--478
+   status:    published
+   entrytype: article
+** A Quantitative Description of {KcsA} Gating {II}: {S}ingle-Channel Currents
+   key:       Chakrapani2007b
+   author:    Sudha Chakrapani, Julio F. Cordero-Morales, Eduardo Perozo
+   year:      2007
+   journal:   Journal of General Physiology
+   publisher: Rockefeller Univ Press
+   volume:    130
+   number:    5
+   pages:     479--496
+   status:    published
+   entrytype: article
+** On the Structural Basis of Modal Gating Behavior in {K}+ Channels
+   key:       Chakrapani2011
+   author:    Sudha Chakrapani, Julio F. Cordero-Morales, Vishwanath Jogini, Albert C. Pan, D. Marien Cortes, Beno{\^\i}t Roux, Eduardo Perozo
+   year:      2011
+   journal:   Nature Structural \& Molecular Biology
+   publisher: Nature Publishing Group
+   volume:    18
+   number:    1
+   pages:     67--74
+   status:    published
+   entrytype: article
+** Joint Distributions of Apparent Open and Shut Times of Single-Ion Channels and Maximum Likelihood Fitting of Mechanisms
+   key:       Colquhoun1996
+   author:    D. Colquhoun, A. G. Hawkes, K. Srodzinski
+   year:      1996
+   journal:   Philosophical Transactions of the Royal Society of London A: Mathematical, Physical and Engineering Sciences
+   publisher: The Royal Society
+   volume:    354
+   number:    1718
+   pages:     2555--2590
+   status:    published
+   entrytype: article
+** Mode Switching Is the Major Mechanism of Ligand Regulation of {InsP}$_3$ Receptor Calcium Release Channels
+   key:       Ionescu2007
+   author:    Lucian Ionescu, Carl White, King-Ho Cheung, Jianwei Shuai, Ian Parker, John E. Pearson, J. Kevin Foskett, Don-On Daniel Mak
+   year:      2007
+   journal:   Journal of General Physiology
+   publisher: Rockefeller Univ Press
+   volume:    130
+   number:    6
+   pages:     631--645
+   status:    published
+   entrytype: article
+** Maximum Likelihood Estimation of Aggregated {Markov} Processes
+   key:       Qin1997
+   author:    Feng Qin, Anthony Auerbach, Frederick Sachs
+   year:      1997
+   journal:   Proceedings of the Royal Society of London B: Biological Sciences
+   publisher: The Royal Society
+   volume:    264
+   number:    1380
+   pages:     375--383
+   status:    published
+   entrytype: article
+** Restoration of Single-Channel Currents Using the Segmental K-Means Method Based on Hidden {Markov} Modeling
+   key:       Qin2004
+   author:    Feng Qin
+   year:      2004
+   journal:   Biophysical Journal
+   volume:    86
+   number:    3
+   pages:     1488--1501
+   status:    published
+   entrytype: article
+** Statistical Analysis of Modal Gating in Ion Channels
+   key:          Siekmann2014
+   author:       Ivo Siekmann, James Sneyd, Edmund J. Crampin
+   year:         2014
+   journal:      Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences
+   volume:       470
+   number:       2166
+   pages:        20140030
+   status:       published
+   entrytype:    article
+   organization: The Royal Society
+* books
+** Physiology of the Heart
+   key:       Katz2010
+   author:    Arnold M. Katz
+   year:      2010
+   publisher: Lippincott Williams \& Wilkins
+   status:    published
+   entrytype: book
+** {Theory of Heart: Biomechanics, Biophysics, and Nonlinear Dynamics of Cardiac Function}
+   key:       Glass2012
+   author:    Leon Glass, Peter Hunter, Andrew McCulloch
+   year:      2012
+   publisher: Springer
+   status:    published
+   address:   New York
+   entrytype: book
+** {Mathematically Modelling the Electrical Activity of the Heart: From Cell to Body Surface and Back Again}
+   key:       Pullan2005
+   author:    Andrew J. Pullan, Leo K. Cheng, Martin L. Buist
+   year:      2005
+   publisher: World Scientific
+   status:    published
+   entrytype: book
+** {Mathematical Cardiac Electrophysiology}
+   key:       Franzone2014
+   author:    Piero C. Franzone, Luca F. Pavarino, Simone Scacchi
+   year:      2014
+   publisher: Springer
+   volume:    13
+   status:    published
+   entrytype: book
+** Applied Partial Differential Equations
+   key:       Logan2014
+   author:    David Logan
+   year:      2014
+   publisher: Springer
+   status:    published
+   entrytype: book
+** {Stochastic Processes for Physicists: Understanding Noisy Systems}
+   key:       Jacobs2010
+   author:    Kurt Jacobs
+   year:      2010
+   publisher: Cambridge University Press
+   status:    published
+   entrytype: book
+** Partial Differential Equations, an Introduction
+   key:       Strauss2008
+   author:    Walter A. Strauss
+   year:      2008
+   publisher: John Wiley \& Sons
+   status:    published
+   address:   New York
+   entrytype: book
+** {Waves in Neural Media}
+   key:       Bressloff2014w
+   author:    Paul C. Bressloff
+   year:      2014
+   publisher: Springer
+   status:    published
+   address:   New York
+   entrytype: book
+** {Stochastic Processes in Cell Biology}
+   key:       Bressloff2014
+   author:    Paul C. Bressloff
+   year:      2014
+   publisher: Springer
+   volume:    41
+   status:    published
+   entrytype: book
+** Chemical Kinetics, Stochastic Processes, and Irreversible Thermodynamics
+   key:       Santillan2014
+   author:    Mois{\'e}s Santill{\'a}n
+   year:      2014
+   publisher: Springer
+   status:    published
+   entrytype: book
+** Bioelectricity, a Quantitative Approach
+   key:       Plonsey2007
+   author:    Robert Plonsey, Roger C. Barr
+   year:      2007
+   publisher: Springer
+   status:    published
+   entrytype: book
+** Principles of Computational Modelling in Neuroscience
+   key:       Sterratt2011
+   author:    David Sterratt, Bruce Graham, Andrew Gillies, David Willshaw
+   year:      2011
+   publisher: Cambridge University Press
+   status:    published
+   entrytype: book
+** {Dynamical Systems in Neuroscience}
+   key:       Izhikevich2007
+   author:    Eugene M. Izhikevich
+   year:      2007
+   publisher: Cambridge University Press
+   status:    published
+   entrytype: book
+** {Mathematical Foundations of Neuroscience}
+   key:       Ermentrout2010
+   author:    G. Bard Ermentrout, David H. Terman
+   year:      2010
+   publisher: Springer
+   volume:    35
+   status:    published
+   address:   New York
+   entrytype: book
+** {Theoretical Neuroscience}
+   key:       Dayan2001
+   author:    Peter Dayan, Laurence F. Abbott
+   year:      2001
+   publisher: Cambridge University Press
+   volume:    806
+   status:    published
+   entrytype: book
+** {Ion Channels of Excitable Membranes}
+   key:       Hille2001
+   author:    Bertil Hille
+   year:      2001
+   publisher: Sinauer Sunderland, MA
+   volume:    507
+   status:    published
+   entrytype: book
+** Finite Volume Methods for Hyperbolic Problems
+   key:       LeVeque2002
+   author:    Randall J. LeVeque
+   year:      2002
+   publisher: Cambridge Texts in Applied Mathematics
+   status:    published
+   entrytype: book
+** Elements of Scientific Computing
+   key:       Tveito2010
+   author:    Aslak Tveito, Hans Petter Langtangen, Bj{\o}rn Frederik Nielsen, Xing Cai
+   year:      2010
+   publisher: Springer
+   volume:    7
+   status:    published
+   address:   Berlin Heidelberg
+   entrytype: book
+** Introduction to Partial Differential Equations: a Computational Approach
+   key:       Tveito2005
+   author:    Aslak Tveito, Ragnar Winther
+   year:      2005
+   publisher: Springer
+   volume:    29
+   status:    published
+   address:   Berlin Heidelberg
+   entrytype: book
+** Computing the Electrical Activity in the Heart
+   key:       Sundnes2007
+   author:    Joakim Sundnes, Glenn Terje Lines, Xing Cai, Bj{\o}rn Frederik Nielsen, Kent-Andre Mardal, Aslak Tveito
+   year:      2007
+   publisher: Springer
+   volume:    1
+   status:    published
+   address:   Berlin Heidelberg
+   entrytype: book
+** Electrical Diseases of the Heart. Volume 1: Basic Foundations and Primary Electrical Diseases
+   key:       Gussak2012
+   author:    Ihor Gussak, Charles Antzelevitch, Arthur A. M. Wilde, Brian D. Powell, Michael J. Ackerman, Win-Kuang Shen
+   year:      2013
+   publisher: Springer
+   status:    published
+   edition:   2nd
+   entrytype: book
+** Mathematical Physiology: I: Cellular Physiology
+   key:       Keener2010_I
+   author:    James Keener, James Sneyd
+   year:      2010
+   publisher: Springer
+   status:    published
+   address:   New York
+   entrytype: book
+** Mathematical Physiology II: Systems Physiology
+   key:       keener2010_II
+   author:    James Keener, James Sneyd
+   year:      2010
+   publisher: Springer
+   status:    published
+   address:   New York
+   entrytype: book
+** Mathematical Physiology
+   key:       KeenerSneyd
+   author:    James Keener, James Sneyd
+   year:      2009
+   publisher: Springer
+   status:    published
+   address:   New York
+   entrytype: book
+** Excitation-Contraction Coupling and {C}ardiac Contractile Force
+   key:       Bers2001
+   author:    Donald M. Bers
+   year:      2001
+   publisher: Kluwer Academic Publishers
+   status:    published
+   address:   Dordrecht
+   entrytype: book
+   timestamp: 2006.01.03
+* edited
+** Single-Channel Recording
+   key:       Sakmann1995
+   author:    Bert Sakmann, Erwin Neher
+   year:      1995
+   publisher: Springer
+   status:    published
+   entrytype: book
+* misc
+** Investigations on the Theory of the Brownian Movement
+   key:       Einstein1905
+   author:    Albert Einstein
+   year:      1905
+   status:    published
+   entrytype: misc
+** Identifiability of Aggregated {Markov} Models of Single Ion Channels
+   key:       Ball2012_talk
+   author:    Frank Ball
+   year:      2012
+   status:    published
+   entrytype: misc
+   note:      Slides of a talk given at LMS - EPSRC Symposium: Grand Biological Challenges for Mathematicians, Durham University, 12th July

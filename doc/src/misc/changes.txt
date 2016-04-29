@@ -1,0 +1,36 @@
+* figure: use of \hbox and multiple figures, standard caption
+* figure references are dir/name, change labels{dir/name} to labels/ref
+  dir:name
+* figures apply \fig newcommand: 50 begin{figure}, 12 \fig
+  must make \fig translation command:
+  r'\\fig\[(.+?)\]\{(.+?)\}\{(.+?)\}\n\n' (can have multiple braces in caption
+  so we go to end \n\n)
+* remove % at end of line
+* tikzpicture: must be converted to figure files. 30 such figures! Yapi job?
+* tables: look standard, but have captions. About 30 tables.
+* {\it ...} must be handled, and \textit{} and {\em ...},
+  but the construction under Theoretical drugs should be worked out manually.
+* Strange equation references from scientific workplace:
+  $\left( \ref{...}\right) .$
+  r'\$\\left\( *\\ref\{(.+?)\} *\right).+?\$' -> (ref{\g<1>})
+
+Start with the first .tex file, translate, compile doconce and see that it
+is okay. Increment with next .tex file.
+
+Yapi:
+
+Make all figures and tables, \graytable becomes an ordinary table.
+Some figures were not well translated by my scripts. All with \winslow
+(using tikz) must be translated manually.
+
+Run all tikz pictures in separate files.
+\hbox{} alignment of multiple figure files in a figure must be replaced
+by running doconce combine_images-style command.
+Ref doconce FIGURE and table doc.
+
+The .bib file was huge and very difficult to clean up. publish did not
+manage to import everything.
+Detect missing references in latex, find them in official.bib,
+publish import them.
+
+

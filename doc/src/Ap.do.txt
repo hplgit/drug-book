@@ -1,0 +1,62 @@
+========= Numerical simulations using the action potential model when the cell is affected by a mutation =========
+
+We will use the model of the action potential for the whole cell
+introduced above to study the effect of mutations. We have studied
+many different theoretical models of mutations earlier, but here we
+will limit ourselves to study the effect of one theoretical model of a
+sodium channel mutation, one model of a RyR mutation, and one model of
+an LCC mutation. We will also see how the theoretical drugs derived
+above handle these mutations.
+
+===== Mutation of the sodium channel =====
+
+We consider a mutation of the sodium channel of the form presented in
+Figure ref{wtreac3300}.  In Figure ref{ap:burst_mut} we show
+simulation results comparing the wild type ($\mu=1$, blue), the mutant
+($\mu=10$, green), and a simulation (red) where a drug is applied to
+the mutant case.  The Markov model describing the open state drug is
+given in Figure ref{wtreac3300}, where we have used drug parameters
+given by
+
+!bt
+\begin{equation*}
+k_{bo} = k_{io}, \mbox{\ and \ }
+k_{ob}=\left(  \mu-1\right)  \frac{k^{d}k^{u}k_{oi}}{\left(  k^{u}+\mu
+k^{d}\right)  \left(  k^{u}+k^{d}\right)  };
+\end{equation*}
+!et
+see (ref{na_drug_ob}) and (ref{na_drug_bo}).
+As in the single channel case, we observe that the theoretical drug is able to repair the effect of the mutation.
+
+FIGURE: [fig/ap_burst_mut.pdf, width=500 frac=0.8] The figure shows the action potential of the wild type (blue), the mutant (green), and the mutant after the application of the drug (red). label{ap:burst_mut}
+
+
+===== Mutation of the RyR =====
+
+In Figure ref{ap:ryr_mut} we have simulated mutation in the RyR using
+the Markov model given in Figure ref{eq:m_rl2}. The figure shows the
+wild type (blue, $\mu=1$), the mutant (green, $\mu=3$), and the mutant
+where the drug has been applied (red). We have used a closed state
+drug computed as described in (ref{closed_drg}) and
+(ref{optimal_closed_charac}) and we observe that the theoretical drug
+is able to repair the effect of the mutation.
+
+FIGURE: [fig/ap_ryr_mut.pdf, width=500 frac=0.8] The cytosolic calcium concentration for wild type (blue, $\mu=1$), the mutant (green, $\mu=3$), and the mutant after the application of the drug (red). We have used a closed state drug  as defined in (ref{closed_drg}) with $k_{bc}=0.5$ ms$^{-1}$ and $k_{cb}=(\mu-1)k_{bc}$; see (ref{optimal_closed_charac}).  label{ap:ryr_mut}
+
+===== Mutation of the LCC =====
+
+In Figure ref{ap:lcc_mut} we have simulated mutation in the LCC
+channel, using $\eta=3$.  We model the mutation and the drug as
+defined in (ref{closed_drg}) and (ref{optimal_closed_charac}). As
+usual, $k_{bc}$ is a free parameter that must be chosen sufficiently
+large. Again, we note that the theoretical drug repairs the effect of
+the mutation.
+
+FIGURE: [fig/ap_lcc_mut.pdf, width=500 frac=0.8] LCC mutation. The cytosolic calcium concentration for the wild type (blue, $\eta=1$), the mutant (green $\eta=3$), and the mutant case where the theoretical drug is applied (red). In the computations we have used $k_{bc}=0.05$ ms$^{-1}$; for larger values of $k_{bc}$ the results overlap with the wild type case. label{ap:lcc_mut}
+
+
+======= Notes =======
+
+  * The action potential model discussed in Section ref{sec:ap} and used throughout this chapter is only of qualitative relevance; no effort is made to mimic the properties of one particular cell. The field of models for the action potential is huge and growing. A great collection of models is provided by the Auckland Bioengineering Institute at the University of Auckland and their collaborators; see CellML.org. Recent models tend to be increasingly complex and hard to deal with from a mathematical perspective, but clearly the models become more and more realistic in terms of mimicking the properties of the actual action potential.  As mentioned earlier, there are comprehensive introductions to the cardiac action potential, such as Rudy cite{Rudy2012} and Rudy and Silva cite{Rudy2006}.
+
+  * In these notes we have used Matlab as the computational platform for all our simulations. For solving ordinary differential equations we have used the ODE15s function. However, solving the ordinary differential equations modeling the single cell action potential has received a great deal of attention and numerical methods suited for this problem have been developed. An early alternative was developed by Rush and Larsen cite{Rush1978}; the method was improved to second by Sundnes et al.  cite{Sundnes2009} and comparisons of several methods were provided by Marsh et al. cite{Marsh2012} and Campos et al. cite{Campos2013}; see also Stary and Biktashev cite{Stary2015}. From a programming perspective, the explicit Euler scheme is always an attractive alternative, but for stiff problems the stability requirement often excludes that method. For instance, if we use the explicit Euler method with a fixed time step to compute the solutions shown in  Figure ref{ap:single1}, we need about 26000 time-steps, whereas the ODE15s method needs 335 time steps.
