@@ -407,7 +407,7 @@ Both the open and closed state blockers are able to significantly reduce the eff
 Figure \ref{V:ob}. However, the closed state blocker is slightly better at this than the optimal open state blocker.
 
 |--l------------r-----r---------r-----r--------|
-| '         |WT    | MT    | CB    | OB        |
+| x         |WT    | MT    | CB    | OB        |
 |$\pi_o$    |0.500 | 0.750 | 0.500 | 0.478     |
 |$E_o$      |0.922 | 0.969 | 0.922 | 0.919     |
 |$\sigma_o$ |0.076 | 0.031 | 0.076 | 0.088     |

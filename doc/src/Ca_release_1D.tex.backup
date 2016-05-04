@@ -1449,14 +1449,13 @@ the mean open time is changed and reads
 With a closed state blocker used to repair a CO-mutation, the mean open time is kept constant, as it should, but it is changed using an open state blocker. Consequently, it is hard to see how to derive an efficient open state blocker for a CO-mutation.
 
 |-------c---------------c-----------------|
-|$k_{ob} $     | 0.28 $\rm{ms^{-1}}$      |
-|$k_{bo} $     | 1.63 $\rm{ms^{-1}}$      |
-|$k_{cb} $     | 2000 $\rm{ms^{-1}}$      |
-|$k_{bc} $     | 1000 $\rm{ms^{-1}}$      |
-|-----------------------------------------|
+|$k_{ob} $     | 0.28 $\rm{ms^{-1}}$\\ \hline
+$k_{bo} $ & 1.63 $\rm{ms^{-1}}$\\ \hline
+$k_{cb} $ & 2000 $\rm{ms^{-1}}$\\ \hline
+$k_{bc} $ & 1000 $\rm{ms^{-1}}$ \\ \hline
 %\end{tabular} %\end{center}
 %\captionof{table}
-Parameter values for the drugs used in Figure \ref{1D:best_drug}. \label{tab:drug}
+}{Parameter values for the drugs used in Figure \ref{1D:best_drug}. \label{tab:drug}}
 \clearpage
 
 \section{Notes}

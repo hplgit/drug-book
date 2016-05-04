@@ -16,6 +16,7 @@ less than 1/1000 $\mu \mbox{m}^3$\cite{Bers2001} and we have been concerned with
 
 Our aim is now to introduce a reasonably simple action potential model for a whole cell. We will use the building blocks developed above and add some new features in order to get an action potential that is qualitatively reasonable.
 
+
 \begin{figure}
 \begin{tikzpicture}[line width=0.3mm]
 \tikzstyle{every node}=[font=\large]
@@ -50,6 +51,7 @@ Our aim is now to introduce a reasonably simple action potential model for a who
 \end{tikzpicture}
 \caption{Sketch of the calcium dynamics and the fluxes and pumps involved. The volumes of the cytosol, the dyad, the junctional sarcoplasmic reticulum (JSR) and the network sarcoplasmic reticulum (NSR) are $V_c,\, V_d,\, V_j,$ and $V_n$, respectively.\label{fig:sketch}}
 \end{figure}
+
 
 
 
@@ -151,7 +153,7 @@ dynamics of the cell are organized.
 
 \subsection{Definition of calcium-related fluxes}
 
-
+\begin{table}
 |--c--------c-|
 |$V_d$ | 0.1  |
 |$V_j$ | 0.3  |
@@ -164,6 +166,7 @@ We assume that both the extracellular space and the total intracellular space ar
 %The extracellular space is 30.4 pL and we assume that it equals the total intracellular space.
 
 
+
 |-----c-------c----------|
 |$k_{c,n}$ | 0.01        |
 |$k_{j,d}$ | 0.01        |
@@ -172,6 +175,8 @@ We assume that both the extracellular space and the total intracellular space ar
 |$k_{n,j}$ | 0.0001      |
 |$k_{c,e}$ | 0.00001     |
 |------------------------|
+
+
 \label{tab:k}Constants used to define the fluxes between the different spaces. The constants are in units of 1/ms.
 
 

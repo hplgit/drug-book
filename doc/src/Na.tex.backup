@@ -483,15 +483,17 @@ from the wild type solution.
 
 |--r---------------r-------------r---------------r-----------r--------r------r-----------|
 |$\mu$  |$\pi_o\times 100 $ | $\pi_c$ | $\pi_i\times 100$ | $E_o$ | $E_c$ | $E_i$        |
-|1      | 0.0067            | 0.9951  | 0.4834            | -50.8 | -84.9 | -83.5        |
-|3      | 0.0080            |0.9982   | 0.1765            | -41.1 | -84.9 | -79.6        |
-|10     | 0.0162            | 0.9989  | 0.0942            | -13.4 | -84.9 | -57.0        |
-|----------------------------------------------------------------------------------------|
-Probability of being in the open, closed, or inactivated states and the expected value of the transmembrane
-potential, provided that the channel is open, closed, or inactivated.
+|1 | 0.0067 | 0.9951 | 0.4834 | -50.8 | -84.9 | -83.5 |
+|3 | 0.0080 |0.9982 | 0.1765 | -41.1 | -84.9 | -79.6 |
+|10 | 0.0162 | 0.9989 | 0.0942 | -13.4 | -84.9 | -57.0 |
+|--------------------------------------------------------------------------------------------
+\caption{Probability of being in the open, closed, or inactivated states and the expected value of the transmembrane
+potential, provided that the channel is open, closed, or inactivated.}
 %{\bf xxx Glenn xxx: Something wrong here since probability of being in inactivated state increases for increasing $\mu$.
 %I guess it is ok that the channel almost certainly inactivate but that should be less likely when $\mu$ increases.
 %Since numbers are small: refine mesh and refine stopping criterions?}}
+\label{na_stat}
+\end{table}
 
 
 

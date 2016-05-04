@@ -1060,21 +1060,20 @@ Right panel:  As in the left panel, except $k_{io}=0.1\text{ ms}^{-1}$. For all 
 %{\bf xxx Glenn: Can you compute the usual statistical properties of the three cases of 
 %Figure \ref{MOT_mut_L:BICO_O} and put it in a table?}
 %\G{This is now Table \ref{tab:iocb} label{MOT:iocb}\begin{table}  \begin{center}
-%-------------------------------------------------------------------------------------fixe this table
-% \begin{table}
-% \begin{tabular}{|c|r|r|r|r|r|r|} \hline
-% & \multicolumn{2}{c|}{$k=1$} &
-% \multicolumn{2}{c|}{$k_{co}=10$} &
-% \multicolumn{2}{c|}{$k_{io}=0.1$}  \\ \cline{2-7}
-%  & $\pi_o$ & $E_o$ & $\pi_o$ & $E_o$ & $\pi_o$ & $E_o$ \\ \hline
-% WT&0.333 & 16.366 & 0.476 & 22.995 & 0.083 & -12.867 \\ \hline
-% MT&0.476 & 23.272 & 0.833 & 31.074 & 0.333 & 17.702 \\ \hline
-% MT+OB&0.333 & 16.366 & 0.476 & 23.169 & 0.083 & -9.225 \\ \hline
-% \end{tabular} 
-% \end{center}
-% \caption{Statistical properties of $\rho_o$ for the cases shown in Figure \ref{MOT:iocb}.\label{tab:iocb}}
-% \end{table}
-%---------------------------------------------------------------------------------------fixe this table
+\begin{table}
+\begin{tabular}{|c|r|r|r|r|r|r|} \hline
+& \multicolumn{2}{c|}{$k=1$} &
+\multicolumn{2}{c|}{$k_{co}=10$} &
+\multicolumn{2}{c|}{$k_{io}=0.1$}  \\ \cline{2-7}
+ & $\pi_o$ & $E_o$ & $\pi_o$ & $E_o$ & $\pi_o$ & $E_o$ \\ \hline
+WT&0.333 & 16.366 & 0.476 & 22.995 & 0.083 & -12.867 \\ \hline
+MT&0.476 & 23.272 & 0.833 & 31.074 & 0.333 & 17.702 \\ \hline
+MT+OB&0.333 & 16.366 & 0.476 & 23.169 & 0.083 & -9.225 \\ \hline
+\end{tabular} 
+\end{center}
+\caption{Statistical properties of $\rho_o$ for the cases shown in Figure \ref{MOT:iocb}.\label{tab:iocb}}
+\end{table}
+
 
 \subsection{Stochastic simulations using the open state blocker}
 

@@ -766,21 +766,23 @@ We have seen above that open and closed state theoretical blockers can significa
 In this section, we present the statistical properties of the two types of drugs. The properties are presented in Table \ref{stat_drug}. In the table we observe that the total open probability (see Section \ref{statistics}, page  \pageref{statistics}) of the open state in the wild type case is 0.811. This increases to 0.962 for the mutant case ($\mu=3$). When the closed state blocker is applied and the factor $k_{bc}$ is increased, we see that the open probability is repaired by the drug. The same effect holds for the expected concentration $E_o$ of the open state; it is completely repaired by the closed state blocker for large values of $k_{bc}$. This also holds for the standard deviation. For the open state blocker, we do not obtain a sufficient effect by increasing $k_{bo}$, but when both parameters of the drug are optimized, the open probability and the expected concentration of the open state are almost completely repaired. The open state blocker is, however, unable to repair the standard deviation. 
 
 
-
-|-------------l-------------------r---------r----------r-------|
-|Case                          | $\pi_o$ | $E_o$ | $\sigma_o$  |
-|Closed blocker, $k_{bc}$=10   | 0.739   | 82.47 | 10.59       |
-|Closed blocker, $k_{bc}$=100  | 0.805   | 81.97 | 9.66        |
-|Closed blocker, $k_{bc}$=1000 | 0.811   | 81.91 | 9.52        |
-|Open blocker, $k_{bo}$=1      | 0.935   | 86.85 | 6.45        |
-|Open blocker, $k_{bo}$=10     | 0.936   | 85.97 | 4.89        |
-|Open blocker, $k_{bo}$=100    | 0.936   | 85.80 | 3.44        |
-|Optimized open blocker        | 0.817   | 80.09 & 13.10       |
-|Wild type, no drug            | 0.811   | 81.91 | 9.50        |
-|Mutant, no drug               | 0.962   | 87.95 | 3.20        |
-|--------------------------------------------------------------|
-Statistical properties of the closed and open state blockers. \label{stat_drug}
-
+\begin{table}  \begin{center}
+\begin{tabular}{|l|r|r|r|} \hline
+|--l-------r-------r-----------r-------------|
+|Case  | $\pi_o$ | $E_o$ | $\sigma_o$  |
+|Closed blocker, $k_{bc}$=10 | 0.739 | 82.47 | 10.59  |
+|Closed blocker, $k_{bc}$=100 | 0.805 | 81.97 | 9.66  |
+|Closed blocker, $k_{bc}$=1000 | 0.811 | 81.91 | 9.52 |
+|Open blocker, $k_{bo}$=1      | 0.935 | 86.85 | 6.45  |
+|Open blocker, $k_{bo}$=10     | 0.936 | 85.97 | 4.89  |
+|Open blocker, $k_{bo}$=100 | 0.936 | 85.80 | 3.44 |
+|Optimized open blocker     | 0.817 | 80.09 & 13.10  |
+|Wild type, no drug         | 0.811 | 81.91 | 9.50  |
+|Mutant, no drug            | 0.962 | 87.95 | 3.20 |
+|-------------------------------------------------------|
+\end{tabular} \end{center}
+\caption{Statistical properties of the closed and open state blockers. \label{stat_drug}}
+\end{table}
 
 
 \section[Stochastic simulations]{Stochastic simulations using optimal drugs}
