@@ -1,0 +1,635 @@
+\begin{thebibliography}{100}
+
+\bibitem{Ball1999}
+FG~Ball, Y~Cai, JB~Kadane, and A~O'hagan.
+\newblock Bayesian inference for ion--channel gating mechanisms directly from
+  single--channel recordings, using markov chain monte carlo.
+\newblock {\em Proceedings of the Royal Society of London A: Mathematical,
+  Physical and Engineering Sciences}, 455(1988):2879--2932, 1999.
+
+\bibitem{Bennett1995}
+Paul~B. Bennett, Kazuto Yazawa, Naomasa Makita, and Alfred L.~George Jr.
+\newblock Molecular mechanism for an inherited cardiac arrhythmia.
+\newblock {\em Nature}, 376:683--685, 1995.
+
+\bibitem{Bers2001}
+Donald~M. Bers.
+\newblock {\em Excitation-Contraction Coupling and {C}ardiac Contractile
+  Force}.
+\newblock Kluwert Academic, Dordrecht, 2001.
+
+\bibitem{Bers2002N}
+Donald~M. Bers.
+\newblock Cardiac excitation--contraction coupling.
+\newblock {\em Nature}, 415(6868):198--205, 2002.
+
+\bibitem{Bers2008}
+Donald~M. Bers.
+\newblock Calcium cycling and signaling in cardiac myocytes.
+\newblock {\em Annual Review of Physiology}, 70:23--49, 2008.
+
+\bibitem{Bressloff2014}
+Paul~C. Bressloff.
+\newblock {\em {Stochastic Processes in Cell Biology}}, volume~41.
+\newblock Interdisciplinary Applied Mathematics, Springer International
+  Publishing, 2014.
+
+\bibitem{Bressloff2014w}
+Paul~C. Bressloff.
+\newblock {\em {Waves in Neural Media}}.
+\newblock Lecture Notes on Mathematical Modelling in the Life Sciences,
+  Springer, New York, 2014.
+
+\bibitem{Campos2013}
+Ricardo~Silva Campos, Fernando~Otaviano Campos, Johnny~Moreira Gomes, Ciro
+  de~Barros~Barbosa, Marcelo Lobosco, and Rodrigo~Weber Dos~Santos.
+\newblock Comparing high performance techniques for the automatic generation of
+  efficient solvers of cardiac cell models.
+\newblock {\em Computing}, 95(1):639--660, 2013.
+
+\bibitem{Chai2013}
+Jun Chai, Johan Hake, Nan Wu, Mei Wen, Xing Cai, Glenn~T. Lines, Jing Yang,
+  Huayou Su, Chunyuan Zhang, and Xiangke Liao.
+\newblock Towards simulation of subcellular calcium dynamics at nanometre
+  resolution.
+\newblock {\em International Journal of High Performance Computing
+  Applications}, 29(1):51--63, 2013.
+
+\bibitem{Chakrapani2011}
+Sudha Chakrapani, Julio~F. Cordero-Morales, Vishwanath Jogini, Albert~C. Pan,
+  D.~Marien Cortes, Beno{\^\i}t Roux, and Eduardo Perozo.
+\newblock On the structural basis of modal gating behavior in {K}+ channels.
+\newblock {\em Nature Structural \& Molecular Biology}, 18(1):67--74, 2011.
+
+\bibitem{Chakrapani2007a}
+Sudha Chakrapani, Julio~F. Cordero-Morales, and Eduardo Perozo.
+\newblock A quantitative description of {KcsA} gating {I}: {M}acroscopic
+  currents.
+\newblock {\em Journal of General Physiology}, 130(5):465--478, 2007.
+
+\bibitem{Chakrapani2007b}
+Sudha Chakrapani, Julio~F. Cordero-Morales, and Eduardo Perozo.
+\newblock A quantitative description of {KcsA} gating {II}: {S}ingle-channel
+  currents.
+\newblock {\em Journal of General Physiology}, 130(5):479--496, 2007.
+
+\bibitem{Chandra1998}
+Rashmi Chandra, C.~Frank Starmer, and Augustus~O. Grant.
+\newblock {Multiple effects of KPQ deletion mutation on gating of human cardiac
+  $\mbox{Na}^{+}$ channels expressed in mammalian cells}.
+\newblock {\em AJP: Heart and Circulatory Physiology}, 274(5):H1643--H1654,
+  1998.
+
+\bibitem{Clancy1999}
+Colleen~E. Clancy and Yoram Rudy.
+\newblock Linking a genetic defect to its cellular phenotype in a cardiac
+  arrhythmia.
+\newblock {\em Nature}, 400:566--569, 1999.
+
+\bibitem{Clancy2002}
+Colleen~E. Clancy and Yoram Rudy.
+\newblock {$\mbox{Na}^{+}$ channel mutation that causes both Brugada and
+  long-QT syndrome phenotypes: A simulation study of mechanism}.
+\newblock {\em Circulation}, 105(10):1208--1213, 2002.
+
+\bibitem{Clancy2007}
+Colleen~E. Clancy, Zheng~I. Zhu, and Yoram Rudy.
+\newblock Pharmacogenetics and anti-arrhythmic drug therapy: {A} theoretical
+  investigation.
+\newblock {\em AJP: Heart and Circulatory Physiology}, 292(1):H66--H75, 2007.
+
+\bibitem{Colquhoun1996}
+D.~Colquhoun, A.~G. Hawkes, and K.~Srodzinski.
+\newblock Joint distributions of apparent open and shut times of single-ion
+  channels and maximum likelihood fitting of mechanisms.
+\newblock {\em Philosophical Transactions of the Royal Society of London A:
+  Mathematical, Physical and Engineering Sciences}, 354(1718):2555--2590, 1996.
+
+\bibitem{Colquhoun2004}
+David Colquhoun, Kathryn~A. Dowsland, Marco Beato, and Andrew J.~R. Plested.
+\newblock How to impose microscopic reversibility in complex reaction
+  mechanisms.
+\newblock {\em Biophysical Journal}, 86(6):3510--3518, 2004.
+
+\bibitem{Colquhoun1977}
+David Colquhoun and Alan~G. Hawkes.
+\newblock Relaxation and fluctuations of membrane currents that flow through
+  drug-operated channels.
+\newblock {\em Proceedings of the Royal Society of London B: Biological
+  Sciences}, 199(1135):23--262, 1977.
+
+\bibitem{Colquhoun1981}
+David Colquhoun and Alan~G. Hawkes.
+\newblock On the stochastic properties of single ion channels.
+\newblock {\em Proceedings of the Royal Society of London B: Biological
+  Sciences}, 211(1183):205--235, 1981.
+
+\bibitem{Colquhoun1982}
+David Colquhoun and Alan~G. Hawkes.
+\newblock On the stochastic properties of bursts of single ion channel openings
+  and of clusters of bursts.
+\newblock {\em Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 300:1--59, 1982.
+
+\bibitem{Dayan2001}
+Peter Dayan and Laurence~F. Abbott.
+\newblock {\em {Theoretical Neuroscience}}, volume 806.
+\newblock Cambridge, MA: MIT Press, 2001.
+
+\bibitem{Ermentrout2010}
+G.~Bard Ermentrout and David~H. Terman.
+\newblock {\em {Mathematical Foundations of Neuroscience}}, volume~35.
+\newblock Springer-Verlag, New York, 2010.
+
+\bibitem{Fink2009}
+Martin Fink and Denis Noble.
+\newblock Markov models for ion channels: {V}ersatility versus identifiability
+  and speed.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engineering Sciences}, 367(1896):2161--2179, 2009.
+
+\bibitem{Franzone2014}
+Piero~C. Franzone, Luca~F. Pavarino, and Simone Scacchi.
+\newblock {\em {Mathematical Cardiac Electrophysiology}}, volume~13.
+\newblock Springer International Publishing, 2014.
+
+\bibitem{Gillespie1977}
+Daniel~T. Gillespie.
+\newblock Exact stochastic simulation of coupled chemical reactions.
+\newblock {\em Journal of Physical Chemistry}, 81(25):2340--2361, 1977.
+
+\bibitem{Gin2009}
+Elan Gin, Martin Falcke, Larry~E. Wagner, David~I. Yule, and James Sneyd.
+\newblock {Markov chain Monte Carlo fitting of single-channel data from
+  inositol trisphosphate receptors}.
+\newblock {\em Journal of Theoretical Biology}, 257(3):460--474, 2009.
+
+\bibitem{Glass2012}
+Leon Glass, Peter Hunter, and Andrew McCulloch.
+\newblock {\em {Theory of Heart: Biomechanics, Biophysics, and Nonlinear
+  Dynamics of Cardiac Function}}.
+\newblock Springer-Verlag, New York, 2012.
+
+\bibitem{Grandi2010B}
+Eleonora Grandi, Francesco~S. Pasqualini, and Donald~M. Bers.
+\newblock {A novel computational model of the human ventricular action
+  potential and Ca transient}.
+\newblock {\em Journal of Molecular and Cellular Cardiology}, 48(1):112--121,
+  2010.
+
+\bibitem{Hake2012}
+Johan Hake, Andrew~G. Edwards, Zeyun Yu, Peter~M. Kekenes-Huskey, Anushka~P.
+  Michailova, J.~Andrew McCammon, Michael~J. Holst, Masahiko Hoshijima, and
+  Andrew~D. McCulloch.
+\newblock Modelling cardiac calcium sparks in a three-dimensional
+  reconstruction of a calcium release unit.
+\newblock {\em Journal of Physiology}, 590(18):4403--4422, 2012.
+
+\bibitem{Hille1977}
+Bertil Hille.
+\newblock Local anesthetics: hydrophilic and hydrophobic pathways for the
+  drug-receptor reaction.
+\newblock {\em Journal of General Physiology}, 69(4):497--515, 1977.
+
+\bibitem{Hille2001}
+Bertil Hille.
+\newblock {\em {Ion Channels of Excitable Membranes}}, volume 507.
+\newblock Sinauer Sunderland, MA, 2001.
+
+\bibitem{Hodgkin1952}
+Alan~L. Hodgkin and Andrew~F. Huxley.
+\newblock A quantitative description of membrane current and its application to
+  conduction and excitation in nerve.
+\newblock {\em Journal of Physiology}, 117(4):500--544, 1952.
+
+\bibitem{Hondeghem1977}
+Luc~M. Hondeghem and Bertram~G. Katzung.
+\newblock Time- and voltage-dependent interactions of antiarrhythmic drugs with
+  cardiac sodium channels.
+\newblock {\em Biochimica et Biophysica Acta}, 472(3-4):373--398, 1977.
+
+\bibitem{Huertas2007}
+Marco~A. Huertas and Gregory~D. Smith.
+\newblock The dynamics of luminal depletion and the stochastic gating of
+  $\mbox{Ca}^{2+}$-activated $\mbox{Ca}^{2+}$ channels and release sites.
+\newblock {\em Journal of Theoretical Biology}, 246(2):332--354, 2007.
+
+\bibitem{Huertas2010}
+Marco~A. Huertas, Gregory~D. Smith, and S{\'a}ndor Gy{\"o}rke.
+\newblock {$\mbox{Ca}^{2+}$ alternans in a cardiac myocyte model that uses
+  moment equations to represent heterogeneous junctional SR $\mbox{Ca}^{2+}$}.
+\newblock {\em Biophysical Journal}, 99:377--387, 2010.
+
+\bibitem{Ionescu2007}
+Lucian Ionescu, Carl White, King-Ho Cheung, Jianwei Shuai, Ian Parker, John~E.
+  Pearson, J.~Kevin Foskett, and Don-On~Daniel Mak.
+\newblock Mode switching is the major mechanism of ligand regulation of
+  {InsP}$_3$ receptor calcium release channels.
+\newblock {\em Journal of General Physiology}, 130(6):631--645, 2007.
+
+\bibitem{Izhikevich2007}
+Eugene~M. Izhikevich.
+\newblock {\em {Dynamical Systems in Neuroscience}}.
+\newblock Cambridge, MA: MIT Press, 2007.
+
+\bibitem{Jacobs2010}
+Kurt Jacobs.
+\newblock {\em {Stochastic Processes for Physicists: Understanding Noisy
+  Systems}}.
+\newblock Cambridge University Press, 2010.
+
+\bibitem{Jost2009}
+Norbert Jost, K{\'a}roly Acsai, Bal{\'a}zs Horv{\'a}th, Tam{\'a}s
+  B{\'a}ny{\'a}sz, Istv{\'a}n Baczk{\'o}, Mikl{\'o}s Bitay, G{\'a}bor
+  Bog{\'a}ts, and P{\'eter}~P. N{\'a}n{\'a}si.
+\newblock {Contribution of {I}$_{Kr}$ and {I}$_{K1}$ to ventricular
+  repolarization in canine and human myocytes: Is there any influence of action
+  potential duration?}
+\newblock {\em Basic Research in Cardiology}, 104:33--41, 2009.
+
+\bibitem{Katz2010}
+Arnold~M. Katz.
+\newblock {\em Physiology of the Heart}.
+\newblock Lippincott Williams \& Wilkins, 2010.
+
+\bibitem{KeenerSneyd}
+James Keener and James Sneyd.
+\newblock {\em Mathematical Physiology}.
+\newblock Springer, New York, 2009.
+
+\bibitem{Keener2010_I}
+James Keener and James Sneyd.
+\newblock {\em Mathematical Physiology: I: Cellular Physiology}.
+\newblock Springer, New York, 2010.
+
+\bibitem{Keener2010_II}
+James Keener and James Sneyd.
+\newblock {\em Mathematical Physiology II: Systems Physiology}.
+\newblock Springer, New York, 2010.
+
+\bibitem{Keener1998}
+James~P. Keener and Kristina Bogar.
+\newblock A numerical method for the solution of the bidomain equations in
+  cardiac tissue.
+\newblock {\em Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  8(1):234--241, 1998.
+
+\bibitem{Lagarias1998}
+Jeffrey~C. Lagarias, James~A. Reeds, Margaret~H. Wright, and Paul~E. Wright.
+\newblock {Convergence properties of the Nelder--Mead simplex method in low
+  dimensions}.
+\newblock {\em SIAM Journal on Optimization}, 9(1):112--147, 1998.
+
+\bibitem{Lakatta2009}
+Edward~G. Lakatta and Dario DiFrancesco.
+\newblock {What keeps us ticking: A funny current, a calcium clock, or both?}
+\newblock {\em Journal of Molecular and Cellular Cardiology}, 47(2):157--170,
+  2009.
+
+\bibitem{LeVeque2002}
+Randall~J. LeVeque.
+\newblock {\em Finite Volume Methods for Hyperbolic Problems}.
+\newblock Cambridge Texts in Applied Mathematics, 2002.
+
+\bibitem{Li2009}
+Pan Li and Arun~V. Holden.
+\newblock Intracellular {Ca}$^{2+}$ nonlinear wave behaviours in a three
+  dimensional ventricular cell model.
+\newblock {\em Physica D: Nonlinear Phenomena}, 238(11):992--999, 2009.
+
+\bibitem{Li2013}
+Pan Li, Glenn~T. Lines, Mary~M. Maleckar, and Aslak Tveito.
+\newblock Mathematical models of cardiac pacemaking function.
+\newblock {\em Frontiers in Computational Physics}, 1(20):1--25, 2013.
+
+\bibitem{Li2010}
+Pan Li, Wenjie Wei, Xing Cai, Christian Soeller, Mark~B. Cannell, and Arun~V.
+  Holden.
+\newblock Computational modelling of the initiation and development of
+  spontaneous intracellular {Ca}$^{2+}$ waves in ventricular myocytes.
+\newblock {\em Philosophical Transactions of the Royal Society of London A:
+  Mathematical, Physical and Engineering Sciences}, 368(1925):3953--3965, 2010.
+
+\bibitem{loaiza2013}
+Randall Loaiza, Nancy~A. Benkusky, Patricia~P. Powers, Timothy Hacker, Sami
+  Noujaim, Michael~J. Ackerman, Jos{\'e} Jalife, and H{\'e}ctor~H. Valdivia.
+\newblock Heterogeneity of ryanodine receptor dysfunction in a mouse model of
+  catecholaminergic polymorphic ventricular tachycardia.
+\newblock {\em Circulation Research}, 112(2):298--308, 2013.
+
+\bibitem{Logan2014}
+David Logan.
+\newblock {\em Applied Partial Differential Equations}.
+\newblock Springer, 2014.
+
+\bibitem{Louch2015}
+William~E. Louch, Jussi~T. Koivum{\"a}ki, and Pasi Tavi.
+\newblock {Calcium signalling in developing cardiomyocytes: Implications for
+  model systems and disease}.
+\newblock {\em The Journal of physiology}, 593(5):1047--1063, 2015.
+
+\bibitem{Louch2010}
+William~E. Louch, Ole~M. Sejersted, and Fredrik Swift.
+\newblock {There goes the neighborhood: Pathological alterations in T-tubule
+  morphology and consequences for cardiomyocyte \Ca Handling}.
+\newblock {\em BioMed Research International}, 2010.
+
+\bibitem{Marsh2012}
+Megan~E. Marsh, Saeed~T. Ziaratgahi, and Raymond~J. Spiteri.
+\newblock The secrets to the success of the {R}ush--{L}arsen method and its
+  generalizations.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 59(9):2506--2515,
+  2012.
+
+\bibitem{Mazzag2005}
+Borbala Mazzag, Christopher~J. Tignanelli, and Gregory~D. Smith.
+\newblock The effect of residual $\mbox{Ca}^{2+}$ on the stochastic gating of
+  $\mbox{Ca}^{2+}$ -regulated $\mbox{Ca}^{2+}$ channel models.
+\newblock {\em Journal of Theoretical Biology}, 235(1):121--150, 2005.
+
+\bibitem{Nelder1965}
+John~A. Nelder and Roger Mead.
+\newblock A simplex method for function minimization.
+\newblock {\em Computer Journal}, 7(4):308--313, 1965.
+
+\bibitem{Nicolai2013}
+Christopher Nicolai and Frederick Sachs.
+\newblock {Solving ion channel kinetics with the QuB software}.
+\newblock {\em Biophysical Reviews and Letters}, 8(03n04):191--211, 2013.
+
+\bibitem{Nivala2012}
+Michael Nivala, Enno de~Lange, Robert Rovetti, and Zhilin Qu.
+\newblock Computational modeling and numerical methods for spatiotemporal
+  calcium cycling in ventricular myocytes.
+\newblock {\em Frontiers in Physiology}, 3(114), 2012.
+
+\bibitem{Noble1960}
+Denis Noble.
+\newblock Cardiac action and pacemaker potentials based on the
+  {H}odgkin--{H}uxley equations.
+\newblock {\em Nature}, 188:495--497, 1960.
+
+\bibitem{Noble1962}
+Denis Noble.
+\newblock A modification of the {H}odgkin--{H}uxley equations applicable to
+  {P}urkinje fibre action and pacemaker potentials.
+\newblock {\em Journal of Physiology}, 160:317--352, 1962.
+
+\bibitem{Nykamp2000}
+Duane~Q. Nykamp and Daniel Tranchina.
+\newblock {A population density approach that facilitates large-scale modeling
+  of neural networks: Analysis and an application to orientation tuning}.
+\newblock {\em Journal of Computational Neuroscience}, 8(1):19--50, 2000.
+
+\bibitem{Ohara2011}
+Thomas O'Hara, L{\'a}szl{\'o} Vir{\'a}g, Andr{\'a}s Varr{\'o}, and Yoram Rudy.
+\newblock {Simulation of the undiseased human cardiac ventricular action
+  potential: Model formulation and experimental validation}.
+\newblock {\em PLoS Computational Biology}, 7(5):e1002061, 2011.
+
+\bibitem{Patlak1991}
+Joseph Patlak.
+\newblock Molecular kinetics of voltage-dependent $\mbox{Na}^{+}$ channels.
+\newblock {\em Physiological Reviews}, 71(4):1047--1080, 1991.
+
+\bibitem{Plonsey2007}
+Robert Plonsey and Roger~C. Barr.
+\newblock {\em Bioelectricity, A Quantitative Approach}.
+\newblock Springer, 2007.
+
+\bibitem{Pullan2005}
+Andrew~J. Pullan, Leo~K. Cheng, and Martin~L. Buist.
+\newblock {\em {Mathematically Modelling the Electrical Activity of the Heart:
+  From Cell to Body Surface and Back Again}}.
+\newblock World Scientific, 2005.
+
+\bibitem{Qin1996}
+Feng Qin, Anthony Auerbach, and Frederick Sachs.
+\newblock Estimating single-channel kinetic parameters from idealized
+  patch-clamp data containing missed events.
+\newblock {\em Biophysical Journal}, 70:264--280, 1996.
+
+\bibitem{Qin2000}
+Feng Qin, Anthony Auerbach, and Frederick Sachs.
+\newblock {A direct optimization approach to hidden Markov modeling for single
+  channel kinetics}.
+\newblock {\em Biophysical Journal}, 79:1915--1927, 2000.
+
+\bibitem{Qu1999}
+Zhilin Qu and Alan Garfinkel.
+\newblock An advanced algorithm for solving partial differential equation in
+  cardiac conduction.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 46(9):1166--1168,
+  1999.
+
+\bibitem{Qu2014}
+Zhilin Qu, Gang Hu, Alan Garfinkel, and James~N. Weiss.
+\newblock {Nonlinear and stochastic dynamics in the heart}.
+\newblock {\em Physics Reports}, 543(2):61--162, 2014.
+
+\bibitem{Rosales2001}
+Rafael Rosales, J~Alex Stark, William~J Fitzgerald, and Stephen~B Hladky.
+\newblock Bayesian restoration of ion channel records using hidden markov
+  models.
+\newblock {\em Biophysical Journal}, 80(3):1088--1103, 2001.
+
+\bibitem{Rosales2004}
+Rafael~A Rosales.
+\newblock Mcmc for hidden markov models incorporating aggregation of states and
+  filtering.
+\newblock {\em Bulletin of mathematical biology}, 66(5):1173--1199, 2004.
+
+\bibitem{Rudy2012}
+Yoram Rudy.
+\newblock {From genes and molecules to organs and organisms: Heart}.
+\newblock {\em Comprehensive Biophysics}, 9:268--327, 2012.
+
+\bibitem{Rudy2006}
+Yoram Rudy and Jonathan~R. Silva.
+\newblock Computational biology in the study of cardiac ion channels and cell
+  electrophysiology.
+\newblock {\em Quarterly Reviews of Biophysics}, 39(1):57--116, 2006.
+
+\bibitem{Rush1978}
+Stanley Rush and Hugh Larsen.
+\newblock A practical algorithm for solving dynamic membrane equations.
+\newblock {\em IEEE Transactions on Biomedical Engineering},
+  BME-25(4):389--392, 1978.
+
+\bibitem{Sakmann1984}
+Bert Sakmann and Erwin Neher.
+\newblock Patch clamp techniques for studying ionic channels in excitable
+  membranes.
+\newblock {\em Annual Review of Physiology}, 46(1):455--472, 1984.
+
+\bibitem{Sakmann1995}
+Bert Sakmann and Erwin Neher, editors.
+\newblock {\em Single-Channel Recording}.
+\newblock Springer, 1995.
+
+\bibitem{Santillan2014}
+Mois{\'e}s Santill{\'a}n.
+\newblock {\em Chemical Kinetics, Stochastic Processes, and Irreversible
+  Thermodynamics}.
+\newblock Springer International Publishing, 2014.
+
+\bibitem{Schroll2007}
+H.~Joachim Schroll, Glenn~T. Lines, and Aslak Tveito.
+\newblock On the accuracy of operator splitting for the monodomain model of
+  electrophysiology.
+\newblock {\em International Journal of Computer Mathematics}, 84(6):871--885,
+  2007.
+
+\bibitem{Shaya2011}
+David Shaya, Mohamed Kreir, Rebecca~A. Robbins, Stephanie Wong, Justus Hammon,
+  Andrea Br{\"u}ggemann, and Daniel L.~Minor Jr.
+\newblock Voltage-gated sodium channel ({N}a$_\text{V}$) protein dissection
+  creates a set of functional pore-only proteins.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  108(30):12313--12318, 2011.
+
+\bibitem{Siekmann2012}
+Ivo Siekmann, James Sneyd, and Edmund~J. Crampin.
+\newblock {MCMC can detect nonidentifiable models}.
+\newblock {\em Biophysical Journal}, 103(11):2275--2286, 2012.
+
+\bibitem{Siekmann2014}
+Ivo Siekmann, James Sneyd, and Edmund~J. Crampin.
+\newblock Statistical analysis of modal gating in ion channels.
+\newblock {\em Proceedings of the Royal Society of London A: Mathematical,
+  Physical and Engineering Sciences}, 470(2166):20140030, 2014.
+
+\bibitem{Siekmann2011}
+Ivo Siekmann, Larry~E. Wagner~II, David Yule, Colin Fox, David Bryant,
+  Edmund~J. Crampin, and James Sneyd.
+\newblock {MCMC Estimation of Markov models for ion channels}.
+\newblock {\em Biophysical Journal}, 100(8):1919--1929, 2011.
+
+\bibitem{Smith2002}
+Gregory~D. Smith.
+\newblock Modeling the stochastic gating of ion channels.
+\newblock In C.~P. Fall, E.~S. Marland, J.~M. Wagner, and J.~J. Tyson, editors,
+  {\em Computational Cell Biology}, volume~20 of {\em Interdisciplinary Applied
+  Mathematics}, chapter~11, pages 285--319. Springer, New York, 2002.
+
+\bibitem{Song1994}
+Lu~Song and Karl~L Magleby.
+\newblock Testing for microscopic reversibility in the gating of maxi k+
+  channels using two-dimensional dwell-time distributions.
+\newblock {\em Biophysical journal}, 67(1):91, 1994.
+
+\bibitem{Starmer2002}
+C.~Frank Starmer.
+\newblock How antiarrhythmic drugs increase the rate of sudden cardiac death.
+\newblock {\em International Journal of Bifurcation and Chaos},
+  12(9):1953–--1968, 2002.
+
+\bibitem{Stary2015}
+Tomas Stary and Vadim~N. Biktashev.
+\newblock {Exponential integrators for a Markov chain model of the fast sodium
+  channel of cardiomyocytes}.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 62(4):1070--1076,
+  2015.
+
+\bibitem{Stern1999}
+Michael~D. Stern, Long-Sheng Song, Heping Cheng, James S.~K. Sham, Huang~Tian
+  Yang, Kenneth~R. Boheler, and Eduardo R{\'\i}os.
+\newblock Local control models of cardiac excitation-contraction coupling. {A}
+  possible role for allosteric interactions between ryanodine receptors.
+\newblock {\em Journal of General Physiology}, 113(3):469–--489, 1999.
+
+\bibitem{Sterratt2011}
+David Sterratt, Bruce Graham, Andrew Gillies, and David Willshaw.
+\newblock {\em Principles of Computational Modelling in Neuroscience}.
+\newblock Cambridge University Press, 2011.
+
+\bibitem{Strauss2008}
+Walter~A. Strauss.
+\newblock {\em Partial Differential Equations, An Introduction}.
+\newblock John Wiley \& Sons, New York, 2008.
+
+\bibitem{Sundnes2009}
+Joakim Sundnes, Robert Artebrant, Ola Skavhaug, and Aslak Tveito.
+\newblock A second order algorithm for solving dynamic cell membrane equations.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 56(10):2546--2548,
+  2009.
+
+\bibitem{Sundnes2007}
+Joakim Sundnes, Glenn~Terje Lines, Xing Cai, Bj{\o}rn~Frederik Nielsen,
+  Kent-Andre Mardal, and Aslak Tveito.
+\newblock {\em Computing the Electrical Activity in the Heart}, volume~1.
+\newblock Springer-Verlag, Berlin Heidelberg, 2007.
+
+\bibitem{Sundnes2005}
+Joakim Sundnes, Glenn~Terje Lines, and Aslak Tveito.
+\newblock An operator splitting method for solving the bidomain equations
+  coupled to a volume conductor model for the torso.
+\newblock {\em Mathematical Biosciences}, 194(2):233--248, 2005.
+
+\bibitem{Swietach2008}
+Pawel Swietach, Kenneth~W. Spitzer, and Richard~D. Vaughan-Jones.
+\newblock {Ca$^{2+}$-mobility in the sarcoplasmic reticulum of ventricular
+  myocytes is low.}
+\newblock {\em Biophysical Journal}, 95(3):1412--1427, 2008.
+
+\bibitem{Tveito2010}
+Aslak Tveito, Hans~Petter Langtangen, Bj{\o}rn~Frederik Nielsen, and Xing Cai.
+\newblock {\em Elements of Scientific Computing}, volume~7.
+\newblock Springer-Verlag, Berlin Heidelberg, 2010.
+
+\bibitem{Tveito2009}
+Aslak Tveito and Glenn~T. Lines.
+\newblock A note on a method for determining advantageous properties of an
+  anti-arrhythmic drug based on a mathematical model of cardiac cells.
+\newblock {\em Mathematical Biosciences}, 217(2):167--173, 2009.
+
+\bibitem{Tveito2012}
+Aslak Tveito, Glenn~T. Lines, Johan Hake, and Andrew~G. Edwards.
+\newblock Instabilities of the resting state in a mathematical model of calcium
+  handling in cardiac myocytes.
+\newblock {\em Mathematical Biosciences}, 236(2):97--107, 2012.
+
+\bibitem{Tveito2011c}
+Aslak Tveito, Glenn~T. Lines, Pan Li, and Andrew McCulloch.
+\newblock Defining candidate drug characteristics for
+  \uppercase{L}ong-\uppercase{QT} (\uppercase{LQT3}) syndrome.
+\newblock {\em Mathematical Biosciences and Engineering}, 8(3):861--73, 2011.
+
+\bibitem{Tveito2005}
+Aslak Tveito and Ragnar Winther.
+\newblock {\em Introduction to Partial Differential Equations: A Computational
+  Approach}, volume~29.
+\newblock Springer-Verlag, Berlin Heidelberg, 2005.
+
+\bibitem{Ullah2012}
+Ghanim Ullah, Don-On~Daniel Mak, and John~E Pearson.
+\newblock A data-driven model of a modal gated ion channel: The inositol 1, 4,
+  5-trisphosphate receptor in insect sf9 cells.
+\newblock {\em The Journal of general physiology}, 140(2):159--173, 2012.
+
+\bibitem{Williams2007}
+George S.~B. Williams, Marco~A. Huertas, Eric~A. Sobie, M.~Saleet Jafri, and
+  Gregory~D. Smith.
+\newblock A probability density approach to modeling local control of
+  calcium-induced calcium release in cardiac myocytes.
+\newblock {\em Biophysical Journal}, 92:2311--2328, 2007.
+
+\bibitem{Williams2008}
+George S.~B. Williams, Marco~A. Huertas, Eric~A. Sobie, M.~Saleet Jafri, and
+  Gregory~D. Smith.
+\newblock Moment closure for local control models of calcium-induced calcium
+  release in cardiac myocytes.
+\newblock {\em Biophysical Journal}, 95:1689--1703, 2008.
+
+\bibitem{winslow2011}
+Raimond~L. Winslow and Joseph~L. Greenstein.
+\newblock Cardiac myocytes and local signaling in nano-domains.
+\newblock {\em Progress in Biophysics and Molecular Biology}, 107:48--59, 2011.
+
+\bibitem{winslow2006}
+Raimond~L. Winslow, Antti Tanskanen, Mindao Chen, and Joseph~L. Greenstein.
+\newblock Multiscale modeling of calcium signaling in the cardiac dyad.
+\newblock {\em Annals of the New York Academy of Sciences}, 1080:362–375,
+  2006.
+
+\end{thebibliography}

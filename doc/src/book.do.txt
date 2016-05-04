@@ -1,0 +1,34 @@
+TITLE: Computing characterizations of drugs for ion channels and receptors using Markov models
+AUTHOR: Aslak Tveito Email:aslak@simula.no at Simula Research Laboratory & Department of Informatics, University of Oslo
+AUTHOR: Glenn Terje Lines Email:glennli@simula.no at Simula Research Laboratory
+DATE: today
+
+TOC: on
+
+# #include "Introduction.do.txt"
+
+# #include "Ca_release_1D.do.txt"
+
+# #include "properties.do.txt"
+
+# #include "Ca_release_2D.do.txt"
+
+# #include "Generalization.do.txt"
+
+# #include "Ca_V.do.txt"
+
+# #include "Ionchannels.do.txt"
+
+# #include "Na.do.txt"
+
+# #include "mot.do.txt"
+
+# #include "burst_mode.do.txt"
+
+# #include "Ap.do.txt"
+
+======= References =======
+
+BIBFILE: papers.pub
+
+
