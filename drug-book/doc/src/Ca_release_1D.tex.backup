@@ -1,0 +1,1472 @@
+
+\chapter{One-dimensional calcium release}
+\label{Ca_release_1D}
+
+The contraction of a single cardiac cell is initiated by an increase in the transmembrane potential leading to opening of the so-called L-type calcium channels (LCCs). When these channels are open, calcium flows into a rather small space called the dyadic cleft (often simply referred to as the dyad), leading to a locally increased concentration of Ca$^{2+}$ ions. This increased concentration leads to  the opening of the ryanodine receptors (RyRs), which control the flow of calcium from the internal stores referred to as the sarcoplasmic reticulum (SR). This process is referred to as the calcium-induced calcium release (CICR) and is of vital importance in the functioning of the heart. A schematic description of the process is given in Figure \ref{cicr_1D}. 
+
+%The figure illustrates the essential elements of CICR. Increased transmembrane potential leads to opening of L-type calcium channels (LCCs in the figure) and then Ca$^{2+}$ ions flows into the dyad due to a strong concentration gradient. In the dyad, RyRs are calcium sensitive and increases concentration in the dyad leads to opening of the RyRs and then calcium ions flow out of SR (union of JSR and NSR in the figure) and into the dyad. 
+
+This CICR process is one of the focal points of interest in these notes. We shall develop a model coupling the effects alluded to in Figure \ref{cicr_1D}. However, in this first chapter we shall simplify the process quite a bit by assuming that we just have three spaces: the SR, the dyad, and the cytosol (see Figure \ref{geom1D}). This simplification means that we assume that there is very fast diffusion between the network SR (NSR) domain and the junctional SR (JSR) domain such that the associated concentrations are identical. 
+Furthermore, we ignore the L-type channels and assume that the concentrations in both the SR and the cytosol are constant. This leads to a one-dimensional model, in the sense that only the concentration of the dyad changes. The model is useful because it helps illustrate the tools we need in our analysis of the full CICR process and illustrates the properties of optimal drugs that will be more or less inherited in more complex models.  
+
+Our aim is therefore to understand in some detail what is going on in the process illustrated in  Figure \ref{cicr_1D}. However, this figure is in itself a huge simplification of the complex CICR process. The cell consists of 10,000 to 20,000 dyads, each dyad having \GTLV[20]{up} to 100 RyRs, and human ventricles consist of billions of cells. Our aim is to focus entirely on a very small but essential element in the CICR mechanism.
+
+\begin{figure}
+\centering\resizebox{0.9\linewidth}{!}{\winslow{2.5}{2}{8.5}{6}}
+\caption{This figure illustrates the components involved in the CICR: the T-tubule, the dyad, the SR represented by the JSR and NSR, and the cytosol.
+%(the light blue area except for the area occupied by the dyad).
+Calcium ions can enter the dyad from the T-tubule through LCCs and from the SR through the RyRs. The figure is taken from Winslow et al. \cite{winslow2006}. In this chapter, we concentrate on the dynamics in the box surrounded by a thin red line. Thus we assume that the concentration of the JSR and NSR are identical and constant and we ignore the LCCs. We also assume that all the RyRs are in the same state and therefore can be treated as one channel (see also Notes at page \pageref{notes_Ca_1D}).
+\label{cicr_1D}}
+\end{figure}
+
+We model the release of Ca$^{2+}$ ions from the SR to the dyad by formulating a stochastic differential equation governing the concentration of Ca$^{2+}$ ions in the dyad. The model will be studied both numerically and analytically and we show how the solution's properties depend on the parameters defining the model. Next, we will derive a deterministic partial differential equation (PDE) giving the probability density function of the states of the Markov model. Although the transition from a stochastic model to a deterministic model for the probability density functions is classical by now, we will spend some time deriving the equations in detail because the transition from stochastic to deterministic is such a wonderful piece of insight. Furthermore, we will provide detailed comparisons of Monte Carlo simulations based on the stochastic model and the probability density functions.
+In subsequent chapters, we will develop the model further by using two small spaces, the dyad and the JSR (see Figure \ref{cicr_1D}),  allowing for different concentrations of Ca$^{2+}$ ions. This leads to a two-dimensional (2D) problem. 
+
+Finally, we will take the LCCs into account. This leads to a 2D problem depending on one parameter: the transmembrane potential.
+
+In these notes, we will use the concept of dimension in two different, but related,  ways. In the first version of the stochastic model of CICR, we will model only the concentration of Ca$^{2+}$ in the dyad and we will refer to the model as one dimensional (1D). When a deterministic model governing the probability density function of the states of the Markov model is derived, that model is also 1D in the sense that it depends on one spatial variable; the concentration of Ca$^{2+}$. Next we move to two concentrations (in the dyad and the JSR), leading to a 2D stochastic model in the sense that it is a $2\times 2$ system of stochastic ordinary differential equations. The associated model governing the deterministic probability density functions is also 2D in the sense that the model depends on two spatial variables: the concentration of Ca$^{2+}$ in the dyad and in the JSR. So the general rule is that the number of different concentrations allowed in the system of stochastic ordinary differential equations carries over to the spatial dimension of the deterministic system of PDEs governing the probability density functions of the states involved in the Markov model. Furthermore, the number of states in the Markov model decides the number of equations in the deterministic system of PDEs. 
+
+
+\section{Stochastic model of calcium release}
+\label{stoch}
+
+Suppose that the cytosolic Ca$^{2+}$  concentration is given by $c_{0}$ and the SR
+concentration is given by $c_{1}$; we assume both to be constant and that
+$c_{1}\gg c_{0}$. We want to model the concentration $\bar{x}=\bar{x}(t)$ in the dyad located
+between the cytosol and the SR (see Figure \ref{geom1D}). Throughout these notes, we will use a bar to indicate stochastic variables.
+
+\begin{figure}
+[ptb]
+\begin{center}
+\begin{tabular}{c!{\vrule width 1pt}c!{\vrule width 1pt}c} 
+\noalign{\hrule height 1pt}
+&& \\
+Cytosol, $c_0$ & Dyad, $\bar{x}(t)$ & SR, $c_1$ \ \ \ \ \  \\
+&& \\ \noalign{\hrule height 1pt}
+\end{tabular}
+\caption{Illustration of the model studied in the present chapter: The Ca$^{2+}$ concentration is high in the SR and low in the cytosol. Release from the SR is governed by a Markov model and the
+concentration can be diffused from the dyad to the cytosol.}
+\label{geom1D}
+\end{center}
+\end{figure}
+%EndExpansion
+
+We assume that there is stochastic release from the SR to the dyad, and diffusion from the dyad to the cytosol. Let $v_{r}$ denote the
+speed of release (when the channel is open) and let $v_{d}$ be the speed of diffusion; both are non-negative. Then a stochastic
+model of the concentration $\bar{x}=\bar{x}(t)$ in the dyad is given by
+\begin{equation}
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x}), \label{ode1}
+\end{equation}
+where the function $\bar{\gamma}=\bar{\gamma}(t)$ takes on the value zero (closed) or one
+(open), and the dynamics of the function are governed by a Markov model of the
+form
+\begin{equation}
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O, \label{Markov}
+\end{equation}
+with $k_{oc}$ and $k_{co}$ as reaction rates that may depend on the concentration.
+Markov models were introduced on page \pageref{markovintro} but let us recall that the 
+reaction rates $k_{oc}$ and $k_{co}$ basically indicate the tendency of a channel to change state. So, if 
+the channel is open, the probability that the channel changes from open to closed in a very short time interval
+$\Delta t$ is given by $\Delta t k_{oc}$ and, similarly, if the channel is closed,
+ $\Delta t k_{co}$ is the probability that it becomes open in the time interval $\Delta t$. 
+ This means that the higher the rate $k_{co}$,  the more likely it is that the channels are open. This property will be used repeatedly in what follows. 
+
+\subsection{Bounds of the concentration}
+
+Suppose that at time $t=t_{0},$ the channel is closed ($\gamma=0)$, that the
+concentration is given by $x(t_0)=x_{0},$ and that the channel remains closed for
+$t\leqslant t_{0}+\Delta t.$ Then, in the interval $t_{0}\leqslant t\leqslant
+t_{0}+\Delta t,$ the dynamics are given by the deterministic equation\footnote{Note that when we consider the case of a given value
+$\gamma$, the model becomes deterministic and we remove the overbar that
+indicates a variable is stochastic.}
+\[
+x^{\prime}(t)=v_{d}(c_{0}-x)
+\]
+and thus
+\[
+x(t)=c_{0}+e^{v_{d}(t_{0}-t)}\left(  x_{0}-c_{0}\right)
+\]
+in this time interval.  Therefore, for a closed channel, the concentration $x(t)$ of the
+dyad approaches $c_{0}$ (the cytosolic concentration) at an exponential
+rate. The decay is faster for larger values of the diffusion
+velocity $v_{d.}$ By consulting Figure \ref{geom1D} we see that this is quite
+reasonable; if we close the release from the SR, the concentration of the dyad will gradually approach
+the concentration of the cytosol.
+
+Next, we consider the case of an open channel,
+\begin{equation}
+x^{\prime}(t)=v_{r}(c_{1}-x)+v_{d}(c_{0}-x), \label{open600}
+\end{equation}
+and again we assume that $x(t_0)=x_0.$
+We can rewrite this in the form
+\[
+x^{\prime}(t)=(v_{r}+v_{d})\left(c_{+}-x\right),
+\]
+where
+\[
+c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}},
+\]
+and find that the solution is given by
+\[
+x(t)=c_{+}+e^{\left(  v_{r}+v_{d}\right)
+(t_{0}-t)}\left(  x_{0}-c_{+}\right).
+\]
+Therefore, when the channel is open, we observe that the concentration $x(t)$ of the dyad approaches $c_{+}$
+at an exponential rate. Furthermore, we note that the rate increases with $v_{r}+v_{d}$.
+Note also that
+\begin{equation}
+c_{+}  =c_{1}+\frac{v_{d}\left(  c_{0}-c_{1}\right)  }{v_{r}+v_{d}}<c_{1}.
+\end{equation}
+So, to summarize, when the channel is open, the concentration approaches  $c_+<c_1$ and when it is closed, the concentration approaches $c_0$. 
+
+For a given state of the channel (open or closed), the concentration profile is monotone and therefore there is no way the solution
+can become less than $c_0$ or larger than $c_+$. We therefore have
+\begin{equation}
+c_{0}\leqslant \bar{x}(t)\leqslant c_{+} \label{invariant}
+\end{equation}
+for all time, provided that this bound holds initially. 
+
+Note that since $c_{1}\gg c_{0},$ we have
+\[
+c_{+}\approx\frac{v_{r}}{v_{r}+v_{d}}c_{1}
+\]
+and therefore $c_{+}$ approaches $c_{1}$ if 
+\[\frac{v_{d}}{v_{r}}
+\longrightarrow 0.\]
+ Suppose, for instance, that we keep $v_{r}$ fixed and we let $ v_{d}$ approach zero. Then 
+ $c_{+}$ approaches $c_{1}$, which is reasonable since calcium will be poured into the dyad, but the connection to the cytosol is almost closed and thus the 
+dyadic concentration will increase until it reaches an equilibrium with the SR concentration.
+
+\subsection{An invariant region for the solution}
+
+The invariant region (\ref{invariant}) deserves a comment, since it will become quite useful later. Suppose that the initial concentration of the dyad is somewhere in the interval defined by $c_0$ and $c_+$. Then, we have seen that if the channel is either closed or open, the solution remains in this interval as long as the channel does not change state. When the channel changes state, say, at time $t=\Delta t$, we have a new initial condition in the interval $c_0$ and $c_+$ and we can solve the equation deterministically once more and the solution will remain in the interval. The process can be repeated over and over and the solution will always remain in the interval $c_0$ and $c_+$. This property is useful, because it directly implies that the probability of being outside this interval is zero, which is what we need when we want to define boundary conditions for the model defining probability density functions. 
+
+\subsection{A numerical scheme}
+\label{numscheme}
+
+To perform stochastic simulations, we discretize the equation
+\begin{equation}
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x}) \label{sde1D}
+\end{equation}
+to obtain the explicit scheme
+\begin{equation}
+x_{n+1}=x_{n}+\Delta t\left( \gamma_{n}v_{r}(c_{1}-x_{n})+v_{d}(c_{0}
+-x_{n})\right) \label{sde1D_scheme}
+\end{equation}
+where $\gamma_{n}$ takes on the value zero (closed) or one (open). The value of $\gamma_{n}$ is computed as follows: Let $\sigma_n$ be a random number in the unit interval. Assume that $\gamma_{n-1}=0$. Then, if $k_{co}\Delta t >\sigma_n$, we set 
+$\gamma_{n}=1$, but if this condition does not hold, we set $\gamma_{n}=0$. Similarly, assume that $\gamma_{n-1}=1$. Then, if $k_{oc}\Delta t >\sigma_n$, we set 
+$\gamma_{n}=0$, but if this condition does not hold, we set $\gamma_{n}=1$.
+
+\subsection{An invariant region for the numerical solution}
+We want to ensure that the numerical scheme provides solutions mimicking the properties of the analytical solutions. Therefore, we want to confirm that the invariant region for model (\ref{sde1D}) also holds for the numerical solutions. For this to hold, we have to assume that the time step is restricted as follows:
+\begin{equation}
+\Delta t<\frac{1}{v_{r}+v_{d}}. \label{time_step_sode}
+\end{equation}
+To derive the invariant region, we define
+\[
+F(x)=x+\Delta t\left(  \gamma_{n}v_{r}(c_{1}-x)+v_{d}(c_{0}-x)\right)
+\]
+and note that
+\[
+F^{\prime}(x)=1-\Delta t\left(  \gamma_{n}v_{r}+v_{d}\right)  \geqslant
+1-\Delta t\left(  v_{r}+v_{d}\right)  >0.
+\]
+If we assume that $c_{0}\leqslant x_{n}\leqslant c_{+}$, we obtain
+\[
+x_{n+1}=F(x_{n})\geqslant F(c_{0})=c_{0}+\Delta t\left(  \gamma_{n}v_{r}
+(c_{1}-c_{0})\right)  \geqslant c_{0}
+\]
+and
+\begin{align*}
+x_{n+1}  &  =F(x_{n})\\
+&\leqslant F(c_{+})\\
+&  =c_{+}+\Delta t\left(  \gamma_{n}v_{r}(c_{1}-c_{+})+v_{d}(c_{0}
+-c_{+})\right) \\
+&  \leqslant c_{+}+\Delta t\left(  v_{r}(c_{1}-c_{+})+v_{d}(c_{0}
+-c_{+})\right) \\
+&  =c_{+},
+\end{align*}
+where we have used the fact that
+\[ c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}.\]
+Therefore, by induction, we have $c_{0}\leqslant x_{n}\leqslant c_{+}$ for all time.
+
+
+\subsection{Stochastic simulations}
+
+|--c-----------c------------------------------------|
+|$v_d $       | 1 $\rm{ms^{-1}}$                    |
+|$v_r $       | 0.1 $\rm{ms^{-1}}$                  |
+|$c_0 $       | 0.1 $\rm{\mu M}$                    |
+|$c_1 $       | 1000 $\rm{\mu M}$                   |
+|$k_{co}(x) $ | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
+|$k_{oc} $    | 1 $\rm{ms^{-1}}$                    |
+|---------------------------------------------------|
+Parameter values for model (\ref{sde1D}) used in the computations
+presented in Figures \ref{1D:mc_ca} and \ref{1D:mc_state}. \label{tab:1Dsode}
+
+We use the scheme (\ref{sde1D_scheme}) to compute the concentration governed by the model  (\ref{sde1D}),
+using the parameters given in Table \ref{tab:1Dsode}.
+%$v_d =1\rm{ms^{-1}}$,  $c_0=0.1 \rm{\mu M}$, $v_r=0.1\rm{ms^{-1}}$, $c_1=1000\rm{\mu M}$, 
+%$k_{oc}=1 \rm{ms^{-1}}$, and $k_{co}(x)=0.1x\rm{ms^{-1}\, \mu M^{-1}}  $.
+The numerical results are given in Figure 
+\ref{1D:mc_ca} for time running from $0$ ms to $100$ ms. In Figure  \ref{1D:mc_state}, we show the same solution but focus on the time interval from $20$ ms to $30$ ms. The lower graph indicates when the channel is open (high value) and when it is closed (low value). We obseve from the concentration profile that the solution increases whenever the channel is open and reduces whenever the channel is closed and we also observe that the solution remains in the interval $[c_{0} ,c_{+}]$ for all time, where
+\[
+c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}=91\text{ }\rm{\mu M}.
+\]
+FIGURE: [fig/1D_mc_ca.pdf, width=500 frac=0.8] \code{1D/figure_mc.m}The calcium concentration of the dyad as a function of time. The numerical solution is computed using scheme  (\ref{sde1D_scheme}) using $\Delta t =1$ $\mu$s and
+$x(0) = (c_{+} +c_0)/2 = 45.55$ $\mu$M. Furthermore, we assume that the channel is closed initially, so $\gamma(0)=0$.  label{1D:mc_ca}%(Strictly speaking $\gamma$ is just a derived quantity from the Markov model, and has no inital condition. The Markov model is initally in the closed state.
+
+
+FIGURE: [fig/1D_mc_state.pdf, width=500 frac=0.8]  The concentration profile is taken from Figure \ref{1D:mc_ca} above. Here we show the solution restricted to the time interval ranging from $t=20$ ms to $t=30$ ms. In the lower part of the figure we indicate whether the channel is open (high value) or closed (low value). Seen together, the figure illustrates that the concentrations increase when the channel is open, and decrease when the channel is closed.   label{1D:mc_state}
+
+\section[Probability density functions]{Deterministic systems of PDEs governing the probability density functions}
+\label{sec:pdf}
+
+We have seen that model (\ref{sde1D}) can be studied using Monte Carlo simulations based on the numerical scheme (\ref{sde1D_scheme}). Such simulations clearly give some insight into the dynamics. In addition to the simulations shown above, we can use the numerical scheme to see the effect of changing the rates of the Markov model and the other parameters of the model. However, it is tricky to compare solutions of simulations based on stochastic processes because the results vary from simulation to simulation anyway. So we are faced with the following question: Is the difference in solutions from one computation to another due to stochastic effects or are they due to changes of parameters? This matter becomes especially pertinent when we introduce theoretical drugs, because we want to compare solutions with and without application of the theoretical drug. It is tempting to derive some sort of statistics based on the simulation results and then compare the solutions computed based on two sets of parameters based on the statistics.
+
+ By running numerous simulations, we can add the results and compute probability density functions based on the stochastic simulations. Exactly how this can be done will be explained below. However, it turns out that the probability density functions can also be computed by solving a deterministic system of PDEs. In this section we show how to derive this system of PDEs. We will see below that this is quite useful, because it is much easier to compare solutions of deterministic differential equations than  stochastic solutions. By analyzing the deterministic system of PDEs we can also, analytically, derive properties of the process that would be very hard to derive based on direct analysis of the stochastic model (\ref{sde1D}).
+
+\subsection{Probability density functions}
+
+Let $\rho_{o}=\rho_{o}\left(  x,t\right)  $ be the probability density
+functions of the channel being in an open state. This means that, at time $t,$
+the probability of the channel being open and the concentration $\bar{x}
+=\bar{x}(t)$ being in the interval $(x,x+\Delta x)$ is given by
+\begin{equation}
+P_{o}\left\{  x<\bar{x}(t)<x+\Delta x\right\}  =\int_{x}^{x+\Delta x}\rho
+_{o}\left(  \xi,t\right)  d\xi. \label{probopen}
+\end{equation}
+Similarly, the probability of the concentration $\bar{x}=\bar{x}(t)$ being in
+the interval $(x,x+\Delta x)$ and the channel being closed is given by
+\begin{equation}
+P_{c}\left\{  x<\bar{x}(t)<x+\Delta x\right\}  =\int_{x}^{x+\Delta x}\rho
+_{c}\left(  \xi,t\right)  d\xi, \label{prob_closed}
+\end{equation}
+where $\rho_c$ is the probability density
+function of the channel being in the closed state. Note that
+\begin{equation}
+\int\left(  \rho_{o}\left(  \xi,t\right)  +\rho_{c}\left(  \xi,t\right)
+\right)  d\xi=1, \label{integral1}
+\end{equation}
+where the integral is over all possible concentrations. In particular, if the initial
+concentration is in the invariant region given by $\left[  c_{0}
+,c_{+}\right],$ then the integral goes over this interval.
+
+The probability density functions $\rho_o$ and $\rho_c$ contain a great deal of information about the
+process under consideration. At every point in time, we can understand how likely it is that the concentration is in a certain interval for a given state of the channel. 
+It is therefore of great interest to be able to compute these functions.
+
+
+\bigskip
+
+\subsection{Dynamics of the probability density functions}
+
+Now, we are interested in understanding how $\rho_{o}$ and $\rho_{c}$ change
+dynamically. 
+Consider $\rho_{o}$ and suppose that, for a given $x$ and $t$, the
+density $\rho_{o}(x,t)$ is known. Over a small time interval, several things
+can happen that will affect the density: a) the channel can change from open to
+closed (reducing $\rho_{o})$, b) the channel can change from closed to open
+(increasing $\rho_{o}),$ and, finally, c) the concentration can move from
+outside the interval $(x,x+\Delta x)$ to inside this interval or the
+concentration can move from inside the interval $(x,x+\Delta x)$ to outside
+this interval.
+
+Here cases a) and b) are handled by the Markov model and we will return to
+that issue below, but we will start by taking care of the change in
+probability density due to changes in concentration. It turns out that this part will be governed by an advection\footnote{Advection means the transport of a conserved quantity.} equation and we will start by considering two very special cases illustrating how the probability is advected in the absence of a Markov model. 
+
+\subsection{Advection of probability density}
+\label{advectprobability}
+
+We start by considering two very special cases in which we just assume that the channel is always open or the channel is always closed. 
+
+\subsubsection{Advection in a very special case: The channel is kept open for all time}
+ Let us also assume that the probability density function is known at time $t=0$ and that it is given by a very simple function,
+\begin{equation}
+ \rho_o (x,0)=1/h \text{ for } x\in \tilde{\Omega} = [\tilde{c}-h/2,\tilde{c}+h/2 ],  \label{adv_ode_open_init}
+ \end{equation}
+and $\rho_o=0$ for values of $x$ outside the interval $\tilde{\Omega}$. Here $h$ is assumed to be a given positive number and $\tilde{c}=\half (c_0+c_+)$, where we recall that
+\[
+c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}.
+\]
+Note that, since we know that  channel is open, we have $\rho_c=0$ for all values of $x$ and, since we have somehow forced the channel to remain open, nothing will happen to $\rho_c$. 
+
+If we pick any initial concentration $x_0$ in the interval
+$\tilde{\Omega}$, we know that the concentration will develop according to the ordinary differential equation
+\begin{equation}
+x^{\prime}_o(t;x_0)=a_o(x)=(v_{r}+v_{d})\left(c_{+}-x\right), \label{adv_ode_open}
+\end{equation}
+whose solution is given by
+\[
+x_o(t;x_0)=c_{+}+e^{-t\left(  v_{r}+v_{d}\right)}\left(  x_{0}-c_{+}\right);
+\]
+see the discussion on page \pageref{open600}. In Figure \ref{1D:advec}
+%xxxGlennxxx(husk a lage tabell med parametrene du bruker, eller henvis til andre tabeller. 
+%Show solution i a few ms - do not reach boundary layer)) 
+we plot $x_o(t;x_0)$ as a function of $t$ for ten values of initial data $x_0$ in the interval $\tilde{\Omega}$, \GTLV{using $h = 20$ $\mu$M}. The figure illustrates that the probability density function 
+$\rho_o$, in this special case of a forced open channel, is simply advected in time and the advection is clearly governed by the speed of $x=x(t)$, which is given by $x^{\prime}(t)=a_o(x)$.
+
+FIGURE: [fig/1D_advec.pdf, width=500 frac=0.8] Ten solutions of the ordinary differential equation (\ref{adv_ode_open}) with data from Table \ref{tab:1Dsode}. The figure illustrates that when the channel is kept open and the initial data are of the form given by (\ref{adv_ode_open_init}) (with $h=20$ $\mu$M), the probability density is simply advected toward greater values of the concentration $x$.  label{1D:advec}
+\subsubsection{Advection in another very special case: The channel is kept closed for all time}
+
+We can certainly repeat the considerations above for the probability density function of the closed state. In that case we assume that
+\begin{equation}
+ \rho_c (x,0)=1/h \text{ for } x\in \tilde{\Omega} = [\tilde{c}-h/2,\tilde{c}+h/2 ]  \label{closed_advec}
+  \end{equation}
+and $\rho_c=0$ for values of $x$ outside the interval $\tilde{\Omega}$. Again we pick any initial concentration $x_0$ in the interval
+$\tilde{\Omega}$ and recall that the concentration evolves as
+\begin{equation}
+x^{\prime}_c(t;x_0)=a_c(x)=v_{d}\left(c_{0}-x\right), \label{adv_ode_closed}
+\end{equation}
+whose solution is given by 
+\[
+x_c(t;x_0)=c_{0}+e^{-t v_{d}}\left(  x_{0}-c_{0}\right).
+\]
+In Figure \ref{1D:advec_c} we plot $x_c(t;x_0)$ as a function of $t$ for ten values of initial data $x_0$ in the interval $\tilde{\Omega}$. Again we observe that the probability density function is simply advected according to 
+ the speed of $x=x(t)$, which is given by $x^{\prime}=a_c(x)$.
+
+FIGURE: [fig/1D_advec_c.pdf, width=500 frac=0.8] Ten solutions of the ordinary differential equation (\ref{adv_ode_closed}) . The figure illustrates that when the channel is kept closed and the initial data are of the form given by (\ref{closed_advec}), the probability density is advected toward smaller values of the concentration $x$. As above we have used $h=20$ $\mu$M. label{1D:advec_c}\subsubsection{Advection: The general case}
+
+We have seen how the probability density functions evolve in two very special cases. Next we consider the general case of how the probability density functions are advected when the state of the channel is kept fixed, and we focus on the probability density function of the open state.
+
+Let $J_{o}(x,t)$ denote the flux per time of the probability across the point $x$ at time
+$t.$ A positive flux at $x$ indicates a flux of probability into
+the domain $\left(  x,x+\Delta x\right)$ and a positive flux at $x+\Delta
+x$ indicates a flux of probability out of the interval. This gives
+\begin{equation}
+\frac{d}{dt}P_{o}\left\{  x<\bar{x}(t)<x+\Delta x\right\}  =J_{o}(x,t)-J_{o}
+(x+\Delta x,t).\label{p2}
+\end{equation} 
+It now follows from (ref{probopen}) that
+\begin{align*}
+\frac{J_{o}(x,t)-J_{o}(x+\Delta x,t)}{\Delta x} &  =\frac{d}{dt}\frac
+{1}{\Delta x}\int_{x}^{x+\Delta x}\rho_{o}\left(  \xi,t\right)  d\xi\\
+&  =\frac{1}{\Delta x}\int_{x}^{x+\Delta x}\frac{\partial\rho_{o}}{\partial
+t}\left(  \xi,t\right)  d\xi
+\end{align*}
+and, therefore, by going to the limit in $\Delta x,$ we have
+\begin{equation}
+\frac{\partial\rho_{o}\left(  x,t\right)  }{\partial t}=-\frac{\partial
+J_{o}(x,t)}{\partial x}.\label{cons_o}
+\end{equation}
+\begin{comment}
+Next, we have to consider about the size of the flux $J_{o}$. Let us start by
+observing that the change in concentration $x$ over the time step $\Delta t$
+is given by
+\[
+\Delta x=x(t+\Delta t)-x(t)=x^{\prime}(t)\Delta t+O(\Delta t^{2}).
+\]
+Note also that the probability of the concentration being in that interval
+(and the channel being open) is given by
+\[
+\rho_{o}(x,t)\Delta x=\rho_{o}(x,t)x^{\prime}(t)\Delta t+O(\Delta t^{2})
+\]
+and then the flux of probability per time is given by
+\[
+J_{o}=\rho_{o}(x,t)\frac{\Delta x}{\Delta t}=\rho_{o}(x,t)x^{\prime
+}(t)+O(\Delta t).
+\] 
+\end{comment}
+\GTLV{The flux is given by the product of velocity times density: $J_o = \rho_o v$, where in our case the velocity is given by $v = x^{\prime}(t)$, so the flux will be
+\[
+J_{o}=\rho_{o}(x,t)x^{\prime}(t).
+\]
+} 
+By recalling that, when the channel is open, we have
+\[
+x^{\prime}(t)=a_o(x)=v_{r}(c_{1}-x)+v_{d}(c_{0}-x),
+\]
+we obtain
+\begin{equation}
+J_{o}=a_o(x)  \rho_{o}=\left(  v_{r}(c_{1}-x)+v_{d}(c_{0}-x)\right)  \rho_{o}.\label{Jo}
+\end{equation}
+It follows from (ref{cons_o}) and 
+(ref{Jo}) that we have the
+conservation equation
+\begin{equation}
+\frac{\partial\rho_{o}\left(  x,t\right)  }{\partial t}+\frac{\partial
+}{\partial x}(a_o  \rho_{o})
+=0,\label{cons2}
+\end{equation}
+where we account only for the advection of probability.
+
+\bigskip
+
+\subsection{Changing states: The effect of the Markov model}
+
+We have now handled the advection of the probability listed as c) above and 
+how changes due to the opening or closing of the channel affect
+the probability density function remains to be seen. Recall that the reaction scheme of the
+Markov model is given by
+\begin{equation}
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O
+\end{equation}
+and suppose that the channel is open at time $t$. If we ignore the advection
+of concentration, handled above, we find that the probability density changes
+as follows from time $t$ to time $t+\Delta t:$
+\[
+\rho_{o}(x,t+\Delta t)=\rho_{o}(x,t)-\Delta tk_{oc}\rho_{o}(x,t)+\Delta
+tk_{co}\rho_{c}(x,t).
+\]
+By going to the limit in $\Delta t$ and combining this result with the
+conservation equation above, we obtain
+\[
+\frac{\partial\rho_{o}\left(  x,t\right)  }{\partial t}+\frac{\partial
+}{\partial x}(a_o  \rho_{o})=k_{co}
+\rho_{c}(x,t)-k_{oc}\rho_{o}(x,t),
+\]
+which governs the dynamics of the open probability density function.
+
+\subsection{The closed state}
+
+We can carry out the same derivation of an equation modeling the dynamics of the
+probability density function of the closed state. The only change is that in the
+closed state we have
+\[
+x^{\prime}(t)=v_{d}(c_{0}-x)
+\]
+and therefore the associated flux is given by
+\begin{equation}
+J_{c}=v_{d}(c_{0}-x)\rho_{c}.
+\end{equation}
+
+
+\subsection{The system governing the probability density
+functions \label{system_def_99}}
+
+To summarize, we have the coupled system
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o}, \label{pdfsystem}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c}, \nonumber
+\end{align}
+where 
+\begin{align}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\\
+a_{c} &  =v_{d}(c_{0}-x).\nonumber
+\end{align}
+This is a coupled system of PDEs; it is linear and
+first order and special care must be taken in solving it numerically, since it
+develops steep gradients. For ease of reference, we will sometimes call this the PDF system
+and its solutions are sometimes labeled the PDF solutions.
+
+\subsubsection{Boundary conditions}
+\label{bc}
+
+The boundary conditions are set up to avoid the leak of probability across the
+boundary. Hence we need the fluxes $a_{o}\rho_{o}$ and $a_{c}\rho_{c}$
+to be zero for $x=c_{0}$ and $x=c_{+}.$ Note that $a_{o}(c_{+})=a_{c}
+(c_{0})=0,$ so we require that $\rho_{o}(c_{0})=0$ and $\rho_{c}(c_{+})=0.$
+
+These conditions are fine as long as we know that the concentration is always in the interval
+bounded by $c_0$ and $c_+$. However, we may be interested in studying initial concentrations outside this interval.\footnote{We have seen above that the 
+interval bounded by $c_0$ and $c_+$ is invariant in the sense that if the initial condition of the stochastic model
+(\ref{ode1}) is in this interval, then the solution remains in the same interval for all time. We may, of course, however, pick an initial condition outside
+that interval, which motivates examination of the probability density functions using a larger domain. In these notes, however, we will stick
+to the invariant region.} Then we can 
+extend the computational domain and use zero Dirichlet boundary conditions on the new computational domain.
+
+
+\section{Numerical scheme for the PDF system}
+\label{npdf}
+
+The dynamics of the probability density functions are governed by system (\ref{pdfsystem}), a system of linear advection-reaction equations. Numerical methods for such equations are thoroughly covered by LeVeque \cite{LeVeque2002}.  
+To describe the method, we consider the simple model
+\begin{equation}
+\rho_{t}+(a\rho)_{x}=h\rho  \label{advectionreaction},
+\end{equation}
+where $a$ and $h$ are smooth functions of $x$. We let $\rho_{i}^{n}$
+denote an approximation of $\rho$ at time $t=n\Delta t$ for $x\in\lbrack
+x_{i-1/2},x_{i+1/2})$, where $x_i=c_0+i \Delta x$, with
+\[
+\Delta x=\frac{c_+-c_0}{M}
+\] 
+for an integer $M>1$. The
+numerical approximation is defined by the scheme
+\begin{equation}
+\rho_{i}^{n+1}=\rho_{i}^{n}-\frac{\Delta t}{\Delta x}\left(  \left(
+a\rho\right)  _{i+1/2}^{n}-\left(  a\rho\right)  _{i-1/2}^{n}\right)  +\Delta
+th_{i}\rho_{i}^{n}, \label{eq:scheme}
+\end{equation}
+where
+\begin{equation}
+\left(  a\rho\right)  _{i+1/2}^{n}=\max(a_{i+1/2},0)\rho_{i}^{n}
++\min(a_{i+1/2},0)\rho_{i+1}^{n} \label{eq:flux}
+\end{equation}
+and $a_{i+1/2}=a(x_{i+1/2})$.
+In an appendix to this chapter (see page \pageref{appendix_hyp}), we will go a bit deeper into the problem of computing solutions to the problem (\ref{pdfsystem}).
+
+
+
+
+
+\section{Rapid convergence to steady state solutions}
+\label{sec:rapid} 
+
+The PDF solutions rapidly reach a steady state solution. This is illustrated in Figure \ref{1D/spacetime}.  
+\GTLV{As initial conditions, we have $\rho_o(x,0) = \rho_c(x,0) = 0$, except 
+$\rho_c (x,0)=1/h \text{ for } x\in \tilde{\Omega} = [\tilde{c}-h/2,\tilde{c}+h/2 ],$ with  $h = (c_+-c_0)/20,$} and where
+we recall that $\tilde{c}=\half (c_0+c_+)$.
+\GTLV{We have used $\Delta x=0.1136$ mV and $\Delta t=11.36$ ns.} Furthermore, discrete initial conditions are normalized in order to ensure that
+\begin{equation}
+\Delta x \sum_{i,j}  \rho_{i,j}=1,  \label{discrete_sumone_1}
+\end{equation}
+where $\rho=\rho_{o}+\rho_{c}$.  In the upper panel, we show the solution for the first 10 ms and we observe rapid convergence toward a steady state solution. In the lower panel, we show the same results but for a small (and interesting) part of the concentration ranging from 80 $\mu$M to 91 $\mu$M. The solution seems to be almost in steady state after 6--8 ms. Because of this property of the solution of PDF system (\ref{pdfsystem}), we will often concentrate on steady state solutions. 
+
+\GTLV{In Figure \ref{1D:spacetime_closed} we show the solution for $\rho_c(x,t)$. Here we have plotted the logarithm of the distribution to highlight the small but significant probability densities for the channel being closed at high concentrations and again we note rapid convergence toward equilibrium.}
+
+\begin{figure}[p]\centering
+\vbox{
+\includegraphics[width=0.9\linewidth]{1D/spacetime_full.pdf}
+\includegraphics[width=0.9\linewidth]{1D/spacetime_zoom.pdf}
+}
+\caption{Convergence to the steady state solution of  $\rho_o$ for PDF system (\ref{pdfsystem}). Upper panel: Dynamics of the open probability for all relevant values of the calcium concentration. Lower panel: Solution for concentrations in the interval  80--91 $\mu$M.  Convergence to steady state is quite rapid. \label{1D/spacetime}}
+\end{figure}
+
+FIGURE: [fig/1D_spacetime_closed.pdf, width=500 frac=0.8] \GTLV{The figure shows the probability density function of the closed state. In order to highlight small values of the probability densities, we show $\log(\rho_c(x,t))$.} label{1D:spacetime_closed}\section[Comparison of Monte Carlo simulations and PDFs]{Comparison of Monte Carlo simulations and probability density functions}
+\label{compare}
+We are now in a position to study the release process illustrated in Figure \ref{geom1D} using two different approaches: We can use Monte Carlo simulations and solve the stochastic differential equation (\ref{ode1}) or we can compute the probability density functions of the process by solving system (\ref{pdfsystem}). In Figure \ref{1D:pdf}, we compare the numerical results obtained using these two approaches. Here, the probability density functions are computed using scheme (\ref{eq:scheme}) and the Monte Carlo simulations are based on the numerical scheme given by (\ref{sde1D_scheme}). 
+%The PDF solution is shown at time $t=t^*=xxx$, 
+In the figure, we show the solution of the PDF system at time $t^*=1$ s.  The Monte Carlo-based solution is computed by dividing the interval $[c_0,c_+]$ into 100 intervals and then counting the number of open states in each interval. The counting is performed over a period of time where we assume that the histogram has reached a stationary shape. In Figure \ref{1D:pdf}
+the counting is based on the time interval running from $t=t^*/2$ to $t=t^*$, with $t^*=1$ s. By considering the simulations shown in Figure \ref{1D/spacetime}, we know that in this interval the probability density functions have reached their steady state solutions.  In the figure, the histogram is computed running 500 Monte Carlo simulations. The figure clearly shows that the probability density approach gives the average of a large number of Monte Carlo simulations. We will see this repeated over and over in this text.
+
+At steady state, we observe that it is quite unlikely that we have a low concentration combined with an open channel and it is quite likely that we have a large concentration (close to $c_+=91\text{ }\rm{\mu M}$) combined with an open channel. There is a boundary layer close to the upper possible concentration, which means that the channel tends to be open and the concentration tends to be close to its maximum value. 
+
+In order to further illustrate the connection between the Monte Carlo simulations and the solution of the PDF system, we show four arbitrary solutions in the time interval from $900$ ms to $1000$ ms computed by the stochastic scheme (\ref{sde1D_scheme}). The solutions are given in Figure \ref{1D:mc_state4} and we note that all the solutions are quite close to the upper level $c_+$ of the calcium concentration and the channel tends to be open. 
+%xxxGlenn: Lag en figur av samme type Figur \ref{1D:mc_state} Ð der du viser bade Ca-concentration og open/closed. Lag fire paneler med samme opplegg. 
+
+FIGURE: [fig/1D_pdf.pdf, width=500 frac=0.8] Numerical solution of PDF system  (\ref{pdfsystem})  (red) at time $t=t^*=$ 1 s compared with the result of Monte Carlo simulations based on scheme  (\ref{sde1D_scheme}) (histogram).  label{1D:pdf}FIGURE: [fig:1D_mc_state4.pdf, width=500 frac=0.8] Four simulations  based on  the stochastic scheme (\ref{sde1D_scheme}) where the solutions are plotted from $900$ ms to $1000$ ms. The lower curves give the concentrations and we note that the concentrations are quite large but limited above by the upper limit given by $c_+=91\text{ }\rm{\mu M}$. The upper two lines indicate whether the channel is open (upper) or closed (lower); we see that the channel is open most of the time. These results fit well with the results presented in Figure \ref{1D/pdf}, where the probability density functions are plotted. label{1D:mc_state4}\section{Analytical solutions in the stationary case}
+\label{sec:analytical}
+In the stationary case, we can derive analytical solutions of the PDF system.
+We start the derivation by recalling that the open and closed probability densities are governed by the
+following system of PDEs:
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  = k_{co}\rho_{c}-k_{oc}\rho_{o},\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}- k_{co}\rho_{c},
+\end{align}
+where 
+\begin{align}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\label{fluxes22}\\
+a_{c} &  =v_{d}(c_{0}-x).\nonumber
+\end{align}
+We consider the system for $x\in\left[  c_{0},c_{+}\right]$, where
+\[
+c_{+}=c_{1}+\frac{v_{d}\left(  c_{0}-c_{1}\right)  }{v_{r}+v_{d}}.
+\]
+In the computations reported above, we saw that the solutions converge rapidly
+ toward steady state solutions. The steady state solutions are given
+by the system
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  = k_{co}
+\rho_{c}-k_{oc}\rho_{o}, \label{steadystate1}\\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)   &  =k_{oc}\rho
+_{o}- k_{co}\rho_{c}. \label{steadystate2}
+\end{align}
+By adding these equations, we find that
+\begin{equation}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}+a_{c}\rho_{c}\right)  =0.
+\end{equation}
+Therefore, by invoking the boundary conditions, we have
+\begin{equation}
+a_{o}\rho_{o}+a_{c}\rho_{c}=0.
+\end{equation}
+Here it is useful to recall that $a_{c}<0$ and $a_{o}>0$ for $x\in\left(
+c_{0},c_{+}\right)  $ and thus we have
+\begin{equation}
+\rho_{c}=-\frac{a_{o}}{a_{c}}\rho_{o}.
+\end{equation}
+The system can therefore be reduced to a scalar equation of the form
+\begin{equation}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)  =-\left(  
+k_{co}\frac{a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o}. \label{reduced}
+\end{equation}
+By differentiation, we can write this equation in the standard form
+\begin{equation}
+\rho_{o}^{\prime}=-a(x)\rho_{o},
+\end{equation}
+with
+\[
+a(x)=\frac{k_{co}}{a_{c}}+\frac{k_{oc}}{a_{o}}+\frac{a_{o}^{\prime}}{a_{o}
+}.
+\]
+We define the function $A=A(x)$ as
+\[
+A^{\prime}(x)=-a(x),
+\]
+and find that
+\[
+\left(  e^{-A(x)}\rho_{o}\right)  ^{\prime}=0
+\]
+and therefore
+\[
+\rho_{o}=ce^{A(x)},
+\]
+where $c$ is a constant. We can find $c$ by observing that
+\begin{align*}
+1 &  =\int_{c_{0}}^{c_{+}}\left(  \rho_{o}+\rho_{c}\right)  dx\\
+&  =\int_{c_{0}}^{c_{+}}\left(  1-\frac{a_{o}}{a_{c}}\right)  \rho_{o}dx\\
+&  =c\int_{c_{0}}^{c_{+}}\left(  1-\frac{a_{o}}{a_{c}}\right)  e^{A(x)}dx
+\end{align*}
+and therefore
+\begin{equation}
+c=\left(  \int_{c_{0}}^{c_{+}}\left(  1-\frac{a_{o}}{a_{c}}\right) 
+e^{A(x)}dx\right)  ^{-1}.\label{c}
+\end{equation}
+Recall that $v_{d}=1\text{ ms}^{-1}$, $c_{0}=0.1\text{ }\mu \mathrm{{ M}}$,
+$v_{r}=0.1\text{ ms}^{-1}$, $c_{1}=1000\text{ }\mu \mathrm{{ M}}$, $k_{oc}
+=1\text{ ms}^{-1}$, and $k_{co}=(x/10)\text{ ms}^{-1} (\mu \mathrm{ M)^{-1}}$
+ and that the fluxes are defined by (\ref{fluxes22}). 
+%\K{zzz xxx Skal konsentrasjonene ha enhet $\mu M$ her, som i Table \ref{tab:1Dsode}?} 
+For these data, we have the analytical solution
+\[ \rho_o(x) = K e^{x/10} (91-x)^{-\frac{0.1}{1.1}} (x-0.1)^{0.01}, \]
+\[ \rho_c(x)  = 1.1 K e^{x/10} (91-x)^{\frac{1}{1.1}} (x-0.1)^{-0.99}, \]
+where $K \approx1.0073\cdot 10^{-5}$.
+%\K{zzz xxx Skal man ikke gange med faktoren 1.1  (som svarer til $\frac{v_r + v_d}{v_d}$ eller $\frac{v_p}{v_d}$ fra seksjon 4.4 'Markov model of a mutation') i uttrykket for $\rho_c(x)$?}
+
+\section{Numerical solution accuracy}
+\label{accuracy}
+
+Since we have a steady state analytical solution, we can 
+evaluate the accuracy of the numerical method under consideration.
+However, to do so, we will first clarify how we compute stationary 
+solutions using the numerical scheme.
+
+\subsection{Stationary solutions computed by the numerical scheme}
+ 
+ 
+The numerical scheme (\ref{eq:scheme}) can be written in matrix form:
+\[
+\rho^{n+1}=\left(  I+\Delta tA\right)\rho^{n}.
+\]
+The scheme is constructed such that if a discrete version of the integral condition (\ref{integral1})
+holds at time $t=0$, it will hold for all subsequent time steps. More precisely, if we define
+\begin{equation}
+r^n=\Delta x\sum_{i=1}^{M}(\rho^n_{o,i}+\rho^n_{c,i}), \label{sum_one}
+\end{equation}
+and  $r^0=1$, then, by the construction of the scheme, we have $r^n=1$ for all $n\ge 1$.
+Since the solution we are considering converges rapidly to a stationary solution, it is useful to be able to compute 
+the stationary solution directly. The stationary version of the scheme reads
+\[
+\rho=\left(  I+\Delta tA\right)\rho 
+\]
+but here we have to make sure that the condition $r^n=1$ is added to obtain a unique solution. When this condition is added, the stationary version of the system can be written in the form
+\[
+B\phi=b.
+\]
+An alternative to this method is to observe that the stationary solution is characterized by $A\rho=0$. Therefore, using Matlab terminology, we can find the stationary solution by first computing 
+\[
+z=\rm{null}(A)
+\]
+and then set
+\[
+\rho=\frac{z}{\Delta x \sum_i z_i}.
+\]
+
+
+%\K{zzz Jeg skj\o nner ikke helt hvordan man skal sette opp dette systemet. Er det meningen at man skal se det?}
+%\A{I have rewritten a bit to explain matters, but no - you will not understand the details - but hopefully you get the idea
+%of why an extra equation is added and how to derive the detailed equations on your own.}
+
+\subsection{Comparison with the analytical solution: The stationary solution}
+
+The numerical and analytical solutions are compared in Figure \ref{1D:analytical}. In the numerical
+scheme, we use $\Delta x = 0.909$ $\mu$M and we observe that the analytical and numerical solutions are almost indistinguishable. In Table \ref{tab:conv}, 
+we show the error as the mesh is refined. In the table, we measure only the errors of inner nodes to avoid evaluating 
+the analytical solution at singular points. We define $[c_0+\delta x,c_+-\delta x]$ as the inner interval, where $\delta x$ is the mesh parameter $\Delta x$ used in the coarsest simulation in the convergence study.  The difference between
+the analytical solution $\rho$ and 
+numerical solution $\hat{\rho}$ is measured by
+\begin{equation}
+ \| \hat{\rho}-\rho\|= |\hat{\rho}_o-\rho_o|/|\rho_o|+ |\hat{\rho}_c-\rho_c|/|\rho_c| \label{norm}
+\end{equation}
+where $|x| = \sqrt{\sum_{i} x_i^2}$ and $i$ runs over the nodes in the inner interval.
+
+FIGURE: [fig/1D_analytical.pdf, width=500 frac=0.8] Comparison of the numerical and analytical solutions of the steady state 
+problem (\ref{steadystate1}) and (\ref{steadystate2}). Numerical solutions are marked with $\times$. label{1D:analytical}\input{1D/convergence_table}
+
+
+\section{Increasing the reaction rate from open to closed}
+\label{increasingkoc}
+
+In Figure \ref{1D/openclose} (upper panel), we increase the reaction rate $k_{oc}$ from one to three. This means that the channel is much more prone to be closed and we see that this changes the probability density function $\rho_o$ considerably. For completeness, we also plot the closed probability density functions (lower panel) and observe that, when $k_{oc}$ is increased, there is a high probability of the channel being closed and the concentration being quite low. All the other parameters used in the model are as specified on page \pageref{tab:1Dsode}.
+
+\begin{figure}[p]\centering
+\vbox{
+\includegraphics[width=0.9\linewidth]{1D/open.pdf}
+\includegraphics[width=0.9\linewidth]{1D/close.pdf}
+}
+\caption{Upper panel: Comparison of the open probability density function for the cases $k_{oc}=1$ $\rm{ms^{-1}}$ and $k_{oc}=3$ $\rm{ms^{-1}}$.
+ When  $k_{oc}$ is increased, the open probability is significantly reduced for high concentrations.
+ Lower panel:   Comparison of the closed probability density function for the cases $k_{oc}=1$ $\rm{ms^{-1}}$ and $k_{oc}=3$ $\rm{ms^{-1}}$.
+ When  $k_{oc}$ is increased, the closed probability is significantly increased for low concentrations.
+    \label{1D/openclose}}
+\end{figure}
+
+
+\section{Advection revisited}
+
+In the derivation of system (ref{pdfsystem})
+above governing the probability density functions of the states of the Markov
+model, we found it useful to consider a case representing the pure advection of probability density.
+ Let us now see that we can find the same solution using system $\left(
+\ref{pdfsystem}\right) $, that is, 
+
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o},\label{adv400}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c},\nonumber
+\end{align}
+where, as usual,
+\begin{align}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\label{adv401}\\
+a_{c} &  =v_{d}(c_{0}-x);\nonumber
+\end{align}
+see page \pageref{system_def_99}. Let us assume that $\rho_{c}(x,0)=0$ and
+that
+ \begin{equation} 
+ \rho_o (x,0)=1/h \text{ for } x\in \tilde{\Omega} = [\tilde{c}-h/2,\tilde{c}+h/2 ] \label{adv_init_open}
+ \end{equation}
+and $\rho_o=0$ for values of $x$ outside the interval $\tilde{\Omega}$; 
+for other notation see page \pageref{advectprobability}.  
+Furthermore, we assume that $k_{oc}=0$ ms$^{-1}$ (if the channel is open, it
+remains open) and $k_{co}=1$ ms$^{-1}$. Then, the solution of system  $\left(
+\ref{adv400}\right)  $ with the given initial conditions is given
+by\footnote{To see that $\left(  \rho_{o},\rho_{c}\right)  $ given by $\left(
+\ref{adv402}\right)  $ solves system (ref{adv400}) it
+is sufficient to insert $\left(  \rho_{o},\rho_{c}\right)  $ into the
+system to verify that it is a solution. }
+\begin{equation}
+\left(  \rho_{o},\rho_{c}\right)  =\left(  r,0\right)  \label{adv402}
+\end{equation}
+where $r$ solves the pure advection equation
+\begin{equation}
+r_{t}+\left(  ar\right)  _{x}=0\label{adv403}
+\end{equation}
+with $a(x)=a_{o}(x)$ and the initial condition $r(x,0)=\rho_{o}(x,0).$ 
+
+\bigskip 
+In Figure \ref{1D/compare_open} we show the solution $\rho_{o}$ of this problem in
+the left panel and in the right panel we repeat the solution given in Figure
+\ref{1D:advec}, where the pure advection case was studied by solving a series of ordinary
+differential equations; see page \pageref{1D:advec}. 
+
+%\begin{figure}[h]\centering
+%\hbox{
+%\includegraphics[width=0.45\linewidth]{1D/advec_open.pdf}
+%\includegraphics[width=0.55\linewidth]{1D/advec.pdf}
+%}
+%\caption{Left panel: Solution of the system (\ref{adv400})  using  $k_{oc}=0$  and $k_{co}=1$, and the initial condition (\ref{adv_init_open}) computed by solving (\ref{adv403})  using the mesh parameters xxxGlenn. Right panel: Ten solutions of (\ref{adv_ode_open}) given in Figure \ref{1D:advec} above. \label{1D/compare_open}}
+%\end{figure}
+
+FIGURE: [fig/1D_advec_open2.pdf, width=500 frac=0.8] Left panel: Solution of system (\ref{adv400})  using  $k_{oc}=0$ ms$^{-1}$  and $k_{co}=1$ ms$^{-1}$ and the initial condition (\ref{adv_init_open}) computed by solving (\ref{adv403})  using the mesh parameters $\Delta x = 0.114$ $\mu$M and $\Delta t = 0.0114$ $\mu$s. Right panel: Ten solutions of (\ref{adv_ode_open}) given in Figure \ref{1D:advec} above. \label{1D/compare_open} label{1D:advec_open2}For completeness, we also consider pure advection in the case where 
+the channel is always closed. In this case we put $k_{co}=0$ ms$^{-1}$ and $k_{oc}=1$ ms$^{-1}$
+and we use the initial conditions given by (\ref{closed_advec}). In Figure 
+\ref{1D/compare_closed} we show
+(left panel) the solution $\rho_{c}$ of this problem computed by solving the
+pure advection problem
+\begin{equation}
+r_{t}+\left(  ar\right)  _{x}=0
+\end{equation}
+with $a(x)=a_{c}(x)$ and $r(x,0)=\rho_{c}(x,0).$ We also show (right
+panel) the solution of the pure advection problem computed by solving a series
+of ordinary differential equations, as explained on page \pageref{closed_advec}.
+
+%\begin{figure}[h]\centering
+%\hbox{
+%\includegraphics[width=0.45\linewidth]{1D/advec_closed.pdf}
+%\includegraphics[width=0.55\linewidth]{1D/advec_c.pdf}
+%}
+%\caption{Left panel: Solution of the system (\ref{adv400})  using  $k_{co}=0$  and $k_{oc}=1$, and the initialcondition (\ref{closed_advec}) computed by solving (\ref{adv403})  using the mesh parameters xxxGlenn. Right panel: Ten solutions of (\ref{adv_ode_closed}) given in Figure \ref{1D:advec_c} above. \label{1D/compare_closed}}
+%\end{figure}
+
+
+FIGURE: [fig/1D_advec_close2.pdf, width=500 frac=0.8] Left panel: Solution of system (\ref{adv400})  using  $k_{co}=0$ ms$^{-1}$  and $k_{oc}=1$ ms$^{-1}$ and the initial condition (\ref{closed_advec}) computed by solving (\ref{adv403})  using the mesh parameters $\Delta x = 0.114$ $\mu$M and $\Delta t = 0.011$4 $\mu$s. Right panel: Ten solutions of (\ref{adv_ode_closed}) given in Figure \ref{1D:advec_c} above. \label{1D/compare_closed} label{1D:advec_close2}
+\section[Appendix]{Appendix: Solving the system of partial differential
+equations \label{appendix_hyp}}
+
+In this chapter, we derived the system
+
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o},\label{pdf400}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c},\nonumber
+\end{align}
+where
+\begin{align}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\label{pdf401}\\
+a_{c} &  =v_{d}(c_{0}-x);\nonumber
+\end{align}
+see page \pageref{system_def_99}. We also briefly sketched a numerical method for solving
+it; see (\ref{eq:scheme}). The numerical solution of systems of this form is used repeatedly in these notes, so solution methods deserve a little more
+attention. In this appendix we will present one way of solving the system; by consulting literature in numerical methods for solving PDEs, the reader will find a huge number of alternatives. The numerical solution of systems of this form is an active field of research and we will by no means argue that the method we present here is any better than other methods.  Our focus is simplicity.
+
+\subsection{Operator splitting}
+
+By breaking this system down into smaller parts, we will see that it
+is actually quite straightforward to solve numerically. Let us start by
+writing the system in the form
+\begin{equation}
+\rho_{t}+(A\rho)_{x}=K\rho \label{pdf800}
+\end{equation}
+where
+\begin{equation}
+\rho=\left(
+\begin{array}
+[c]{c}
+\rho_{o}\\
+\rho_{c}
+\end{array}
+\right)  ,\text{ }A=\left(
+\begin{array}
+[c]{cc}
+a_{o} & 0\\
+0 & a_{c}
+\end{array}
+\right)  ,\text{ and }K=\left(
+\begin{array}
+[c]{cc}
+-k_{oc} & k_{co}\\
+k_{oc} & -k_{co}
+\end{array}
+\right)  .
+\end{equation}
+Then one way of solving this system is to introduce operator splitting. Using
+first-order operator splitting, we can solve the system (\ref{pdf800}) in two steps.
+Assume that the solution is given by $\rho^{n}$ at time $t_{n}=n\Delta t.$
+Then the first step is to solve the system
+\begin{equation}
+\rho_{t}+(A\rho)_{x}=0\label{pde_os}
+\end{equation}
+from $t=t_{n}$ to $t=t_{n}+\Delta t$ using $\rho(t_{n})=\rho^{n}$ as the
+initial condition. Next we define the initial condition $u(t_{n})=\rho
+(t_{n+1})$ (which we just computed) and then solve the system of ordinary
+differential equations given by
+\begin{equation}
+u_{t}=Ku\label{ode_os}
+\end{equation}
+from $t=t_{n}$ to $t=t_{n}+\Delta t$.
+Finally, we define
+\begin{equation}
+\rho_{n+1}=u(t_{n+1})
+\end{equation}
+and thereby we have an approximate solution at time $t=t_{n+1}$ and the 
+procedure can be repeated. 
+
+\bigskip 
+Now the problem of solving system (\ref{pdf400}) is reduced to solving a
+linear hyperbolic problem of the form (\ref{pde_os}) and a linear system of ordinary
+differential equations of the form (\ref{ode_os}). Methods for solving the latter can be
+found in any introductory text in numerical methods for PDEs. The explicit and implicit Euler methods are particularly popular
+because of their simplicity (see, e.g., \cite{Tveito2010}). In our computations, we use either
+the explicit or the implicit Euler method or we use the ODE15s method provided by Matlab (www.mathworks.com). 
+
+\subsection{The hyperbolic part}
+Systems of hyperbolic equations can
+in general be hard to solve, but the present system takes on a particularly
+simple form. We observe that the two equations in $\left( \ref{pde_os}
+\right)  $ simply decouple and take the form
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =0,\label{os_600}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =0;\nonumber
+\end{align}
+thus it is sufficient to discuss how to solve a scalar equation of the form
+\begin{equation}
+u_{t}+\left(  au\right)  _{x}=0.\label{os_601}
+\end{equation}
+This problem is further simplified by the fact that the function $a$ has a
+uniform sign. This is obviously true for $a=a_{c}=v_{d}(c_{0}-x)$ since
+$x\in\left(  c_{0},c_{+}\right)$, where we recall that
+\begin{equation}
+c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}
+\end{equation}
+and therefore $a_{c}\leq0$ for all relevant values of $x.$ Similarly,
+\begin{equation}
+a=a_{o}=v_{r}(c_{1}-x)+v_{d}(c_{0}-x)=\left(  v_{r}+v_{d}\right)  \left(
+c_{+}-x\right)
+\end{equation}
+and therefore $a_{o}\geq0$ for all relevant values of $x.$
+
+\bigskip 
+We mentioned above that a scalar equation of the form
+\begin{equation}
+u_{t}+\left(  au\right)  _{x}=0
+\end{equation}
+can be solved using the scheme 
+\begin{equation}
+u_{i}^{n+1}=u_{i}^{n}-\frac{\Delta t}{\Delta x}\left(  \left(  au\right)
+_{i+1/2}^{n}-\left(  au\right)  _{i-1/2}^{n}\right)  ,\label{eq:scheme_os}
+\end{equation}
+where
+\begin{equation}
+\left(  au\right)  _{i+1/2}^{n}=\max(a_{i+1/2},0)u_{i}^{n}+\min(a_{i+1/2}
+,0)u_{i+1}^{n} \label{eq:flux_os}
+\end{equation}
+and $a_{i+1/2}=a(x_{i+1/2})$;
+see (ref{eq:scheme}) on page \pageref{npdf}. For the probability
+density function of the open state $\rho_{o}$ with $a=a_{o}\geq0$, we obtain
+\begin{equation}
+\left(  a_{o}\rho_{o}\right)  _{i+1/2}^{n}=a_{o,i+1/2}\rho_{o,i}^{n}
+\end{equation}
+and for the probability density function of the closed state $\rho_{c}$ with
+$a=a_{c}\leq0$, we obtain
+\begin{equation}
+\left(  a_{c}\rho_{c}\right)  _{i+1/2}^{n}=a_{c,i+1/2}\rho_{c,i+1}^{n}.
+\end{equation}
+The numerical schemes of the hyperbolic part given by (\ref{pde_os}) therefore read
+\begin{equation}
+\rho_{o,i}^{n+1}=\rho_{o,i}^{n}-\frac{\Delta t}{\Delta x}\left(
+a_{o,i+1/2}\rho_{o,i}^{n}-a_{o,i-1/2}\rho_{o,i-1}^{n}\right)  
+\end{equation}
+and
+\begin{equation}
+\rho_{c,i}^{n+1}=\rho_{c,i}^{n}-\frac{\Delta t}{\Delta x}\left(
+a_{c,i+1/2}\rho_{c,i+1}^{n}-a_{c,i-1/2}\rho_{c,i}^{n}\right)  .
+\end{equation}
+
+\subsection{The Courant--Friedrichs--Lewy condition}
+For hyperbolic problems of the form 
+\begin{equation}
+u_{t}+\left(  au\right)  _{x}=0
+\end{equation}
+it is well known that a certain condition must be imposed on the time step in order to avoid spurious oscillations. The condition states that 
+\begin{equation}
+\frac{\Delta t}{\Delta x} \max_x \vert a(x)\vert \le 1; \label{CFL}
+\end{equation}
+see LeVeque \cite{LeVeque2002} for a derivation of the Courant--Friedrichs--Lewy condition. Note that in our case the condition\begin{equation}
+\Delta t\le \frac{\Delta x}{(v_r+v_d)(c_+ -c_0)} \label{CFL2}
+\end{equation}
+covers both the equations of the decoupled system (\ref{os_600}). This is a stability condition for the hyperbolic part of the problem. If we solve the ordinary differential equation part (\ref{ode_os}) using an implicit scheme, that part is unconditionally stable. Nevertheless, the ordinary differential equation part usually requires smaller time steps than the hyperbolic part in order to obtain sufficient accuracy. 
+
+%xxxGlennxxx Sjekk at betingelsen (\ref{CFL2}) holder i de beregningene vi har gjort.
+
+
+
+\section{Notes}
+\label{notes_Ca_1D}
+
+\begin{enumerate}
+\item  Figure \ref{cicr_1D} is taken from Winslow et al. \cite{winslow2006}. The figure will be used many times in this text as we gradually consider more complex models of CICR. A detailed description of the CICR mechanism and associated models is given by Winslow, Greenstein, Tankskanen, and Chen in  \cite{winslow2006} and \cite{winslow2011}.
+\item A review of possible pathological changes arising in the vicinity of the dyad is given by Louch et al. \cite{Louch2010} and calcium signaling in the developing  cardiomyocyte is reviewed by Louch et al. \cite{Louch2015}. Cardiac calcium signaling is reviewed by  Bers \cite{Bers2008}.
+\item The goal of the calcium dynamics of a cardiac cell is to enable the well coordinated contraction of  cardiac muscle. Cardiac excitation contraction is reviewed by Bers \cite{Bers2001,Bers2002N}.
+\item A detailed model of a calcium release unit is presented by Hake et al. \cite{Hake2012} and Chai et al. \cite{Chai2013} used the largest computer in the world (in 2013) to simulate the calcium dynamics of a single sarcomere at the nanometer scale. Simulations of the calcium dynamics of a whole cardiac cell are presented by Nivala et al. \cite{Nivala2012} and Li et al. \cite{Li2009,Li2010}. The dynamics was analyzed in \cite{Tveito2012} using a model developed by Swietach et al. \cite{Swietach2008}.
+\item The derivation in Section \ref{sec:pdf} of the system of deterministic differential equations based on the stochastic release equations is motivated by the derivation of Nykamp and Tranchina \cite{Nykamp2000}.
+\item The probability density function approach used to model calcium concentrations is taken from Huertas and Smith \cite{Huertas2007}.
+\item As mentioned in the beginning of this chapter, the model illustrated in Figure \ref{geom1D} relies on a series of simplifying assumptions. One additional simplification underlying the model given in (\ref{ode1}) is that we assume that there is just one channel. In reality, the RyRs come in clusters of 10--20 channels, but here we assume that the effect of these channels can be added together in one big channel taking on the states of the Markov model in question. This is a major simplification that makes it possible to deal with the problem. The case of many interacting channels is dealt with by  Bressloff \cite{Bressloff2014} (page 112) for the case of a Markov model consisting of only two states (closed and open). 
+\item For readers who need to refresh basic notions of differential equations, we recommend a look at the books by Logan \cite{Logan2014}, Strauss \cite{Strauss2008} or \cite{Tveito2005,Tveito2010}. As mentioned several times above, we recommend LeVeque \cite{LeVeque2002} for an introduction to the  numerical solution of hyperbolic problems.
+\item Systems of PDEs written in the form (\ref{pdfsystem}) appear in many different applications; see Bressloff \cite{Bressloff2014}, where other methods of analysis are also presented.
+\item An introduction to operator splitting and an explanation of why it works are given by, for example,  LeVeque \cite{LeVeque2002}. Operator splitting for the monodomain equation of electrophysiology  was used by Qu and Garfinkel \cite{Qu1999} and the accuracy was analyzed by Schroll et al. \cite{Schroll2007}. Application to the bidomain model was presented by Keener and Bogar \cite{Keener1998} and by  Sundnes et al. \cite{Sundnes2005}.
+\end{enumerate}
+
+
+\chapter{Models of open and closed state blockers}
+
+So far we have studied a one-dimensional model of calcium-induced calcium release. The analysis started with a stochastic differential equation modeling release from internal storage to the dyad. We found that this model could be analyzed using Monte Carlo simulations or a system of deterministic partial differential equations giving the probability density functions of the open and the closed states. Furthermore, we found analytical solutions of the stationary solutions of the probability density system. 
+
+The aim of the present chapter is to introduce mathematical models of a drug and then show how the parameters defining the drug can be computed so that it works as well as possible. 
+For simplicity, we will focus on closed to open mutations (CO-mutations; see page \pageref{com}), but it will become clear how to handle open to closed mutations (OC-mutations) in later chapters.
+
+
+Let us start by recalling that the Markov model governing the states of the channel is given by
+\begin{equation}
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O. \label{Markov22}
+\end{equation}
+When a CO-mutation is present, we introduce the mutation severity index $\mu$ and replace the reaction rate $k_{co}$ by $\mu k_{co}$,
+\begin{equation}
+C\underset{\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O. \label{Markov23}
+\end{equation}
+Obviously, $\mu=1$ represents the wild type case and the size of $\mu >1$ gives the strength of the mutation. By recalling what the Markov model means, we see that the mutation increases the probability of going from the closed to the open state and thus the open state probability will increase.
+
+
+In this chapter, we will study theoretical open and closed state blockers. We recall from Chapter \ref{Background} that open and closed state blockers can be presented in the forms 
+\begin{equation}
+C\underset{ \mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O\underset{k_{ob}
+}{\overset{k_{bo}}{\leftrightarrows}}B \label{open_block2}
+\end{equation}
+and
+\begin{equation}
+B\underset{k_{bc}}{\overset{k_{cb}}{\leftrightarrows}}C\underset{
+\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O, \label{closed_block2}
+\end{equation}
+respectively.  The reasoning behind this way of modeling the effect of a drug was discussed on page \pageref{theoreticaldrugs} above; see in particular Figure \ref{Introduction_L:drg_starmer}. Basically, we assume that the drug introduces a new conformational state of the channel protein that can be attained via the open state (for open state blockers) or via the closed state (for closed state blockers). The blocked states are always assumed to be non-conducting.
+
+The mathematical problem of finding a suitable theoretical drug is now to find the parameters $ k_{bc}$ and $k_{cb}$ for the closed state blockers and $ k_{bo}$ and $k_{ob}$ for the open state blockers such that the effect of the mutation is reduced as much as possible. We will see that this problem is much easier using the probability density approach than using Monte Carlo simulations. 
+
+To compute optimal drugs for the CO-mutation, we will first consider the equilibrium states of the reactions. For closed state blockers, we can use the equilibrium considerations to reduce the number of free parameters from two to one. In principle, this can also be done for open state blockers, but some averaging is needed in the process and optimality is not obtained. For the closed state blocker, we can use the steady state system derived above to completely characterize both parameters of the drug to obtain optimality and computations will show that the resulting drug is theoretically extremely good and asymptotically perfect in the sense that it completely reverses the effect of the mutation. We are also able to derive a good open state blocker, but the method is less satisfactory and the results are not as good as for the closed state blocker.
+
+%It should be noted that we want these parameters to be independent of the calcium concentration of the dyad. This assumption is based on the reflection that it probably very hard to derive a drug whose action varies %in a prescribed manner depending on the calcium concentration. We therefore require the parameters describing the theoretical drugs to be independent of the calcium concentration. And this is probably as close as %it gets to a practical consideration in these notes. 
+
+\section[Closed state blockers for CO-mutations]{Markov models of closed state blockers for CO-mutations}
+
+
+We start the derivation of theoretical drugs by considering closed state blockers.
+The reaction scheme of a closed state blocker takes the form
+\begin{equation}
+B\underset{k_{bc}}{\overset{k_{cb}}{\leftrightarrows}}C\underset{\mu
+k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O, \label{closed_drg}
+\end{equation}
+where the reaction rates of the drug given by $k_{cb}$ and $k_{bc}$ must be determined
+so that the mutated cell behaves as similarly to the wild type cell as possible. We regard these parameters as
+free and we seek to compute them to obtain optimal efficiency of the theoretical drug. Allow us also to briefly repeat that this is basically our definition of a theoretical drug as discussed on page \pageref{theoreticaldrugs}.
+
+\subsection{Equilibrium probabilities for wild type}
+\label{eq_pr_wt}
+Consider the Markov model given by
+\[
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O
+\]
+and let $o$ denote the probability of being in the open state and $c$ the probability of being
+in the closed state. Suppose the channel just flickers between open and closed and nothing else happens. Then
+the equilibrium probabilities are characterized by
+\begin{equation}
+k_{co}c=k_{oc}o. \label{eq_pr_wt_100}
+\end{equation}
+This means that the channel keeps on flickering in equilibrium and the probabilities of the open and closed states satisfy the relation (\ref{eq_pr_wt_100}). From this relation it follows that
+\[
+c=\frac{k_{oc}}{k_{co}}o
+\]
+and then, since $o+c=1,$ we obtain
+\[
+o=\left(  1+\frac{k_{oc}}{k_{co}}\right)  ^{-1}.
+\]
+
+\subsection{Equilibrium probabilities for the mutant case}
+
+
+In the CO-mutation case, we assume that the rate from $C$ to $O$ is increased and
+we define
+\begin{equation}
+k_{co,\mu}=\mu k_{co}, \label{kcomu}
+\end{equation}
+where $\mu\geqslant1$ and $\mu=1$ denotes wild type. The equilibrium
+open probability of the mutant is given by
+\[
+o_\mu=\left(  1+\frac{k_{oc}}{\mu k_{co}}\right)^{-1},
+\]
+which clearly increases with increasing values of $\mu$.
+
+\subsection{Equilibrium probabilities for mutants with a closed state drug}
+\label{sec:eq-closed}
+The equilibrium probabilities of reaction (\ref{closed_drg}) are characterized by
+\begin{align*}
+\mu k_{co}c &  =k_{oc}o,\\
+k_{bc}b &  =k_{cb}c;
+\end{align*}
+so
+\begin{align*}
+c &  =\frac{k_{oc}}{\mu k_{co}}o,\\
+b &  =\frac{k_{cb}}{k_{bc}}c=\frac{k_{cb}}{k_{bc}}\frac{k_{oc}}{\mu k_{co}}o,
+\end{align*}
+and, since $o+c+b=1,$ we obtain
+\[
+\left(  1+\frac{k_{oc}}{\mu k_{co}}+\frac{k_{cb}}{k_{bc}}\frac{k_{oc}}{\mu
+k_{co}}\right)  o=1.
+\]
+So
+\[
+o=\left(  1+\frac{k_{oc}}{\mu k_{co}}\left(  1+\frac{k_{cb}}{k_{bc}}\right)
+\right)  ^{-1}.
+\]
+Define
+\begin{equation}
+\delta_{c}=\frac{k_{cb}}{k_{bc}} \label{d_c}
+\end{equation}
+and note that, in equilibrium, the wild type open probability is given by
+\[
+o=\left(  1+\frac{k_{oc}}{k_{co}}\right)  ^{-1}
+\]
+and the drugged mutant open probability is given by
+\[
+o_{\mu,\delta_c}=\left(  1+\frac{k_{oc}}{k_{co}} \frac{1+\delta_{c}}{\mu}\right)^{-1}.
+\]
+Now, we want to choose the drug characterization $\delta_{c}$ such that
+$o_{\mu,\delta_c}\approx o$ and this can clearly be achieved by requiring that
+\[
+\frac{1+\delta_{c}}{\mu}\approx1
+\]
+or
+\[
+\delta_{c}\approx\mu-1.
+\]
+So we obtain the characterization
+\begin{equation}
+k_{cb}=(\mu-1)k_{bc} \label{optimal_closed_charac}.
+\end{equation}
+This means that, for the closed state blocker, we reduced the number of parameters characterizing the blocker
+from two to one. We will use the probability density approach to determine the remaining degree of freedom.
+
+
+\section{Probability density functions in the presence of a closed state blocker}
+
+The probability density approach to the stochastic model in the presence of a closed state drug is
+\begin{align*}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-k_{oc}\rho_{o},\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\left(  \mu k_{co}+k_{cb}\right)
+\rho_{c}+k_{bc}\rho_{b},\\
+\frac{\partial\rho_{b}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{b}\right)   &  =k_{cb}\rho_{c}-k_{bc}\rho_{b},
+\end{align*}
+where 
+\begin{align*}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\\
+a_{c} &  =v_{d}(c_{0}-x).
+\end{align*}
+From (\ref{optimal_closed_charac}), the parameters of the drug are related by
+\begin{equation}
+k_{cb}=\left(  \mu-1\right)  k_{bc};  \label{kcb}
+\end{equation}
+so the system is
+\begin{align*}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-k_{oc}\rho_{o},\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\left(  \mu k_{co}+\left(
+\mu-1\right)  k_{bc}\right)  \rho_{c}+k_{bc}\rho_{b},\\
+\frac{\partial\rho_{b}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{b}\right)   &  =\left(  \mu-1\right)  k_{bc}\rho_{c}-k_{bc}\rho
+_{b}.
+\end{align*}
+In the stationary case, we obtain the system
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =\mu k_{co}
+\rho_{c}-k_{oc}\rho_{o}, \label{st1} \\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)   &  =k_{oc}\rho
+_{o}-\left(  \mu k_{co}+\left(  \mu-1\right)  k_{bc}\right)  \rho_{c}
++k_{bc}\rho_{b},  \label{st2}\\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{b}\right)   &  =\left(
+\mu-1\right)  k_{bc}\rho_{c}-k_{bc}\rho_{b}  \label{st3}.
+\end{align}
+In this system, the mutation severity is given by $\mu$ and the drug is characterized by a single parameter given by $k_{bc}$. For a given value of $\mu$ our aim is now to compute the value of $k_{bc}$ such that the probability density function of the open state given by this system is as similar as possible to the probability density function of the open state in the case of $\mu=1$, that is, the wild type solution when no drug is applied.
+
+
+
+\subsection{Numerical simulations with the theoretical closed state blocker}
+
+|-----------c-----------------------------------------------------c----------------------|
+|$v_d $                                            | 1 $\rm{ms^{-1}}$                    |
+|$v_r $                                            | 0.1 $\rm{ms^{-1}}$                  |
+|$c_0 $                                            | 0.1 $\rm{\mu M}$                    |
+|$c_1 $                                            | 1000 $\rm{\mu M}$                   |
+|$k_{co}(x) $                                      | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
+|$k_{oc} $                                         | 1 $\rm{ms^{-1}}$                    |
+|----------------------------------------------------------------------------------------|
+Parameter values for the undrugged case.\label{tab:1Drepeat}
+
+We consider a mutation characterized by $\mu=3$ and we apply closed state blockers (see reaction scheme (\ref{closed_drg})) with
+parameters  satisfying the relation
+(\ref{kcb}). In Figure \ref{1D/drug_mc}, we show the results of these simulations using the Monte Carlo approach: The lower panel of the figure is the same as the upper panel, except that we focus on concentrations ranging from 80 $\mu$M  to 91 $\mu$M . We observe significant differences between the wild type solution and the solution representing the mutation. Furthermore, we observe that the drug works quite well.  Similar results are given in Figure \ref{1D/drug_pdf}, where the computations are based on the probability density approach: Here the lower panel focuses on very high concentrations ranging from 89 $\mu$M  to 91 $\mu$M. We also see that the closed state drug improves as the value of $k_{bc}$ increases. In fact, the result seems to indicate that the drug is asymptotically perfect in the sense that the solution converges toward the wild type solution when $k_{bc}\rightarrow \infty$.
+
+
+\begin{figure}[p]\centering
+\vbox{
+\includegraphics[width=0.9\linewidth]{1D/drug_mc.pdf}
+\includegraphics[width=0.9\linewidth]{1D/drug_mc_zoom.pdf}
+}
+\caption{Monte Carlo simulations using the theoretical closed state blocker given by the reaction scheme (\ref{closed_drg}), where the reaction rates are related by (\ref{kcb}) and the mutation severity index is given by $\mu=3$. The lower panel focuses on higher levels of concentrations. \label{1D/drug_mc}}
+\end{figure}
+
+
+\begin{figure}[p]\centering
+\vbox{
+\includegraphics[width=0.9\linewidth]{1D/drug_pdf.pdf}
+\includegraphics[width=0.9\linewidth]{1D/drug_pdf_zoom.pdf}
+}
+\caption{Numerical solutions of the steady state probability density functions defined by the system (\ref{st1})--(\ref{st3}), 
+ where the reaction rates are related by (\ref{kcb}) and the mutation severity index is given by $\mu=3$. The lower panel focuses on higher levels of concentrations. Note that the concentration axis of this figure is different from that of the lower panel of Figure \ref{1D/drug_mc}. \label{1D/drug_pdf}}
+\end{figure}
+
+\section{Asymptotic optimality for closed state blockers in the stationary case}
+\label{asymptotic}
+
+In the simulations above, we observed that the closed state blocker worked well and that the drug became more effective as the value of $k_{bc}$ increased.  Our aim is now to indicate that, when $k_{bc}\rightarrow \infty$, the drug will completely repair the mutation. 
+It is worth mentioning that the possibility of making a drug with $k_{bc}=\infty$ is quite unlikely, but the asymptotic result is still of theoretical interest.
+
+Consider the steady state system
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =\mu k_{co}
+\rho_{c}-k_{oc}\rho_{o}, \label{101}\\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)   &  =k_{oc}\rho
+_{o}-\left(  \mu k_{co}+\left(  \mu-1\right)  k_{bc}\right)  \rho_{c}
++k_{bc}\rho_{b}, \label{102}\\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{b}\right)   &  =\left(
+\mu-1\right)  k_{bc}\rho_{c}-k_{bc}\rho_{b}. \label{103}
+\end{align}
+By adding all the equations, we obtain
+%\begin{align}
+%\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =\mu k_{co}
+%\rho_{c}-k_{oc}\rho_{o},\\
+%\frac{\partial}{\partial x}\left(  a_{c}\left(  \rho_{c}+\rho_{b}\right)
+%\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\rho_{c}.%\\
+%\frac{\partial}{\partial x}\left(  a_{c}\rho_{b}\right)   &  =\left(
+%\mu-1\right)  k_{bc}\rho_{c}-k_{bc}\rho_{b}.
+%\end{align}
+%And then, by adding the two first equations here, we get
+\begin{equation}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}+a_{c}\left(  \rho_{c}
++\rho_{b}\right)  \right)  =0.
+\end{equation}
+From the boundary conditions,  we obtain
+\begin{equation}
+a_{o}\rho_{o}+a_{c}\left(  \rho_{c}+\rho_{b}\right)  =0
+\end{equation}
+and therefore
+\begin{equation}
+\rho_{c}=\frac{-1}{a_{c}}\left(  a_{o}\rho_{o}+a_{c}\rho_{b}\right),
+\end{equation}
+where we recall that  $a_{c}<0$ for $x\in\left(
+c_{0},c_{+}\right)$. 
+%\K{zzz Hvorfor er disse nyttige?} \A{to avoid division by zero}
+Now, the system (\ref{101})--(\ref{103}) can be rewritten in the form
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =-\mu k_{co}
+\rho_{b}-\left(  \frac{\mu k_{co}a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o},\\
+\frac{1}{k_{bc}}\frac{\partial}{\partial x}\left(  a_{c}\rho_{b}\right)   &
+=-\left(  \mu-1\right)  \frac{a_{o}}{a_{c}}\rho_{o}-\mu\rho_{b}.
+\end{align}
+We are interested in solutions of this system as $k_{bc}$ becomes very large
+and we therefore note that, in the limit as $k_{bc}\rightarrow\infty,$ the
+second equation yields
+\begin{equation}
+\rho_{b}=-\frac{\left(  \mu-1\right)  }{\mu}\frac{a_{o}}{a_{c}}\rho_{o}
+\end{equation}
+and therefore the first equation becomes
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =-\mu k_{co}
+\rho_{b}-\left(  \frac{\mu k_{co}a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o}\\
+&  =k_{co}\left(  \mu-1\right)  \frac{a_{o}}{a_{c}}\rho_{o}-\left(  \frac{\mu
+k_{co}a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o}\\
+&  =-\left(  k_{co}\frac{a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o}.
+\end{align}
+So
+\begin{equation}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)  =-\left(  k_{co}
+\frac{a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o}. \label{drg_an}
+\end{equation}
+Recall that the wild type model is
+ \begin{equation}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)  =-\left(  
+k_{co}\frac{a_{o}}{a_{c}}+k_{oc}\right)  \rho_{o} \label{wt}
+\end{equation}
+(see (\ref{reduced})). By comparing (\ref{drg_an}) and (\ref{wt}), we see that when the drug is chosen to
+be of the form
+\[
+k_{cb}=\left(  \mu-1\right)  k_{bc}
+\]
+and when we let $k_{bc}\rightarrow\infty,$ the drug {\it completely} repairs the
+probability density functions of the mutated cell.
+
+
+\section{Markov models for open state blockers}
+
+Next, we want to consider models of open state blockers. The reaction scheme of an open state blocker for the mutant reads
+\[
+C\underset{\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O\underset{k_{ob}
+}{\overset{k_{bo}}{\leftrightarrows}}B.
+\]
+The equilibrium probabilities are now characterized by
+\begin{align*}
+\mu k_{co}c  &  =k_{oc}o,\\
+k_{bo}b  &  =k_{ob}o;
+\end{align*}
+so
+\begin{align*}
+c  &  =\frac{k_{oc}}{\mu k_{co}}o,\\
+b  &  =\frac{k_{ob}}{k_{bo}}o,
+\end{align*}
+and since $o+c+b=1,$ we have
+\[
+\left(  1+\frac{k_{oc}}{\mu k_{co}}+\frac{k_{ob}}{k_{bo}}\right)  o=1.
+\]
+We now define the open state blocker characterization
+\[
+\delta_{o}=\frac{k_{ob}}{k_{bo}}
+\]
+and note that the open probability is given by
+\[
+o_{\mu,\delta_{o}}=\left(  1+\frac{k_{oc}}{\mu k_{co}}+\delta_{o}\right)  ^{-1}.
+\]
+Since the wild type open probability is given by
+\[
+o=\left(  1+\frac{k_{oc}}{k_{co}}\right)  ^{-1},
+\]
+we want to choose the drug such that $o_{\mu,\delta_{o}}\approx o$ and we therefore 
+require
+\[
+\frac{k_{oc}}{\mu k_{co}}+\delta_{o}\approx\frac{k_{oc}}{k_{co}}
+\]
+or
+\begin{equation}
+\delta_{o,\mu}\approx\frac{k_{oc}}{k_{co}}\frac{\mu-1}{\mu},
+\label{open_drg_char}
+\end{equation}
+where we recall that the mutation severity index $\mu\geqslant1.$ Since
+$\mu=1$ is the wild type case, we note that in that case $\delta_{o}=0$ is the
+optimal drug, which makes sense; there is no need to drug the wild type. 
+However, for
+mutant cells, we have $\mu>1$ and the characterization $\left(
+\ref{open_drg_char}\right)  $ of $\delta_{o}$ depends on the
+dyad calcium concentration, $x.$ We will therefore use direct optimization to
+find suitable open state blockers.
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%
+If we aim for a drug that works independent of
+the concentrations, we need to replace this expression by a constant value. As discussed above, the probability
+density functions rapidly reach equilibrium (see Figure \ref{1D/spacetime}) and therefore we can
+concentrate on the steady state solution. Let $\rho_{o,\mu}(x)$ denote
+the steady state open probability density function, defined by (\ref{rho_o}). 
+\K{zzz Uttrykket det refereres til ligger n\r{a} i neste kapittel. Er det greit? Det tilsvarende resultatet er nevnt i forrige kapittel i seksjon \ref{sec:analytical} for $\mu = 1$ og gitte parameterverdier.}
+We use
+this distribution to define the characterization
+\begin{equation}
+\bar{\delta}_{o,\mu}=\frac{\mu-1}{\mu}\frac{1}{\int_{c_{0}}^{c_{+}}\rho_{o,\mu
+}(x)dx}\int_{c_{0}}^{c_{+}}\rho_{o,\mu
+}(x)\frac{k_{oc}(x)}{k_{co}(x)} dx. \label{open_charac}
+\end{equation} 
+\K{zzz Jeg forst\r{a}r ikke hvor dette uttrykket kommer fra.}
+The drug is given by the parameters $k_{ob}$ and $k_{bo}$ and they are now
+related as follows,
+\begin{equation}
+k_{ob}=\bar{\delta}_{o,\mu}k_{bo.} \label{kob}
+\end{equation}
+In the analysis of open state blockers, we will use $k_{bo}$ as the control
+parameter, and we let $k_{ob}$ be given by the relation $\left(
+\ref{kob}\right) .$
+
+%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+
+
+\subsection{Probability density functions in the presence of an open state
+blocker}
+
+The probability density model in the presence of an open state drug is
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-(k_{oc}+k_{ob})\rho_{o}+k_{bo}\rho_{b},\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\rho_{c},\\
+\frac{\partial\rho_{b}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{b}\right)   &  =k_{ob}\rho_{o}-k_{bo}\rho_{b},
+\end{align}
+where we recall that 
+\begin{align*}
+a_{o} &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\\
+a_{c} &  =v_{d}(c_{0}-x).
+\end{align*}
+In the stationary case, we obtain the system
+\begin{align}
+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-(k_{oc}+k_{ob})\rho_{o}+k_{bo}\rho_{b},\\
+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\rho_{c},\\
+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{b}\right)   &  =k_{ob}\rho_{o}-k_{bo}\rho_{b}.
+\end{align}
+\begin{comment}
+%%%%%%%%%%%%
+and in Figure \ref{1D:openblock_pdf} we show numerical solutions of this system using three values
+of the control parameter $k_{bo}$.  For the closed state blocker we observed a monotonic improvement of the drug as the control parameter $k_{bc}$ increased. This is not the case for the open state blocker. The drug has effect for the mutant but not nearly as good effect as we observed for the closed state blocker. In Figure \ref{1D:openblock_pdf_zoom} we show the result for high concentrations using lower values of $k_{bo}$.
+
+FIGURE: [fig/1D_openblock_pdf.pdf, width=500 frac=0.8] Open blocker using the characterization (\ref{kob}). Unlike the closed blocker case, the drug does not improve monotonically with increasing rates. label{1D:openblock_pdf}FIGURE: [fig/1D_openblock_pdf_zoom.pdf, width=500 frac=0.8] Results at high concentration for three different open state blockers. label{1D:openblock_pdf_zoom}We observed that the open state blockers computed based on the relation (\ref{kob}) does not give very good results. Another approach to this problem is to reconsider the system 
+\begin{align}
+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-(k_{oc}+k_{ob})\rho_{o}+k_{bo}\rho_{b},\\
+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\rho_{c},\\
+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{b}\right)   &  =k_{ob}\rho_{o}-k_{bo}\rho_{b},
+\end{align}
+%%%%%%%%%%%
+\end{comment}
+We let both $k_{ob}$ and $k_{bo}$ be free parameters and use the {\it Fminsearch \label{Fminsearch}} function in Matlab to optimize these parameters by minimizing the discrete $l_2$ difference\footnote{The discrete $l_2$ difference between two vectors is given by
+$\norm{u-v}_2=(\sum_i (u_i-v_i)^2)^{1/2}$.} between the wild type and mutant $\rho_o$. 
+%{\bf Glenn: What norm is used in minimization?, write answer in blue}
+%\G{difference between $\rho_o$ WT and drugged, integrated over the whole domain.$y = norm(P.wt(2:end-1)-Po_d(2:end-1))$}
+The resulting parameters are $k_{ob}=0.28$ $\rm{ms^{-1}}$, and $k_{bo}=1.63$ $\rm{ms^{-1}}$
+and the associated numerical results are given in Figure \ref{1D:openblock_pdf_optimized}, marked as {\it opt}.
+ %In the figure we also use the optimal value of $k_{bo}=0.456$ and let $k_{ob}$ be given by (\ref{kob}). The numerical solution is marked "opt. 1D" since only one parameter is optimized. 
+
+\section{Open blocker versus closed blocker}
+In Figure  \ref{1D:best_drug}, we compare the results of the best open state blocker 
+(referred to as {\it opt} in Figure  \ref{1D:openblock_pdf_optimized}) and closed state blocker, using $k_{bc}=1000$ $\rm{ms^{-1}}$ (see Figure
+\ref{1D/drug_pdf}). We clearly see that the closed state blocker is better; in fact, at this resolution of the graphs, it is hard to distinguish the wild type solution from the solution of the mutant case where the closed state blocker is applied.
+
+FIGURE: [fig/1D_openblock_pdf_optimized.pdf, width=500 frac=0.8]  Graphs of the numerical solutions using open state blockers. The open state blockers are based on optimization using the 
+{\it Fminsearch} function in Matlab.
+% The solution based on optimization of the single control parameter $k_{bo}$ is marked "opt 1D" and in this case the other parameter $k_{ob}$ is given by (\ref{kob}). 
+In the simulation marked with {\it opt}, both parameters $k_{ob}$ and $k_{bo}$ are used in the minimization.
+%{\bf xxx Glenn: can you make this figure again and remove the results related to 1D opt? The 1D opt is now removed from the text. Also refer refer to "opt" instead of opt. 2D (see text). }
+ label{1D:openblock_pdf_optimized}% Moved this closer to where it is mentioned in the main text.
+%%\begin{table}  \begin{center}
+%\sidebar[0.4]{l}{
+%\begin{tabular}{|y|y|} \hline
+%$k_{ob} $ & 0.28 $\rm{ms^{-1}}$\\ \hline
+%$k_{bo} $ & 1.63 $\rm{ms^{-1}}$\\ \hline
+%$k_{cb} $ & 200 $\rm{ms^{-1}}$\\ \hline
+%$k_{bc} $ & 1000$\rm{ms^{-1}}$ \\ \hline
+%\end{tabular} %\end{center}
+%\captionof{table}{Parameter values for the drugs used in Figure \ref{1D:best_drug} and in Figure \ref{1D:block_mc} .\label{tab:drug}}
+%\end{table}
+%}
+
+
+
+FIGURE: [fig/1D_best_drug.pdf, width=500 frac=0.8] Comparison of the best open state blocker and closed state blocker using $k_{bc}=1000$ $\rm{ms^{-1}}$ (see Table 
+\ref{tab:drug} for all the parameters of the two drugs). It is hard to distinguish between the wild type solution and the solution of the mutant case where the closed state blocker is applied.   label{1D:best_drug}
+%The statistical properties of the solutions are given in Table \ref{stat_drug}. As $k_{bc}$ increases, we see %that all statistical properties of the solutions are converging towards the wild type numbers.
+
+\section{CO-mutations does not change the mean open time}
+
+To understand why the closed state blocker is much better than the open state blocker for CO-mutations, it is useful to recall that the mean open time of the Markov model
+\begin{equation}
+C\underset{\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O \label{Markov111}
+\end{equation}
+is given by
+\[ \tau_o=\frac{1}{k_{oc}}. \]
+Thus the mean open time is independent of the mutation. If a closed state blocker is introduced as
+\begin{equation}
+B\underset{k_{bc}}{\overset{k_{cb}}{\leftrightarrows}}C\underset{\mu
+k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O, 
+\end{equation}
+we clearly see that the mean open time is still given by
+\[ \tau_o=\frac{1}{k_{oc}}. \]
+On the other hand, for an open state blocker of the form
+\begin{equation}
+C\underset{ \mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O\underset{k_{ob}
+}{\overset{k_{bo}}{\leftrightarrows}}B,
+\end{equation}
+the mean open time is changed and reads
+\[ \tau_o=\frac{1}{k_{oc}+k_{ob}}. \]
+With a closed state blocker used to repair a CO-mutation, the mean open time is kept constant, as it should, but it is changed using an open state blocker. Consequently, it is hard to see how to derive an efficient open state blocker for a CO-mutation.
+
+|-------c---------------c-----------------|
+|$k_{ob} $     | 0.28 $\rm{ms^{-1}}$\\ \hline
+$k_{bo} $ & 1.63 $\rm{ms^{-1}}$\\ \hline
+$k_{cb} $ & 2000 $\rm{ms^{-1}}$\\ \hline
+$k_{bc} $ & 1000 $\rm{ms^{-1}}$ \\ \hline
+%\end{tabular} %\end{center}
+%\captionof{table}
+}{Parameter values for the drugs used in Figure \ref{1D:best_drug}. \label{tab:drug}}
+\clearpage
+
+\section{Notes}
+\label{notesdrugs}
+
+\begin{enumerate}
+\item In this chapter we focused on CO-mutations (see page \pageref{com}) and, for such mutations, closed state blockers are best suited from a theoretical perspective. We will see later that OC-mutations are more easily repaired using open state blockers.
+\item The argument of asymptotic optimality given on page \pageref{asymptotic} is not a rigorous proof. To prove it mathematically, we have to take the boundary layer into consideration. Our derivation assumes smooth solutions but that assumption does not hold at the boundary.
+\item In this section, we used probability density formulations for systems with more than two states. The general  case of many states is presented in Appendix C of  Huertas and Smith \cite{Huertas2007}.
+\item The mean open time will be introduced and analyzed in Chapter \ref{mot_chapter}. In the present chapter we just used very basic properties.
+\item We mentioned above that we used the function \textit{Fminsearch} in Matlab to solve a minimization problem; see page  \pageref{Fminsearch}. The \textit{Fminsearch} function uses the Melder-Nead \cite{Nelder1965} algorithm studied by Lagarias et al. \cite{Lagarias1998}. The method is very powerful and will be used routinely in these notes. 
+\item It is an underlying assumption for Markov models that the states of the model correspond to the conformational states of the channel protein. This should not be interpreted literally; rather, it has proved to be a useful modeling technique. A thorough discussion on the modeling of ion channels using Markov models and the models relation to the states of the protein is provided by Rudy and Silva \cite{Rudy2006}.
+\end{enumerate}
+

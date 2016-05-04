@@ -1,0 +1,165 @@
+
+
+
+
+\documentclass{book}%
+
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}% sets the page style to 'fancy', comment out for normal style
+
+%\fancyhead[LO,LE,RE,RO]{}
+%\fancyhead[LO]{\leftmark}
+%\fancyhead[RE]{\rightmark}
+%\fancyhead[RE]{\leftmark}
+%\fancyhead[LO]{\rightmark}
+%\usepackage{soul}
+
+%\fancyfoot[C]{\thepage\ \ \ {\it \url{\currfiledir\currfilename}}} %put current file in footer
+
+
+
+\usepackage{colortbl}
+\definecolor{Gray}{gray}{0.93}
+\newcolumntype{x}{>{\columncolor{Gray}}l}
+\newcolumntype{y}{>{\columncolor{Gray}}c}
+\newcolumntype{z}{>{\columncolor{Gray}}r}
+
+\usepackage{verbatim}
+\usepackage{capt-of}
+\usepackage{wrapfig}
+\newcommand{\sidebar}[3][0.45]{
+\begin{wrapfigure}{#2}{#1\textwidth}
+\begin{center}
+#3
+\end{center}
+\end{wrapfigure}
+}
+
+\definecolor{boxgray}{gray}{0.94}
+\newcommand{\graytable}[3]{
+  \begin{wrapfigure}{#1}{0.5\textwidth}
+    \vspace*{-0.5\baselineskip}
+    \colorbox{boxgray}{
+      \begin{minipage}{0.45\textwidth}
+        \vspace*{0.25\baselineskip}
+        \centering\begin{tabular}#2 \end{tabular}
+        \captionof{table}{#3}
+      \end{minipage}
+   }
+ \vspace*{-0.5\baselineskip}
+ \end{wrapfigure}
+}
+
+
+\usepackage[usenames]{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{graphicx}%
+\usepackage[sort]{natbib}
+\usepackage{tikz}
+\usepackage{array}
+%\usepackage{url}
+\usepackage{comment}
+\usepackage{hyperref}
+
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+%\newcommand{\G}[1]{{\bf \textcolor{blue}{#1}}}      %Glenn
+%\newcommand{\GTL}[1]{{\textcolor{blue}{GTL: #1}}}      %Glenn
+\newcommand{\GTL}[2][]{\st{#1}{\textcolor{blue}{GTL: #2}}}      %Glenn
+\newcommand{\GTLV}[2][]{#2}      %Glenn
+\newcommand{\KHJ}[1]{{\bf \textcolor{purple}{KHJ: #1}}} %Karoline
+\newcommand{\KHJV}[1]{#1}
+\newcommand{\ATV}[1]{{\bf \textcolor{orange}{#1}}}    %Aslak
+\newcommand{\half}{\frac{1}{2}}
+
+\newcommand{\fig}[3][1.0]{\begin{figure}[hptb]\centering\includegraphics[width=#1\linewidth]{#2}\caption{#3}\label{#2}\end{figure}}
+
+% development version, also shows the filename.
+%\newcommand{\fig}[3][1.0]{\begin{figure}[hptb]\centering\includegraphics[width=#1\linewidth]{#2}\caption{\protect\url{#2} #3}\label{#2}\end{figure}}
+
+%\newcommand{\code}[1]{\href{run:#1}{#1.\ }}
+\newcommand{\code}[1]{Code: \url{#1}.\ }
+
+
+\setcounter{MaxMatrixCols}{30}
+\renewcommand{\cite}[1]{\citep{#1}}
+\providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+%\newcommand{\Ca}[1]{Ca$^{2+}$\ }
+\newcommand{\Ca}{Ca$^{2+}$\ }
+\newcommand{\ca}{Ca$^{2+}$\ }
+%\newcommand{\Na}{Na$^{+}$\ }
+
+
+%\usepackage[inline]{showlabels}
+%\usepackage{showlabels}
+%\usepackage{currfile}
+
+
+\begin{document}
+
+
+\title{Computing characterizations of drugs for ion channels and receptors using Markov models}
+%
+\author{Aslak Tveito$^{1,2}$, Glenn Lines$^{1}$,
+\\{\small{$^{1}$Simula Research Laboratory, Center for Biomedical Computing,
+P.O. Box 134, Lysaker 1325, Norway}}
+\\{\small{ $^{2}$Department of Informatics, University of Oslo, Norway,}}}
+\maketitle
+
+
+
+
+
+\bigskip
+\tableofcontents
+\input{commands}
+%\cite{ChakrapaniS2007a,ChakrapaniS2007b,ChakrapaniS2011,Colquhoun1996,Ionescu2007,Qin1996,Qin1997,Qin2004,Siekmann2011,Siekmann2014}
+\input{Introduction_L/Introduction}
+\input{Ca_1D_L/Ca_release_1D}
+\input{Ca_1D_L/properties}
+\input{Ca_2D_L/Ca_release_2D}
+\input{Generalization_L/Generalization}
+\input{Ca_V_L/Ca_V}
+\input{Ionchannels_L/Ionchannels}
+\input{Sodium_L/Na}
+\input{MOT_mut_L/mot}
+\input{Sodium_L/burst_mode}
+\input{Ap_L/Ap}
+%\input{Potassium_L/blocker}
+%\input{Potassium_L/K}
+
+
+%\bibliographystyle{unsrt}
+\bibliographystyle{plain}
+\bibliography{ln}
+\end{document}

@@ -1,0 +1,860 @@
+\chapter{Two-dimensional calcium release}
+\label{Ca_release_2D}
+
+The essence of calcium-induced calcium release is once more illustrated in Figure \ref{cicr_2D}. This figure is very similar to Figure \ref{cicr_1D} on page \pageref{cicr_1D} except that the box surrounded by a thin red line is now slightly extended. This is meant to illustrate that the model is now extended to account for changes in the calcium concentration of the junctional sarcoplasmic reticulum (JSR) space (see Figure \ref{cicr_2D}); so we now consider a two-dimensional (2D) model where the concentration of the dyad ($\bar{x}=\bar{x}(t)$) and the JSR ($\bar{y}=\bar{y}(t)$) vary, recalling that the bar notation indicates stochastic variables. The concentration of the cytosol and the network sarcoplasmic reticulum (NSR) are still kept constant and we still ignore L-type calcium currents. An illustration of the mathematical model under consideration is given in Figure \ref{geom2D}.
+
+The basic steps of the analysis of the 2D problem follow the steps of the analysis of the one-dimensional (1D) problem.  We will start our analysis of the 2D problem by formulating a $2\times 2$ system of stochastic differential equations giving the dynamics of the calcium concentration of the dyad and of the JSR. This model will be used as a basis for Monte Carlo simulations. By following the steps above, we also derive a 2D deterministic equation describing the probability density functions of the open and closed states. A numerical method for this system will be presented and, again, we will find that it is reasonable to focus on steady state computations. The probability density model will be extended to account for open or closed state blockers and, as above, we will see that we can find very good closed state blockers for CO-mutations (see page \pageref{com}).
+
+\begin{figure}
+\centering\resizebox{0.9\linewidth}{!}{\winslow{2.5}{2}{8.5}{8}}
+\caption{ 
+As above, this figure illustrates the components involved in calcium-induced calcium release: the T-tubule, the dyad, the sarcoplasmic reticulum (SR) represented by the JSR and NSR and the cytosol. In this chapter, we concentrate on the dynamics in the box surrounded by a thin red line. We assume that the concentrations of the cytosol ($c_0$) and of the NSR ($c_1$) are constants and we ignore the LCCs. The variables of interest are the calcium concentrations of the dyad ($\bar{x}=\bar{x}(t)$) and the JSR ($\bar{y}=\bar{y}(t)$). \label{cicr_2D}}
+\end{figure}
+
+
+\begin{figure}
+[ptb]
+\begin{center}
+\begin{tabular}{c!{\vrule width 1pt}c!{\vrule width 1pt}c!{\vrule width 1pt}c} 
+\noalign{\hrule height 1pt}
+&&& \\
+Cytosol, $c_0$ & Dyad, $\bar{x}(t)$ & JSR, $\bar{y}(t)$ & NSR, $c_1$ \ \ \ \ \  \\
+&&& \\ \noalign{\hrule height 1pt}
+\end{tabular}
+\caption{Sketch of a release unit. The cytosolic calcium concentration ($c_0$) and NSR calcium concentration ($c_1$) are assumed to be constant, while the concentrations
+of the dyad and JSR are given by $\bar{x}=\bar{x}(t)$ and $\bar{y}=\bar{y}(t)$, respectively. Note that $c_0\ll c_1$.}
+\label{geom2D}
+\end{center}
+\end{figure}
+
+\section{2D calcium release}
+
+The process of calcium release illustrated in Figure \ref{geom2D} can be
+modeled as follows:
+\begin{align}
+\bar{x}^{\prime}(t)  &  =\bar{\gamma}(t)v_{r}\left(  \bar{y}-\bar{x}\right)
++v_{d}\left(  c_{0}-\bar{x}\right)  ,\label{c1}\\
+\bar{y}^{\prime}(t)  &  =\bar{\gamma}(t)v_{r}\left(  \bar{x}-\bar{y}\right)
++v_{s}\left(  c_{1}-\bar{y}\right)  , \label{c2}
+\end{align}
+where $v_{r}$ denotes the rate of release from the JSR to the dyad, $v_{d}$ denotes the
+speed of calcium diffusion from the dyad to the cytosol, and $v_{s}$ denotes
+the speed of calcium diffusion from the NSR to the JSR. Furthermore, $\bar{\gamma}(t)$
+is a stochastic variable taking on two possible values, zero and one, with (as
+above) zero denoting a closed channel and one denoting an open channel. The
+dynamics of $\bar{\gamma}$ are governed by the Markov model under
+consideration. Furthermore, we always assume that
+\begin{equation}
+ c_{1}\gg c_{0} \, \mbox{ and } \, v_r,v_d,v_s >0.  \label{assumption1}
+\end{equation}
+
+For the 2D case, we also assume\footnote{This is a technical assumption needed in an argument below. } that
+\begin{equation}
+v_{d}v_{s}\ge v_{r}^{2}.  \label{assumption2}
+\end{equation}
+
+\subsection{The 1D case revisited: Invariant regions of concentration}
+
+Suppose the speed of diffusion, $v_{s},$ from the JSR to the NSR becomes very large.
+From (\ref{c2}), we observe that the limiting case when $v_{s}\rightarrow
+\infty$ yields $y=c_{1}$ and thus the problem is in 1D and can be written
+\[
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}\left(  c_{1}-\bar{x}\right)
++v_{d}\left(  c_{0}-\bar{x}\right)  ,
+\]
+which is exactly the problem we discussed in Chapter \ref{Ca_release_1D} (page \pageref{stoch}). 
+We analyzed this equation and saw that, when the channel is closed
+$(\gamma=0)$, the solution tends toward the equilibrium point represented by
+\[
+x=c_{0}
+\]
+and, when the channel is open, the equilibrium solution is given by
+\[
+x=c_{+}=\left(  1-\alpha\right)  c_{1}+\alpha c_{0},
+\]
+where
+\[
+\alpha=\frac{v_{d}}{v_{r}+v_{d}}.
+\]
+Based on this, we concluded that if the initial concentration is in the
+interval $\left[  c_{0},c_{+}\right]  ,$ the solution will always remain in
+this interval. The reason for this is that if the channel is closed, the
+solution will decrease toward $c_{0}$ and, if the channel is open, the
+solution will increase toward $c_{+}.$ For closed channels, $c_{0}$ is a
+stable equilibrium and, similarly, if the channel is open, $c_{+}$ is a stable equilibrium.
+
+\subsection{Stability of linear systems}
+
+Before we consider the 2D case, we need to recall some basic properties of
+linear systems of ordinary differential equations. For a system of the form
+\[
+x^{\prime}(t)=Ax,
+\]
+where $A$ is a matrix and the unknown $x$ is a vector, we know that the
+equilibrium solution $x=0$ is stable, provided that the real part of all the
+eigenvalues of $A$ is negative. However, the systems under consideration here
+are of the form
+\begin{equation}
+x^{\prime}(t)=Ax+b, \label{lin1}
+\end{equation}
+where $b$ is a known vector. In the case of a non-singular matrix $A$, the
+equilibrium solution is given by
+\begin{equation}
+x^{\ast}=-A^{-1}b \label{equil1}
+\end{equation}
+and we are interested in the stability of this solution. To assess
+the stability, we define
+\[
+e=x-x^{\ast}
+\]
+and observe that
+\[
+e^{\prime}(t)=x^{\prime}(t)=Ax+b=Ax-Ax^{\ast}=Ae
+\]
+and, of course, $e=0$ is a stable equilibrium of the system
+\[
+e^{\prime}=Ae,
+\]
+provided that the real part of all the eigenvalues of $A$ are negative. 
+Therefore,
+the equilibrium solution (ref{equil1}) of the system $\left(
+\ref{lin1}\right)  $ is stable under the same condition. With these observations
+at hand, we are ready to try to understand the dynamics of the system $\left(
+\ref{c1}\right)$ and (ref{c2})
+
+\subsection{Convergence toward two equilibrium solutions}
+
+Our aim is now to understand the dynamics of the 2D case and we start by
+considering the system when the channel is closed.
+
+\subsubsection{Equilibrium solution for closed channels}
+
+In this case, the system (ref{c1}) and (ref{c2}) is quite simple, since
+there is no communication between the dyad and the JSR. The system is
+\begin{align}
+x^{\prime}(t)  &  =v_{d}\left(  c_{0}-x\right)  \label{x_c},\\ \
+y^{\prime}(t)  &  =v_{s}\left(  c_{1}-y\right)  \label{y_c},
+\end{align}
+and the stable equilibrium solution of this system is given by
+\begin{align*}
+x_{c}  &  =c_{0},\\
+y_{c}  &  =c_{1}.
+\end{align*}
+
+
+\subsubsection{Equilibrium solution for open channels}
+
+The more interesting case is when the channel is open. Then the system reads
+\begin{align}
+x^{\prime}(t)  &  =v_{r}\left(  y-x\right)  +v_{d}\left(  c_{0}-x\right) \label{x_o} ,\\
+y^{\prime}(t)  &  =v_{r}\left(  x-y\right)  +v_{s}\left(  c_{1}-y\right) \label{y_o}, 
+\end{align}
+and the equilibrium solution is given by
+\begin{align*}
+x_{o}  &  =\alpha c_{1}+\left(  1-\alpha\right)  c_{0},\\
+y_{o}  &  =\beta c_{1}+\left(  1-\beta\right)  c_{0},
+\end{align*}
+where
+\begin{align*}
+\alpha &  =\frac{v_{r}v_{s}}{v_{d}\left(  v_{r}+v_{s}\right)  +v_{r}v_{s}},\\
+\beta &  =\frac{v_{s}\left(  v_{d}+v_{r}\right)  }{v_{d}\left(  v_{r}
++v_{s}\right)  +v_{r}v_{s}}.
+\end{align*}
+It is useful, but not surprising, to note that
+\[
+y_{o}-x_{o}=\left(  \beta-\alpha\right)  \left(  c_{1}-c_{0}\right)
+=\frac{v_{s}v_{d}}{v_{d}\left(  v_{r}+v_{s}\right)  +v_{r}v_{s}}\left(
+c_{1}-c_{0}\right)  >0,
+\]
+since $c_{1}$ is assumed to be larger than $c_{0}$ (see (\ref{assumption1})).
+%\K{zzz Vi m\r{a} vel her ogs\r{a} ha at $v_{r},v_{d},v_{s}>0$?}
+%A{I added these assumptions in the beginning of the chapter.}
+
+\subsubsection{Stability of the equilibrium solution}
+
+Whether the equilibrium solution for open channels is stable remains to be seen.
+As noted above, this can be determined by invoking the eigenvalues of
+the system matrix, which, in this case, are given by
+\[
+A=\left(
+\begin{array}
+[c]{cc}
+-\left(  v_{r}+v_{d}\right)   & v_{r}\\
+v_{r} & -\left(  v_{r}+v_{s}\right)
+\end{array}
+\right)  .
+\]
+Since the matrix is symmetric, the eigenvalues are real, so it is sufficient to see if they are always non-positive.
+ The eigenvalues are given by
+%\textbf{Glenn: check the validity of the formulas numerically}, done
+\begin{align*}
+\lambda_{-} &  =\frac{1}{2}\left(  -\sqrt{\left(  v_{d}-v_{s}\right)
+^{2}+4v_{r}^{2}}-v_{d}-2v_{r}-v_{s}\right)  ,\\
+\lambda_{+} &  =\frac{1}{2}\left(  \sqrt{\left(  v_{d}-v_{s}\right)
+^{2}+4v_{r}^{2}}-v_{d}-2v_{r}-v_{s}\right),
+\end{align*}
+where obviously \bigskip$\lambda_{-}<0$ for any $v_{r},v_{d},v_{s}>0.$ Hence,
+$\lambda_{+}<0$ also remains to be shown. To this end, we start by
+assuming that $\lambda_{+}>0;$ so we assume that
+\[
+0<\sqrt{u}-v,
+\]
+with
+\[
+u=\left(  v_{d}-v_{s}\right)  ^{2}+4v_{r}^{2}
+\]
+and
+\[
+v=v_{d}+2v_{r}+v_{s}.
+\]
+We can safely multiply both sides of this inequality with something positive
+such as $\sqrt{u}+v$ and we therefore find that
+\begin{align*}
+0 &  <\left(  \sqrt{u}-v\right)  \left(  \sqrt{u}+v\right)  \\
+&  =u-v^{2}\\
+&  =-4\left(  v_{d}v_{r}+v_{d}v_{s}+v_{r}v_{s}\right)
+\end{align*}
+and, since $v_{r},v_{d},v_{s}>0$, this is a contradiction and we conclude that
+$\lambda_{+}<0$ for all $v_{r},v_{d},v_{s}>0.$
+
+\subsection{Properties of the solution of the stochastic release model}
+
+We have found that when the channel is closed, the equilibrium solution is given
+by
+\begin{align*}
+x_{c} &  =c_{0},\\
+y_{c} &  =c_{1},
+\end{align*}
+which is stable. Similarly, when the channel is open, the equilibrium solution 
+is given by
+\begin{align*}
+x_{o} &  =\alpha c_{1}+\left(  1-\alpha\right)  c_{0},\text{ with }
+\alpha=\frac{v_{r}v_{s}}{v_{d}\left(  v_{r}+v_{s}\right)  +v_{r}v_{s}},\\
+y_{o} &  =\beta c_{1}+\left(  1-\beta\right)  c_{0},\text{ with }\beta
+=\frac{v_{s}\left(  v_{d}+v_{r}\right)  }{v_{d}\left(  v_{r}+v_{s}\right)
++v_{r}v_{s}},
+\end{align*}
+and this solution is also stable. The solution of the model given by the system $\left(
+\ref{c1}\right)$ and (ref{c2}) will therefore tend toward $(x_{c},y_{c})$
+whenever the channel is closed and toward  $(x_{o},y_{o})$ whenever the
+channel is open. This will be illustrated in numerical simulations below.
+
+%{\bf Glenn: Look for exactly this property in the MC simulations.}
+
+\subsection{Numerical scheme for the 2D release model}
+
+To perform 2D stochastic simulations, we use the numerical scheme
+\begin{align}
+x_{n+1}  &  =x_{n}+\Delta t\left(  \gamma_{n}v_{r}\left(  y_{n}-x_{n}\right)
++v_{d}\left(  c_{0}-x_{n}\right)  \right)  ,\label{nc1}\\
+y_{n+1}  &  =y_{n}+\Delta t\left(  \gamma_{n}v_{r}\left(  x_{n}-y_{n}\right)
++v_{s}\left(  c_{1}-y_{n}\right)  \right)  , \label{nc2}
+\end{align}
+
+|-----c---------c----------------------|
+|$v_d $      | 1 $\rm{ms^{-1}}$        |
+|$v_r $      | 0.1 $\rm{ms^{-1}}$      |
+|$v_s $      | 0.01 $\rm{ms^{-1}}$     |
+|$c_0 $      | 0.1 $\rm{\mu M}$        |
+|$c_1 $      | 1000 $\rm{\mu M}$       |
+|$k_{co} $   | 1 $\rm{ms^{-1}}$        |    
+|$k_{oc} $   | 1 $\rm{ms^{-1}}$        |
+|--------------------------------------|
+Values of parameters used in 2D simulations based on the scheme (\ref{nc1}) and (\ref{nc2}). \label{tab:param2D}
+where $\gamma$ is computed according to the Markov model given by the reaction scheme
+
+\begin{equation}
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O \label{Markov2}
+\end{equation}
+(see page \pageref{numscheme}),
+where $k_{oc}$ and $k_{co}$ are reaction rates that may depend on both the concentrations
+represented by $x=x(t)$ and $y=y(t)$.
+%\K{zzz Betyr dette at $\gamma_{n}$ blir beregnet som i seksjon \ref{numscheme}?}
+
+\subsubsection{Simulations using the 2D stochastic model}
+
+
+We use the numerical scheme given by ($\ref{nc1}$) and ($\ref{nc2}$), where the parameters and functions involved are described in Table \ref{tab:param2D}. The numerical solutions are given in Figures \ref{2D:mc2} and \ref{2D:mc2_zoom}. In the latter figure, we also indicate when the channel is open and closed (upper panel).
+
+FIGURE: [fig/2D_mc2.pdf, width=500 frac=0.8] Results of simulation using the scheme ($\ref{nc1}$) and ($\ref{nc2}$) with the data given in Table \ref{tab:param2D}. label{2D:mc2}FIGURE: [fig:2D_mc2_zoom.pdf, width=500 frac=0.8] A detailed view of the results given in Figure \ref{2D/mc2}. The open/closed state of the channel is indicated in the upper panel. label{2D:mc2_zoom}%\begin{table}  \begin{center}
+%\begin{tabular}
+%[c]{|l|l||l|l|}\hline
+%$v_{r}$ &  0.1/ms & $c_{0}$ & 0.1$\mu$M\\\hline
+%$v_{d}$ &  1/ms & $c_{1}$ & 1000$\mu$M \\\hline
+%$v_{s}$ &  0.01/ms&  & \\\hline
+%$k_{oc}$ &  1/ms & $k_{co}$ & 1/ms \\\hline
+%\end{tabular}
+% \end{center}
+%\caption{Values of parameters used in 2D simulations based on the scheme (\ref{nc1},\ref{nc2}). \label{tab:param2D}}
+%\end{table}
+
+
+\subsection{Invariant region for the 2D case}
+\label{invariant2D}
+
+We observed in the 1D case that an invariant region for the numerical scheme used to compute approximate solutions of the stochastic model was useful for the probability density system, since it defined the interval in which to solve the system. Similarly, we will derive an invariant region for numerical solutions generated by the scheme  ($\ref{nc1}$) and ($\ref{nc2}$) and this invariant region will define the geometry we will use to solve the probability density system.
+
+Let us start by recalling the assumptions ($\ref{assumption1}$) and ($\ref{assumption2}$) and let us also assume that the time step $\Delta t>0$ is chosen such that
+\begin{equation}
+\Delta t<\min\left(  \frac{1}{v_{r}+v_{d}},\frac{1}{v_{r}+v_{s}}\right).
+\label{dt}
+\end{equation}
+Define 
+\begin{align}
+x_{-}  &  =c_{0},\text{ } \label{xm}\\
+x_{+}  &  =\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}, \label{xp}\\
+y_{-}  &  =\frac{c_{0}v_{r}+c_{1}v_{s}}{v_{r}+v_{s}}, \label{ym}\\
+y_{+}  &  =c_{1}, \label{yp}
+\end{align}
+and observe that
+\[
+y_{-}-x_{+}=\frac{c_{0}v_{r}+c_{1}v_{s}}{v_{r}+v_{s}}-\frac{v_{r}c_{1}
++v_{d}c_{0}}{v_{r}+v_{d}}=\left(  c_{1}-c_{0}\right)  \frac{v_{d}v_{s}
+-v_{r}^{2}}{\left(  v_{r}+v_{s}\right)  \left(  v_{r}+v_{d}\right)  }.
+\]
+It now follows from the assumptions  ($\ref{assumption1}$) and ($\ref{assumption2}$)  that we have
+\begin{equation}
+y_{-}\geqslant x_{+}. \label{cond1}
+\end{equation}
+Our aim is now to show that $\Omega=(x_{-},x_{+})\times(y_{-},y_{+})$ is an invariant region for solutions of the scheme ($\ref{nc1}$) and ($\ref{nc2}$).
+Because of ($\ref{cond1}$), this means, in particular, that under the assumptions ($\ref{assumption1}$) and ($\ref{assumption2}$) the lowest possible 
+calcium concentration of the JSR will always be larger than (or equal to) the
+highest calcium concentration of the dyad.
+
+The numerical scheme ($\ref{nc1}, \ref{nc2}$) can be written in the form
+\begin{align*}
+x_{n+1}  &  =F(x_{n},y_{n},\gamma_{n}),\\
+y_{n+1}  &  =G(x_{n},y_{n},\gamma_{n}),
+\end{align*}
+where
+\begin{align*}
+F(x,y,\gamma) &  =x+\Delta t\left(  \gamma v_{r}\left(  y-x\right)
++v_{d}\left(  c_{0}-x\right)  \right),  \\
+G(x,y,\gamma) &  =y+\Delta t\left(  \gamma v_{r}\left(  x-y\right)
++v_{s}\left(  c_{1}-y\right)  \right).
+\end{align*}
+We will consider the properties of the functions $F$ and $G$ for $x$ and $y$
+in the domain
+\begin{equation}
+\Omega=\left\{  (x,y):x_{-}\leq x\leq x_{+},\text{ }y_{-}\leq y\leq
+y_{+}\right\}  \label{cond2}
+\end{equation}
+and for $0\leq\gamma\leq1.$ Note that
+\[
+\frac{\partial F(x,y,\gamma)}{\partial x}=1-\Delta t\left(  \gamma v_{r}
++v_{d}\right)  \geq1-\Delta t\left(  v_{r}+v_{d}\right)  >0
+\]
+by condition (ref{dt}) In addition, we have
+\[
+\frac{\partial F(x,y,\gamma)}{\partial y}=\Delta t\gamma v_{r}\geq0
+\]
+and
+\[
+\frac{\partial F(x,y,\gamma)}{\partial\gamma}=\Delta tv_{r}\left(  y-x\right)
+\geq0,
+\]
+where we use (ref{cond1}) and (ref{cond2}) Similarly, we
+have
+\[
+\frac{\partial G(x,y,\gamma)}{\partial y}=1-\Delta t\left(  \gamma
+v_{r}+v_{s}\right)  \geq1-\Delta t\left(  v_{r}+v_{s}\right)  >0,
+\]
+which is also positive by condition (ref{dt}) Finally,
+we have
+\[
+\frac{\partial G(x,y,\gamma)}{\partial x}=\Delta t\gamma v_{r}\geq0
+\]
+and
+\[
+\frac{\partial G(x,y,\gamma)}{\partial\gamma}=\Delta t v_{r}\left(
+x-y\right)  \leq0
+\]
+by (ref{cond1}) and (ref{cond2}) We now assume that
+\[
+(x_{n},y_{n})\in\Omega.
+\]
+Then,
+\[
+x_{n+1}=F(x_{n},y_{n},\gamma_{n})\geq F(x_{-},y_{-},0)=x_{-}
+\]
+and
+\[
+x_{n+1}=F(x_{n},y_{n},\gamma_{n})\leq F(x_{+},y_{+},1)=x_{+}.
+\]
+So we conclude that
+\[
+x_{-}\leq x_{n+1}\leq x_{+}.
+\]
+Similarly,
+\[
+y_{n+1}=G(x_{n},y_{n},\gamma_{n})\geq G(x_{-},y_{-},1)=y_{-}
+\]
+and
+\[
+y_{n+1}=G(x_{n},y_{n},\gamma_{n})\leq G(x_{+},y_{+},0)=y_{+};
+\]
+so we conclude that
+\[
+y_{-}\leq y_{n+1}\leq y_{+}.
+\]
+
+We have seen that under the assumptions ($\ref{assumption1}), (\ref{assumption2}$), and ($\ref{dt}$), it follows that, if
+\bigskip
+\[
+(x_{n},y_{n})\in\Omega,
+\]
+then also
+\[
+(x_{n+1},y_{n+1})\in\Omega
+\]
+and we therefore conclude that $\Omega$ is an invariant region for the scheme of
+($\ref{nc1}$) and ($\ref{nc2}$). This means that the probability density system will be solved in the
+domain defined by $\Omega.$
+
+%Below, we will take this discussion one step further and see that the solutions are restricted
+%to an invariant that are smaller than the one defined by $\Omega.$
+
+\section{Probability density functions in 2D}
+
+In the 1D case considered above, we derived a model for the probability
+density functions. In the 2D case, we can follow exactly the same steps and
+arrive at a system of partial differential equations of the form
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}^{x}\rho_{o}\right)  +\frac{\partial}{\partial y}\left(  a_{o}^{y}
+\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o},\label{eq:pdf21}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}^{x}\rho_{c}\right)  +\frac{\partial}{\partial y}\left(  a_{c}^{y}
+\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c},\label{eq:pdf22}
+\end{align}
+where 
+\begin{align}
+a_{o}^{x} &  =v_{r}\left(  y-x\right)  +v_{d}\left(  c_{0}-x\right)
+,\nonumber\\
+a_{o}^{y} &  =v_{r}\left(  x-y\right)  +v_{s}\left(  c_{1}-y\right)
+,\label{eq:fluxes2D2}\\
+a_{c}^{x} &  =v_{d}\left(  c_{0}-x\right)  ,\nonumber\\
+a_{c}^{y} &  =v_{s}\left(  c_{1}-y\right)  .\nonumber
+\end{align}
+As in 1D, $\rho_{o}$ and $\rho_{c}$ denote the open and closed probability
+density functions, respectively, satisfying the integral condition
+\begin{equation}
+\int_{\Omega}\left(  \rho_{o}+\rho_c\right)  dx\, dy=1. \label{int10000}
+\end{equation}
+Here the domain can be taken to be
+\begin{equation}
+\Omega=\left\{  (x,y):x_{-}\leqslant x\leqslant x_{+},\text{ }y_{-}\leqslant
+y\leqslant y_{+}\right\}
+\end{equation}
+and the boundary conditions are again defined to ensure that there is
+no flux of probability out of the domain (see page \pageref{bc}).
+
+\subsection{Numerical method for computing the probability density functions in 2D}
+
+|--------c-------------c---------------|
+|$\Delta t $ | 0.001 $\rm{ms}$         |
+|$\Delta x $ | 0.92 $\rm{\mu M}$       |
+|$\Delta y $ | 9.3 $\rm{\mu M}$        |
+|--------------------------------------|
+Discretization parameters.
+
+To solve the system $(\ref{eq:pdf21})$ and $(\ref{eq:pdf22})$, we need to
+define a numerical method. For the 1D model (see page \pageref{npdf}), we used
+an upwind scheme as presented by LeVeque \cite{LeVeque2002}. Here,
+we use the 2D version of the same numerical method. Consider the partial
+differential equation
+\[
+\rho_{t}+(a\rho)_{x}+\left(  b\rho\right)  _{y}=g\rho
+\]
+where $a,b$, and $g$ are smooth functions of $x$ and $y.$ We let $\rho
+_{i,j}^{n}$ denote an approximation of $\rho$ at time $t=n\Delta t$ for
+$(x,y)\in\lbrack x_{i-1/2},x_{i+1/2})\times\lbrack y_{j-1/2},y_{j+1/2})$, where
+$x_{i}=x_{-}+i\Delta x,\, y_{j}=y_{+}+j\Delta y$, and
+\[
+\Delta x=\frac{x_{+}-x_{-}}{M_{x}},\text{ }\Delta y=\frac{y_{+}-y_{-}}{M_{y}}.
+\]
+Here $M_{x}$ and $M_{y}$ denote the number of grid points along the $x$ and $y$
+axes, respectively. The numerical approximation is defined by the scheme
+\begin{align}
+\rho_{i,j}^{n+1}=\rho_{i,j}^{n} &  -\frac{\Delta t}{\Delta x}\left(  \left(
+a\rho\right)  _{i+1/2,j}^{n}-\left(  a\rho\right)  _{i-1/2,j}^{n}\right)
+\nonumber\\
+&  -\frac{\Delta t}{\Delta y}\left(  \left(  b\rho\right)  _{i,j+1/2}
+^{n}-\left(  b\rho\right)  _{i,j-1/2}^{n}\right)  +\Delta tg_{i,j}\rho
+_{i,j}^{n}, \label{eq:scheme2D}
+\end{align}
+where
+\begin{align}
+\left(  a\rho\right)  _{i+1/2,j}^{n} &  =\max(a_{i+1/2,j},0)\rho_{i,j}
+^{n}+\min(a_{i+1/2,j},0)\rho_{i+1,j}^{n},\label{eq:flux_x}\\
+\left(  b\rho\right)  _{i,j+1/2}^{n} &  =\max(b_{i,j+1/2},0)\rho_{i,j}
+^{n}+\min(b_{i,j+1/2},0)\rho_{i,j+1}^{n}.\label{eq:flux_y}
+\end{align}
+In our simulations, this scheme is used for both equations $(\ref{eq:pdf21})$
+and $(\ref{eq:pdf22})$ above, where the right-hand sides are given by
+$k_{co}\rho_{c}-k_{oc}\rho_{o}$ and $k_{oc}\rho_{o}-k_{co}\rho_{c}$,
+respectively. 
+
+%All distributions are initially set to zero, except that $\rho_{cc}(c_0,c_1)= 1/(\Delta x \Delta y)$. 
+As pointed out above, the probability densities integrates to one (see (\ref{int10000})), and the discrete version of this condition
+reads,
+\begin{equation}
+\Delta x \Delta y \sum_{i,j}  \rho_{i,j}=1,  \label{discrete_sumone}
+\end{equation}
+where $\rho=\rho_{o}+\rho_{c}$.  Note that the initial conditions must be chosen such that this condition holds.
+
+
+
+\subsection{Rapid decay to steady state solutions in 2D}
+\label{rapid2D}
+
+We observed in 1D that the time-dependent probability density functions
+converge rapidly toward steady state solutions. This is illustrated in Figure \ref{1D:spacetime} on page \pageref{1D/spacetime}.  In Figure  \ref{2D/pdf_time}, we show snapshots of the open probability density function at times 1, 2, 3, 5, 10, 20, 40, 70, and 100 ms and we observe that the solution converges toward an equilibrium solution with time. 
+This is verified in Figure \ref{2D:time2steady}, where we plot the (weighted) norm between the dynamic and stationary solutions for time $t$ ranging from 0 ms to 150 ms and we see that the solution is quite close to equilibrium at $t=100$ ms. This observation is useful because it implies that when we assess the effect of various theoretical drugs, it is sufficient to consider steady state solutions. 
+
+FIGURE: [fig/2D_pdf_time.pdf, width=500 frac=0.8] Open probability density function $\rho_o$ as a function of the dyad ($x$) and the JSR concentrations ($y$) for times $t=1$, 2, 3, 5, 10, 20, 40, 70, and 100 ms. Note the convergence toward
+an equilibrium solution. In the computations, we use
+$\Delta t=0.001$ ms, $\Delta x=0.92$ $\mu$M,  and  $\Delta y=9.3$ $\mu$M.
+%{\bf xxx Glenn: dt,dx and dy for this computation}
+}
+\fig{2D/time2steady.pdf}{The weighted norm of the difference between the open probability density function 
+$\rho_o$ at time $t$ and at time $1000$ ms. This figure shows convergence toward an equilibrium solution. label{2D:pdf_time}% {\it Glenn: Make two figures: 1) A figure with open probability in a 3x3 panels display of solutions at 9 different times. Illustrate decay to equilibrium. 2) Relative norm (L2) difference between time del solution and steady state solution as function of time. Use 2D version of the norm given in \ref{norm}}.
+
+
+
+
+\subsection{Comparison of Monte Carlo simulations and probability density functions in 2D }
+
+As in 1D, we want to compare the probability densities $\rho_o$ and $\rho_c$ computed by solving the 
+probability density system $(\ref{eq:pdf21})$ and $(\ref{eq:pdf22})$ using the scheme $(\ref{eq:scheme2D})$ with Monte Carlo simulations based on the stochastic differential equations $(\ref{c1})$ and $(\ref{c2})$ solved by the numerical scheme  $(\ref{nc1})$ and $(\ref{nc2})$. The comparison is undertaken in the same manner as in 1D. We simply run a number of Monte Carlo simulations for a long time and count the number of open states in small rectangles. The procedure is a direct generalization of the method used in 1D (see page \pageref{compare}).
+
+The numerical solution of the probability density system is given in Figure  \ref{2D/compare_pdf}  and the associated solution based on Monte Carlo simulations is given in Figure \ref{2D/compare_mc}. As in 1D, we observe that the solutions are quite similar. In both these figures, we observe that the solutions stay inside a region bounded by a red curve. The red curve is computed by solving (\ref{x_c}) and (\ref{y_c}) for the closed state and (\ref{x_o}) and (\ref{y_o}) for the open state.
+
+FIGURE: [fig/2D_compare_pdf}{Steady state open probability density function $\rho_o$ computed by solving the probability density  system $(\ref{eq:pdf21})$ and $(\ref{eq:pdf22})$. The solution is bounded (red curve) by solutions of the system (\ref{x_c}) and (\ref{y_c}) and the system (\ref{x_o}) and (\ref{y_o}). %\K{zzz xxx Aksene til denne og den neste figuren har ikke noe navn, men det er jo ganske lett \r{a} tenke seg at det er de samme som i Figure \ref{2D:pdf_time}}
+}
+
+\fig{2D/compare_mc}{Open probability density function $\rho_o$ computed by Monte Carlo simulations using the scheme  $(\ref{nc1})$ and $(\ref{nc2})$. The solution is bounded (red curve) by solutions of the system (\ref{x_c}) and (\ref{y_c}) and the system (\ref{x_o}) and (\ref{y_o}).}
+
+
+
+\subsection{Increasing the open to closed reaction rate in 2D}
+
+In 1D, we observed that if we increased the reaction rate $k_{oc}$  from open to closed, the steady state probability density functions changed considerably (see page \pageref{increasingkoc}). We observed that the open probability decreased and the closed probability increased significantly. In Figure \ref{2D:koc3}, we study the same effect in 2D and again we observe that the open probability density function is considerably decreased when $k_{oc}$ is increased from one to three. The statistics of the solutions are given in Table \ref{tab:more_open} and we note that the total open probability is reduced considerably 
+when $k_{oc}$ is increased from one to three. The expected dyad concentration ($x$) does not change very much, but the expected JSR concentration ($y$) increases significantly and this observation holds for both open and closed channels. 
+
+
+%To be more specific, note that in the case of $k_{oc}=1$, we have
+%\[ \int_\Omega \rho_{o}=0.4301 \text{  and  }\int_\Omega \rho_{c}=0.5699, \]
+%and in the case of $k_{oc}=1$, we have
+%\[\int_\Omega \rho_{o}=0.2207 \text{  and  } \int_\Omega \rho_{c}=0.7793.\]
+%\G{See also Table \ref{tab:more_open}.}
+
+\fig{2D/koc3.pdf, width=500 frac=0.8] The effect of increasing $k_{oc}$ from one to three. The open probability density function is reduced considerably.  label{2D:compare_pdf}{Steady state open probability density function $\rho_o$ computed by solving the probability density  system $(\ref{eq:pdf21})$ and $(\ref{eq:pdf22})$. The solution is bounded (red curve) by solutions of the system (\ref{x_c}) and (\ref{y_c}) and the system (\ref{x_o}) and (\ref{y_o}). %\K{zzz xxx Aksene til denne og den neste figuren har ikke noe navn, men det er jo ganske lett \r{a} tenke seg at det er de samme som i Figure \ref{2D:pdf_time}}
+}
+
+\fig{2D/compare_mc}{Open probability density function $\rho_o$ computed by Monte Carlo simulations using the scheme  $(\ref{nc1})$ and $(\ref{nc2})$. The solution is bounded (red curve) by solutions of the system (\ref{x_c}) and (\ref{y_c}) and the system (\ref{x_o}) and (\ref{y_o}).}
+
+
+
+\subsection{Increasing the open to closed reaction rate in 2D}
+
+In 1D, we observed that if we increased the reaction rate $k_{oc}$  from open to closed, the steady state probability density functions changed considerably (see page \pageref{increasingkoc}). We observed that the open probability decreased and the closed probability increased significantly. In Figure \ref{2D:koc3}, we study the same effect in 2D and again we observe that the open probability density function is considerably decreased when $k_{oc}$ is increased from one to three. The statistics of the solutions are given in Table \ref{tab:more_open} and we note that the total open probability is reduced considerably 
+when $k_{oc}$ is increased from one to three. The expected dyad concentration ($x$) does not change very much, but the expected JSR concentration ($y$) increases significantly and this observation holds for both open and closed channels. 
+
+
+%To be more specific, note that in the case of $k_{oc}=1$, we have
+%\[ \int_\Omega \rho_{o}=0.4301 \text{  and  }\int_\Omega \rho_{c}=0.5699, \]
+%and in the case of $k_{oc}=1$, we have
+%\[\int_\Omega \rho_{o}=0.2207 \text{  and  } \int_\Omega \rho_{c}=0.7793.\]
+%\G{See also Table \ref{tab:more_open}.}
+
+\fig{2D/koc3}
+
+|-----c--------c-----------c----------c--------------c-------------c-----------|
+|$k_{oc}$ | $\pi_o $ | $E_{x_o}$ | $E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$ |
+|1        |    0.430 | 12.63     | 202.4     | 4.948          |  46.27         |
+|3        |    0.221 | 13.23     | 339.2     | 6.723          |  56.88         |
+|----c---------c-----------c----------c--------------c-------------c-----------|
+
+|-----c--------c-----------c----------c--------------c-------------c-----------|
+|$k_{oc}$ | $\pi_c$ |$E_{x_c}$ | $E_{y_c}$ | $\sigma_{x_c}$ | $\sigma_{y_c}$   |
+|1        | 0.570   | 5.12     | 218.2     | 4.842          |  49.90           |
+|3        | 0.779   |5.95      | 348.0     |5.563           |  57.22           |
+|------------------------------------------------------------------------------|
+
+Statistical properties of the probability density functions 
+for $k_{oc}=1 \text{ ms}^{-1}$ and  $k_{oc}=3 \text{ ms}^{-1}$
+
+\label{tab:more_open}
+
+
+\section{Notes}
+
+\begin{enumerate}
+\item The 2D stochastic model and the associated probability density functions are taken from Huertas and Smith \cite{Huertas2007}, but some of the parameters are changed.
+\end{enumerate}
+
+\chapter{Computing theoretical drugs in the two-dimensional case}
+
+|---c-------------c----------------|
+|$v_d $      | 1 $\rm{ms^{-1}}$    |
+|$v_r $      | 0.1 $\rm{ms^{-1}}$  |
+|$v_s $      | 0.01 $\rm{ms^{-1}}$ |
+|$c_0 $      | 0.1 $\rm{\mu M}$    |
+|$c_1 $      | 1000 $\rm{\mu M}$   |
+|$k_{co} $   | 1 $\rm{ms^{-1}}$    |
+|$k_{oc} $   | 1 $\rm{ms^{-1}}$    |
+|$\Delta t $ | 0.001 $\rm{ms}$     |
+|$\Delta x $ | 0.92 $\rm{\mu M}$   |
+|$\Delta y $ | 9.3 $\rm{\mu M}$    |  
+|----------------------------------|
+Parameters reused from the previous chapter (i.e., Table \ref{tab:param2D}). \label{tab:param2D_again} 
+
+
+Let us briefly recall the difficulty we want to overcome with the
+theoretical drug. The difficulty is that in the prototypical reaction
+defined by the Markov model
+\[
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O
+\]
+the rates may change under various mutations. One case that we have focused on 
+in these notes is CO-mutations where the reaction rate from C to O is increased.
+The reaction of a CO-mutation takes the form
+\[
+C\underset{ \mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O,
+\]
+where we assume that $\mu\geqslant1$ is a constant. We refer to this constant
+as the mutation severity index and the mutation is typically worse the larger
+the value of $\mu$; furthermore, $\mu=1$ refers to the wild type case.
+Our aim is to devise a theoretical drug of the form 
+\[
+B_c\underset{k_{bc}}{\overset{k_{cb}}{\leftrightarrows}}C\underset{\mu k_{co}
+}{\overset{k_{oc}}{\leftrightarrows}}O\underset{k_{ob}}{\overset{k_{bo}}{\leftrightarrows}}B_o,
+\]
+where the constants $k_{bc}, k_{cb}, k_{bo}$, and $k_{ob}$ are used to tune the drug such 
+that the effect of the mutation is reduced as much as possible. As above, we will consider blockers associated with
+the closed state, which means that $k_{ob}=0$, or blockers associated with the open state, which means that $k_{cb}=0$.
+
+
+
+\section[Effect of the mutation in 2D]{Effect of the mutation in the two-dimensional case}
+
+When the effect of the mutation is taken into account, the probability density functions are governed by the system 
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}^{x}\rho_{o}\right)  +\frac{\partial}{\partial y}\left(  a_{o}^{y}
+\rho_{o}\right)   &  =\mu k_{co}\rho_{c}-k_{oc}\rho_{o},\label{eq:pdf211}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}^{x}\rho_{c}\right)  +\frac{\partial}{\partial y}\left(  a_{c}^{y}
+\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\rho_{c},\label{eq:pdf212}
+\end{align}
+where we recall that the fluxes are given by
+\begin{align}
+a_{o}^{x} &  =v_{r}\left(  y-x\right)  +v_{d}\left(  c_{0}-x\right)
+,\nonumber\\
+a_{o}^{y} &  =v_{r}\left(  x-y\right)  +v_{s}\left(  c_{1}-y\right)
+,\label{eq:fluxes2D}\\
+a_{c}^{x} &  =v_{d}\left(  c_{0}-x\right)  ,\nonumber\\
+a_{c}^{y} &  =v_{s}\left(  c_{1}-y\right) \nonumber
+\end{align}
+(see page \pageref{eq:pdf21}).
+In Figure \ref{2D:mutant}, we compare the solution of this system when $\mu=1$ (wild type)
+and $\mu=3$ (mutant) and in Table \ref{tab:wtmt_tab_2D} we give the statistics of the solutions. The total 
+open probability increases from 0.430 for the wild type to 0.743 for the mutant. In addition, the expected concentrations
+of both the dyad and the junctional sarcoplasmic reticulum (JSR) decrease considerably. In the one-dimensional (1D) case we observed that the variability of the solution decreased when the mutation was introduced. This observation seems to carry over to the two-dimensional (2D) case.
+%{\bf xxxx  Glenn: Her ser det ut til at en tabell er blitt borte? Tallene kommer i tabellen nedenfor der drugs er introduusert, men jeg vil gjerne ha en tabell her over det som bare gjelder wt og mt.}
+
+
+
+|--c------------c----------c----------c---------------c-----------------c------|
+|Case      | $\pi_o$ | $E_{x_o}$ | $E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$ |
+|Wild type | 0.430   | 12.63     | 202.4     | 4.948          | 46.27          |
+|Mutant    | 0.743   | 9.64      | 131.7     | 2.419          | 18.90          |
+|------------------------------------------------------------------------------| 
+Properties of the open probability density function in the
+wild type and mutant cases. \label{tab:wtmt_tab_2D}
+
+
+
+
+%{\bf Glenn: Lag tabell}
+
+
+%The integral of the probability density function of the open state increases from
+%\[  \int_\Omega  \rho_o = 0.430 \]
+%in the wild type case to 
+%\[ \int_\Omega \rho_o= 0.743 \]
+%for the mutant. Furthermore, we note that the expected values of the concentrations changes from 
+%\[  (\bar{x},\bar{y}) = (21.63,202.4)\]
+%in the wild type case to 
+%\[  (\bar{x},\bar{y}) =(9.64,131.7)\]
+%for the mutant.
+%\bigskip {\bf Glenn}: Make figure
+
+
+
+FIGURE: [fig/2D_mutant.pdf, width=500 frac=0.8] The open state probability density function for the wild type case (left) and the mutant case (right, $\mu=3$).  label{2D:mutant}
+\section{A closed state drug}
+
+In the 1D case, we were able to compute a characterization of the closed state
+drug based on considering the equilibrium solution of the reaction scheme.
+Since the reaction scheme is the same in the 1D and 2D problems, we can
+use exactly the same characterization as above. Let us first recall that the
+reaction scheme of the closed state drug takes the form
+\[
+B\underset{k_{bc}}{\overset{k_{cb}}{\leftrightarrows}}C\underset{\mu k_{co}
+}{\overset{k_{oc}}{\leftrightarrows}}O.
+\]
+We found above (see $(\ref{optimal_closed_charac})$ on page \pageref{optimal_closed_charac}) that the
+parameters of the closed state blocker should be related as
+\begin{equation}
+k_{cb}=(\mu-1)k_{bc},\label{characterize2D}
+\end{equation}
+so the optimal value of $k_{bc}$ remains to be determined. To find the
+optimal value of this parameter, we need to extend the system 
+$(\ref{eq:pdf211})$ and $(\ref{eq:pdf212})$ to account for the theoretical drug. When the closed state blocker 
+is added,
+the steady state version of the probability density system reads
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}^{x}\rho_{o}\right)  +\frac{\partial
+}{\partial y}\left(  a_{o}^{y}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}
+-k_{oc}\rho_{o},\label{cb2D1}\\
+\frac{\partial}{\partial x}\left(  a_{c}^{x}\rho_{c}\right)  +\frac{\partial
+}{\partial y}\left(  a_{c}^{y}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\left(  \mu
+k_{co}+\left(  \mu-1\right)  k_{bc}\right)  \rho_{c}+k_{bc}\rho_{b}
+,\label{cb2D2}\\
+\frac{\partial}{\partial x}\left(  a_{c}^{x}\rho_{b}\right)  +\frac{\partial
+}{\partial y}\left(  a_{c}^{y}\rho_{b}\right)   &  =\left(  \mu-1\right)
+k_{bc}\rho_{c}-k_{bc}\rho_{b}.\label{cb2D3}
+\end{align}
+Our aim is now to compute the value of the single parameter $k_{bc}$ such that
+the open probability density function defined by the system $(\ref{cb2D1})$--$(\ref{cb2D3})$ is as close as
+possible to the solution of the system $(\ref{eq:pdf211})$ and $(\ref{eq:pdf212})$ in
+the case of $\mu=1$ (i.e., the wild type case). In other words, we want to use the drug to repair the effect of
+the mutations in the sense that we want the open probability densities to be as close
+as possible to the wild type open probability densities.
+
+FIGURE: [fig/2D_closed_blocker.pdf, width=500 frac=0.8] Closed state blocker applied to the mutant case ($\mu=3$). As the value
+$k_{bc}$ increases, the probability density function approaches the wild type solution.  label{2D:closed_blocker}In Figure \ref{2D:closed_blocker} we show 
+the solution of the system $(\ref{cb2D1})$--$(\ref{cb2D3})$ using $\mu=3$ and
+$k_{bc}=0.01$ $\rm{ms^{-1}}$, 0.1 $\rm{ms^{-1}}$, 1 $\rm{ms^{-1}}$, and 10 $\rm{ms^{-1}}$. As expected, we note that the solution becomes increasingly similar to the wild type solution
+(see Figure \ref{2D:mutant}) as $k_{bc}$ increases. 
+
+\subsection{Convergence as $k_{bc}$ increases}
+ Again we observe that the theoretical closed state blocker becomes more
+efficient for larger values of $k_{bc}.$ To obtain a more precise impression of the convergence,
+ we compute the norm of the difference between the open probability
+of the wild type case and the open probability of the solution of the system
+$(\ref{cb2D1})$--$(\ref{cb2D3})$ as a function of $k_{bc}$ using the norm defined by $(\ref{norm})$ on page \pageref{norm}. 
+The result is shown in Figure \ref{2D:closed_error} and we again observe that, when $k_{bc}$ becomes sufficiently large, the effect of the mutation is repaired completely.
+
+FIGURE: [fig/2D_closed_error.pdf, width=500 frac=0.8] The solution with the closed state blocker approaches the wild type case as $k_{bc}$ increases. label{2D:closed_error}\section{An open state drug}
+
+The reaction scheme of an open state blocker for a mutant is
+\[
+C\underset{\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O\underset{k_{ob}
+}{\overset{k_{bo}}{\leftrightarrows}}B.
+\]
+We learned above that we had limited success in using the equilibrium solution
+to derive an optimal characterization of the open state drug. We will
+therefore directly optimize the two parameters $k_{bo}$ and $k_{ob}.$
+
+\subsection{Probability density model for open state blockers in 2D}
+
+The probability density model in the presence of an open state drug is
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}^{x}\rho_{o}\right)  +\frac{\partial
+}{\partial y}\left(  a_{o}^{y}\rho_{o}\right)   &  =\mu k_{co}\rho_{c}
+-(k_{oc}+k_{ob})\rho_{o} + k_{bo}\rho_{b},\label{ob2D1}\\
+\frac{\partial}{\partial x}\left(  a_{c}^{x}\rho_{c}\right)  +\frac{\partial
+}{\partial y}\left(  a_{c}^{y}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu
+k_{co}\rho_{c},\label{ob2D2}\\
+\frac{\partial}{\partial x}\left(  a_{c}^{x}\rho_{b}\right)  +\frac{\partial
+}{\partial y}\left(  a_{c}^{y}\rho_{b}\right)   &  =k_{ob}\rho_{o}-k_{bo}
+\rho_{b}.\label{ob2D3}
+\end{align}
+
+FIGURE: [fig/2D_mu3.pdf, width=500 frac=0.8] Relative difference  between the wild type and the mutant with 
+an open state blocker for the case $\mu=3$. There is a minimum around $(k_{bo},k_{ob})\approx(0.3,0.3)\text{ ms}^{-1}$ marked by a small $\times$. label{2D:mu3}In Figure \ref{2D:mu3}, we show the cost function defined by the norm (see
+(\ref{norm}) on page \pageref{norm}) of the difference between the open probability density function of
+the wild type (solution of $(\ref{eq:pdf211})$ and $(\ref{eq:pdf212})$ with $\mu=1)$
+and the open probability density function of the solution of the system 
+$(\ref{ob2D1})$--$(\ref{ob2D3})$ with $\mu=3.$ By minimizing the cost function,
+\GTLV{using Matlab's {\it Fminsearch} with default parameters and  $k_{ob}  =k_{bo}  =1$ as an initial guess},
+we find that an optimal open state blocker is given by
+\begin{equation}
+k_{ob}=0.3225\text{ ms}^{-1}, \text{  } k_{bo}=0.3346\text{ ms}^{-1}. \label{optob2D}
+\end{equation}
+
+\subsubsection{Does the optimal theoretical drug change with the severity of the mutation?}
+One issue here is to see if the drug changes with the mutation severity
+index. Numerical experiments show that 
+the optimal drug does change. In Figure \ref{2D:mu10}, we show the case in which $\mu=10$ and the optimum has shifted compared to  Figure \ref{2D:mu3}.
+
+FIGURE: [fig/2D_mu10.pdf, width=500 frac=0.8] Relative difference between the wild type and the mutant with 
+an open state blocker for the case $\mu=10$. There is a minimum around $(k_{bo},k_{ob})=(0.53,0.63)\text{ ms}^{-1}$. label{2D:mu10}
+\section[Statistical properties of blockers in 2D]{Statistical properties of the open and closed state blockers in 2D}
+
+We introduced statistical properties of probability density functions in Section \ref{statistics} (see page \pageref{statistics}). In Section \ref{stat1Ddrg} (page \pageref{stat1Ddrg}), we observed that, for the 1D release problem, the closed state blocker completely repaired the statistical properties of the open state probability density functions. In addition, an optimized version of an open state blocker gave good results, but it was unable to repair the standard deviation of the open state probability density functions
+for the particular CO-mutations we considered.
+
+The statistical properties of the solutions for 2D release are summarized in Table \ref{tab:drg_tab_2D}. The results are quite similar to the 1D case. Again, for the CO-mutations, the closed state blocker improves as the value of $k_{bc}$ increases and the optimized version of the open state blocker also provides good results.
+
+
+%\rule{0pt}{4mm} $k_{bc}$ 
+|---------------c--------------------------------c---------c---------------c-------------c----------c------------|
+|Case                                        | $\pi_o$ | $E_{x_o}$ |$E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$  |
+|Closed blocker,\ $k_{bc}$= 0.01             | 0.547   | 10.55     | 144.2    | 4.726          |  58.93          |
+|Closed blocker,\ $k_{bc}$=0.1               | 0.465   | 13.60     | 188.9    | 5.890          |  73.66          |
+|Closed blocker,\ $k_{bc}$=1                 | 0.422   | 13.69     | 205.7    | 5.231          |  53.08          |
+|Closed blocker,\ $k_{bc}$=10                | 0.428   | 12.80     | 203.2    | 5.014          |  47.15          |
+|Open blocker,\ $k_{bo}$=0.33, $k_{ob}$=0.32 | 0.484   | 13.04     | 187.5    | 4.724          |  48.34          |
+|Wild type                                   | 0.430   | 12.63     | 202.4    | 4.948          |  46.27          |
+|Mutant, no drug                             | 0.743   | 9.64      | 131.7    | 2.419          |  18.90          |
+|----------------------------------------------------------------------------------------------------------------|
+
+Statistical properties of the open probability density function in the mutant case when a blocker is applied.  For the mutant case, we use $\mu=3$.
+\label{tab:drg_tab_2D}
+
+
+
+\section[Numerical comparison of blockers]{Numerical comparison of optimal open and closed state blockers}
+
+In the 1D case, we saw that for CO-mutations the closed state blocker was able 
+to completely remove the effect of the mutation, whereas the open state blocker 
+was less efficient.
+This result also holds in the 2D case. In Figure \ref{2D:optimal}, we compare the open
+probability density function of the steady state solution of the wild type
+(solution of $(\ref{eq:pdf211})$ and $(\ref{eq:pdf212})$ with $\mu=1),$ the mutant
+(solution of $(\ref{eq:pdf211})$ and $(\ref{eq:pdf212})$ with $\mu=3),$ the optimal closed state blocker
+(solution of $(\ref{cb2D1})$--$(\ref{cb2D3})$ using $\mu=3$ and $k_{bc}=10\text{ ms}^{-1})$ and the optimal
+open state blocker (solution of $(\ref{ob2D1})$--$(\ref{ob2D3})$ with $\mu=3,k_{ob}=0.3225\text{ ms}^{-1},$
+$k_{bo}=0.3346\text{ ms}^{-1}).$ We observe that it is hard to see any difference between the open probability
+density function of the wild type and the mutant when the closed state blocker is applied. In addition,
+the optimal open state blocker improves the solution, but not as much as the closed state blocker does.
+
+FIGURE: [fig/2D_optimal.pdf, width=500 frac=0.8] Open probability density function for the wild type, the mutant ($\mu=3$), the mutant plus the closed state blocker, and the mutant plus the open state blocker. We compute the stationary solution by solving the time-dependent equations until $T=100$ ms. In the computation we use $\Delta t=0.001$ ms, $\Delta x=0.92$ $\mu$M,  and  $\Delta y=9.3$ $\mu$M. %{\bf  GTL: why do we provide $\Delta t$ for a stationary solution? label{2D:optimal} The model parameters are specified in Table \ref{tab:param2D_again}.  
+% {\bf xxx Glenn. Can you make a gray table in the beginning of the chapter giving numerical parameters used in the whole chapter?}
+%\K{zzz xxx Er det disse parametrene som er brukt i plottene tidligere i kapittelet ogs\r{a}?}
+%\G{In place now.}
+}
+%{\bf xxx Glenn: Specify dt,dx,dy and refer to where all parameters of model is stated.}} 
+
+\section{Stochastic simulations in 2D using optimal drugs}
+
+We have used the probability density approach to find an optimal closed state blocker. In Figure \ref{2D:mc_drug2} 
+%\K{zzz Er det Figure \ref{2D:mc_drug2}?}
+we show how the closed state blocker works in a dynamic simulation based on the scheme 
+$(\ref{nc1})$ and $(\ref{nc2})$. We plot the concentrations of the wild type, the mutant ($\mu=3$), and the mutant when the closed state blocker is applied ($k_{bc}=10 \text{ ms}^{-1},\, k_{cb}=(\mu-1)k_{bc}$). The dyad concentrations ($x=x(t)$) are on the left-hand side and the JSR concentrations
+($y=y(t)$) are on the right-hand side. As for the 1D simulations, we observe that the mutations significantly reduce the variability of the solutions and that this effect is basically completely repaired by the closed state blocker.
+
+FIGURE: [fig/2D_mc_drug2.pdf, width=500 frac=0.8] Stochastic simulation of dyad concentrations (left, $x=x(t)$) and JSR concentrations
+(right, $y=y(t)$) for the wild type (upper), the mutant ($\mu=3$, middle), and the mutant where the closed state drug is applied (lower, $k_{bc}=10 \text{ ms}^{-1}$).
+Here we use $\Delta t=0.01$ ms. The model parameters are specified in Table \ref{tab:param2D_again}, and the initial conditions
+are given by $x(0) = c_0$ and $y(0) = c_1$ with the channel being closed.
+ label{2D:mc_drug2}\section{Notes}
+
+\begin{enumerate}
+\item The 2D stochastic differential equation and the associated probability density system
+is taken from  Huertas and Smith \cite{Huertas2007}.
+\end{enumerate}

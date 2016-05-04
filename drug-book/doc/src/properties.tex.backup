@@ -1,0 +1,839 @@
+
+\chapter{Properties of probability density functions}
+
+
+
+The physical processes we study in this text are modeled using models including stochastic terms. Direct numerical simulations based on such stochastic models give results that are hard to interpret and it is therefore common to run many simulations and compute the average, and we have also seen that we can derive models governing the probability density functions. These are powerful tools that provide insight in the processes. In this chapter we will see that it is useful to have specific numbers that characterize
+stochastic variables and associated probability density functions. We 
+encountered the equilibrium probability of being in the open or closed state
+(see, e.g., page \pageref{eq_pr_wt}) and we introduced probability density
+functions (see, e.g., page \pageref{sec:pdf}). Here we shall derive some specific (and common)
+characteristics of the probability density functions and discuss how these
+characteristics can be used to gain an understanding of calcium release. We will
+also show how the characteristics relate to the concepts already introduced 
+and we will discuss how the characteristics vary as functions of the mutation
+severity index. Finally, we will show how the statistical characterizations can be used 
+to evaluate the properties of theoretical drugs.
+
+
+
+
+
+\section{Probability density functions}
+
+
+ Let us briefly recall the models under consideration. We consider the model
+\begin{equation}
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x})
+\label{asde1D100}
+\end{equation}
+of the calcium concentration of the dyad (see Figure \ref{cicr_1D}). Recall that $v_{r}$
+denotes the speed of release from the sarcoplasmic reticulum (SR) to the dyad, $v_{d}$ denotes the speed of diffusion
+from the dyad to the cytosol, $c_{0}$ is the concentration of calcium ions in
+the cytosol, and $c_{1}$ is the calcium concentration in the SR; both $c_0$ and $c_1$ 
+are assumed to be constant. The stochastic
+function $\bar{\gamma}=\bar{\gamma}(t)$ can be either zero (closed state) or 
+one (open state) and the state is governed by the Markov model
+
+\begin{equation}
+C\underset{k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O, \label{M100}
+\end{equation}
+where $k_{oc}$ and $k_{co}$ are the rates associated with the Markov model. As
+discussed above, the probability density functions of the states of the Markov
+model are governed by the following system of partial differential equations:
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o},\label{pdf1000}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c}, \label{pdf1001}
+\end{align}
+where, as above, $\rho_{o}$ and $\rho_{c}$ are the probability density
+functions of the open and closed states, respectively. Furthermore, we recall
+that
+\begin{align}
+a_{o}  &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\label{aos}\\
+a_{c}  &  =v_{d}(c_{0}-x). \label{acs}
+\end{align}
+The system of partial differential equations given by $\left(
+\ref{pdf1000}\right)$ and (ref{pdf1001}) is solved on the computational
+domain given by $\Omega=[c_0,c_+]$, where
+\[
+c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}},
+\]
+and the boundary conditions are set up to ensure that there is no leak of probability across the
+boundaries (see page \pageref{bc}).
+
+\section{Statistical characteristics}
+\label{statistics}
+
+\bigskip For the probability density functions given by the system $\left(
+\ref{pdf1000}\right)$ and (ref{pdf1001}), we can introduce the common statistical
+concepts of probability, expectation, and standard deviation. The probabilities of
+being in the open and closed states are given by
+\begin{equation}
+\pi_{o}=\int_{\Omega}\rho_{o}dx \text{ and }\pi_{c}=\int_{\Omega}\rho_{c}dx,
+\label{probability}
+\end{equation}
+respectively. It is worth noting that these values are time dependent but
+independent of space (concentration). Furthermore, the sum of these
+probabilities adds up to one,
+\[
+\pi_{o}\left(  t\right)  +\pi_{c}\left(  t\right)  =1,
+\]
+for all time. The expected values of the concentration are given by
+\begin{equation}
+E_{o}=\frac{1}{\pi_{o}}\int_{\Omega}x\rho_{o}dx \text{ and }E_{c}=\frac{1}
+{\pi_{c}}\int_{\Omega}x\rho_{c}dx \label{expectation}
+\end{equation}
+under the condition that the channels are open and closed, respectively. Finally, the standard deviations $\sigma_{o}$ and $\sigma_{c}$ are given by
+\begin{align}
+\sigma_{o}^{2}  &  =\frac{1}{\pi_{o}}\int_{\Omega}x^{2}\rho_{o}dx-E_{o}^{2},\label{stdvo}\\
+\sigma_{c}^{2}  &  =\frac{1}{\pi_{c}}\int_{\Omega}x^{2}\rho_{c}dx-E_{c}^{2}. \label{stdvc}
+\end{align}
+
+We will show below how changes in the Markov model affect these
+characteristics and how the characteristics are influenced by the
+theoretical drugs. Generally, we have to solve the system $\left(
+\ref{pdf1000}\right)$ and (ref{pdf1001}) and then compute the statistical
+properties. However, we will see that in the special case in which the rate functions
+defining the Markov model, $k_{oc}$ and $k_{co}$, are constant; we can compute some of
+the characteristics analytically.  We will therefore start by considering such a case.
+
+
+
+\section{Constant rate functions}
+|---c-------------------c----------------|
+|$v_d $    | 0.1 $\rm{ms^{-1}}$          |
+|$v_r $    | 1.0 $\rm{ms^{-1}}$          |
+|$c_0 $    | 0 $\rm{mM}$                 |
+|$c_1 $    | 1 $\rm{mM}$                 |
+|$k_{co} $ | 1 $\rm{ms^{-1}}$            |
+|$k_{oc} $ | 1 $\rm{ms^{-1}}$            |
+|----------------------------------------|
+Parameter values for the model of (\ref{asde1D100}) and (\ref{M100}).
+%\K{zzz $v_d$ og $v_r$ m\r{a} vel ha benevning $\rm{ms^{-1}}$ (istedenfor  $\rm{\mu M/ms}$) i Table \ref{tab:nodrug}, Table \ref{tab:xdep} og Table \ref{tab:nodrug_again} for at enhetene skal g\r{a} opp?}
+\label{tab:nodrug}
+
+We consider the system (ref{pdf1000}) and (ref{pdf1001}) in the
+special case that both $k_{oc}$ and $k_{co}$ are constants (independent of the concentration $x$). If we integrate
+(ref{pdf1000}) and (ref{pdf1001}) over the interval $\Omega$, we obtain the system
+\begin{align}
+\pi_{o}^{\prime}  &  =k_{co}\pi_{c}-k_{oc}\pi_{o},\label{pi1}\\
+\pi_{c}^{\prime}  &  =k_{oc}\pi_{o}-k_{co}\pi_{c}, \label{pi2}
+\end{align}
+where we use the boundary conditions that state that there is no flux
+of probability across the boundaries.
+
+\subsection{Equilibrium probabilities}
+
+
+When this system reaches equilibrium, the probabilities satisfy
+\begin{equation}
+k_{co}\pi_{c}=k_{oc}\pi_{o}
+\end{equation}
+and since $\pi_{o}+\pi_{c}=1,$ we find that
+\begin{align}
+\pi_{o} &  =\frac{k_{co}}{k_{oc}+k_{co}},\label{eq_po}\\
+\pi_{c} &  =\frac{k_{oc}}{k_{oc}+k_{co}},\label{eq_pc}
+\end{align}
+which we recognize as the probabilities $o$ and $c$, respectively, derived directly from the
+equilibrium of the Markov model on page \pageref{eq_pr_wt}. This relation explains
+the connection between these two ways of considering the probability of
+being in a given state of the Markov model, but it is important to note that
+this relation only holds when the rate functions are constant.
+
+%\footnote{The case of constant values
+%of the rate functions $k_{oc}$ and $k_{co}$  is quite important because of the experimental technique referred
+%to as voltage clamping. The technique allows the current to be measured while the transmembrane potential is kept fixed. }.
+
+
+\subsection{Dynamics of the probabilities}
+
+In the special case with only two states of the Markov model and constant
+rate functions, we can analytically compute how the probabilities evolve in
+time. If we use the fact that $\pi_{o}\left(  t\right)  +\pi_{c}\left(
+t\right)  =1$ for all time, we find that the system (ref{pi1})
+and (ref{pi2}) can be reduced to one equation written in the form
+\begin{equation}
+\pi_{o}^{\prime}=\left(  k_{co}+k_{oc}\right)  \left(  \frac{k_{co}}
+{k_{co}+k_{oc}}-\pi_{o}\right)  . \label{pi_o}
+\end{equation}
+Suppose we know that the channel is closed at $t=0;$ then $\pi_{o}(0)=0$ and
+we find the solution
+\begin{equation}
+\pi_{o}(t)=\frac{k_{co}}{k_{co}+k_{oc}}\left(  1-e^{-\left(  k_{co}
++k_{oc}\right)  t}\right)  .\label{pio11}
+\end{equation}
+We note that if the channel is closed at $t=0,$ the open probability reaches
+the equilibrium given by 
+\[ \frac{k_{co}}{k_{co}+k_{oc}}\]
+at an exponential rate in
+time and the exponent is given by $ k_{co}+k_{oc}$ so
+that equilibrium is reached faster for higher rates.
+
+
+\subsection{Expected concentrations}
+
+We still consider constant rate functions. In that case, we will show that
+the expected concentration in the case of open or closed channels can be obtained by 
+solving a  $2\times2$ linear system of ordinary differential equations. We start by considering the system
+defining the probability density functions,
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =k_{co}\rho_{c}-k_{oc}\rho_{o},\label{rho_100}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-k_{co}\rho_{c}.\label{rho_101}
+\end{align}
+Since
+\begin{equation}
+E_{o}\pi_{o}=\int_{\Omega}x\rho_{o}dx\text{ and }E_{c}\pi_{c}=\int_{\Omega
+}x\rho_{c}dx,
+\end{equation}
+we find, using (ref{rho_100}) that
+\begin{align}
+\left(  E_{o}\pi_{o}\right)  _{t}  & =\int_{\Omega}x\frac{\partial\rho_{o}
+}{\partial t}dx\\
+& =-\int_{\Omega}x\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)
+dx+k_{co}\int_{\Omega}x\rho_{c}dx-k_{oc}\int_{\Omega}x\rho_{o}dx\\
+& =-\int_{\Omega}x\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)
+dx+k_{co}\pi_{c}E_{c}-k_{oc}\pi_{o}E_{o}.
+\end{align}
+Here the integral can be handled using integration by parts. The domain
+$\Omega$ is defined by the interval $\left[  x_{-},x_{+}\right] =[c_0,c_+] $ and we
+recall that $a_{o}\rho_{o}=a_{c}\rho_{c}=0$ at $x=x_{-}$ and at $x=x_{+}.$
+Therefore, by using the definition of $a_{o}$ given in $\left(  \ref{aos}\right)
+$, we obtain
+\begin{align}
+-\int_{x_{-}}^{x_{+}}x\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)
+dx &  =-\left[  x\left(  a_{o}\rho_{o}\right)  \right]  _{x_{-}}^{x_{+}}
++\int_{x_{-}}^{x_{+}}a_{o}\rho_{o}dx\\
+&  =\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}-\left(  v_{r}+v_{d}\right)
+\pi_{o}E_{o}.
+\end{align}
+Consequently, we obtain
+\begin{equation}
+\left(  E_{o}\pi_{o}\right)  _{t}=\left(  v_{r}c_{1}+v_{d}c_{0}\right)
+\pi_{o}+k_{co}\pi_{c}E_{c}-\left(  v_{r}+v_{d}+k_{oc}\right)  \pi_{o}E_{o}.
+\end{equation}
+Similarly, we have
+\begin{align}
+\left(  E_{c}\pi_{c}\right)  _{t}  & =\int_{\Omega}x\frac{\partial\rho_{c}
+}{\partial t}dx\\
+& =-\int_{\Omega}x\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)
+dx+k_{oc}\int_{\Omega}x\rho_{o}dx-k_{co}\int_{\Omega}x\rho_{c}dx\\
+& =-\int_{\Omega}x\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)
+dx+k_{oc}\pi_{o}E_{o}-k_{co}\pi_{c}E_{c}
+\end{align}
+and, by the definition (ref{acs}) of $a_{c}$, we find that
+\begin{align}
+-\int_{x_{-}}^{x_{+}}\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)
+xdx &  =-\left[  \left(  a_{c}\rho_{c}\right)  x\right]  _{x_{-}}^{x_{+}}
++\int_{x_{-}}^{x_{+}}a_{c}\rho_{c}dx\\
+&  =v_{d}c_{0}\pi_{c}-v_{d}\pi_{c}E_{c}.
+\end{align}
+We therefore obtain
+\begin{equation}
+\left(  E_{c}\pi_{c}\right)  _{t}=v_{d}c_{0}\pi_{c}+k_{oc}\pi_{o}E_{o}-\left(
+v_{d}+k_{co}\right)  \pi_{c}E_{c}.
+\end{equation}
+Since we have already found explicit formulas for $\pi_{o}$ and $\pi_{c},$ we
+can define
+\begin{equation}
+e_{o}=E_{o}\pi_{o}\text{ and }e_{c}=E_{c}\pi_{c} \label{eoec_def}
+\end{equation}
+and solve the system
+\begin{align}
+e_{o}^{\prime}  & =\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}+k_{co}
+e_{c}-\left(  v_{r}+v_{d}+k_{oc}\right)  e_{o}, \label{eo33}\\
+e_{c}^{\prime}  & =v_{d}c_{0}\pi_{c}+k_{oc}e_{o}-\left(  v_{d}+k_{co}\right)
+e_{c}. \label{ec33}
+\end{align}
+When $\pi_{o},\pi_{c}$, and $e_{o},e_{c}$ are computed, of course computing 
+the expectations $E_{o}$ and $E_{c}$ is straightforward.
+
+
+\subsection{Numerical experiments} 
+
+In Figures \ref{1D/pi} and \ref{1D/E}, we illustrate the properties derived above by presenting the
+results of numerical computations. The parameters used in the computations are
+given in Table \ref{tab:nodrug}. In Figure  \ref{1D/pi}, we show how the
+probability defined by (ref{probability}) evolves as a
+function of time. The solid line is the exact solution given by the formula
+(ref{pio11}) and the crosses are based on the numerical
+solution of the system (ref{pdf1000}) and (ref{pdf1001}), where
+the probability defined by (ref{probability}) is replaced by
+a Riemann sum based on the numerical solution. In Figure \ref{1D/E}, we show the
+evolution of the expected concentration for the open (solid) or closed
+(dashed) state, based on solving the system of ordinary differential
+equations given by (ref{eo33}) and (ref{ec33}) and then computing
+the expectations from (\ref{eoec_def}) and the solution of  (\ref{pi_o}).  
+The crosses 
+are based on the numerical solution of the system  
+(ref{pdf1000}) and (ref{pdf1001}) and the expected values of the concentration defined by
+(ref{expectation}) are again replaced by a Riemann sum based
+on the numerical solution. 
+
+\begin{figure}[h]\centering
+\hbox{
+\centerline{\includegraphics[width=0.6\linewidth]{1D/pi.pdf}}
+}
+\caption{Comparison of the theoretically derived open probability given by (ref{pio11})
+ with the numerical solution of the probability density functions defined by the system (ref{pdf1000}) and (ref{pdf1001}).
+  In the latter case, the integrals $(\ref{probability}) $ are
+ replaced by Riemann sums.\label{1D/pi}}
+\end{figure}
+
+\begin{figure}[h]\centering
+\hbox{
+\centerline{\includegraphics[width=0.6\linewidth]{1D/E.pdf}}
+}
+\caption{Comparison of the theoretically derived expectations given by (\ref{eoec_def}), where $e_o$ and
+$e_c$ are solutions of the system
+ (ref{eo33}) and (ref{ec33})
+ with the numerical solution of the probability density functions defined by the system (ref{pdf1000}) and (ref{pdf1001}).
+  In the latter case, the integrals $(\ref{expectation}) $ are 
+ replaced by Riemann sums. \label{1D/E}}
+\end{figure}
+
+
+%\G{The figures are in place. I did not use red and blue, only black. And crosses instead of dashed lines, since traces overlap too much to be visible}
+
+
+
+\bigskip
+
+\subsection{Expected concentrations in equilibrium }
+%aaa: I have rewritten this. K: can you check the math once more?}
+In the case of constant rates, 
+we derived the following system describing the evolution of the expected
+concentrations for open or closed channels, respectively,
+\begin{align}
+e_{o}^{\prime}  & =\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}+k_{co}
+e_{c}-\left(  v_{r}+v_{d}+k_{oc}\right)  e_{o}, \label{eo333}\\
+e_{c}^{\prime}  & =v_{d}c_{0}\pi_{c}+k_{oc}e_{o}-\left(  v_{d}+k_{co}\right)
+e_{c}, \label{ec333}
+\end{align}
+where we recall that
+\begin{equation}
+e_{o}=E_{o}\pi_{o}\text{ and }e_{c}=E_{c}\pi_{c}. \label{eoec_def2}
+\end{equation}
+The stationary solution of this system  is given as the solution of the
+following linear $2\times2$ system of equations:
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}
+k_{oc}+ v_{r}+v_{d}     & -k_{co}\\
+-k_{oc} & k_{co}+v_{d}
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}
+e_{o}\\
+e_{c}
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}
+\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}\\
+v_{d}c_{0}\pi_{c}
+\end{array}
+\right)  ,\label{expectation100}
+\end{equation}
+where  $\pi_{o}$ and $\pi_{c}$ are equilibrium probabilities given by $\left(
+\ref{eq_po})\text{ and (}\ref{eq_pc}\right)  .$ The solution of this system
+in terms of a formula becomes messy, but if we consider the specific
+parameters used in the computations (see Table \ref{tab:nodrug}), 
+we find that the equilibrium expectations are given by
+\begin{align}
+E_{o}  & =0.8397 \text{ mM,}\\
+E_{c}  & =0.7634 \text{ mM,}
+\end{align}
+which compares well with our observations in Figure \ref{1D/E}.
+
+\bigskip
+
+\section{Markov model of a mutation}
+
+Mutations may change the release mechanism and thus seriously alter the
+function of the calcium-induced calcium release. Mutations in the RyR2
+gene can lead to changes in the receptor function, increasing the open
+probability. 
+
+%\K{zzz Jeg synes det hadde v\ae rt fint om man spesifiserte et sted at  vi n\r{a} har $k_{co}(x) = k_{co}x$ (eller $\mu k_{co}x$)}
+%\G{I now tried to not use $k_{co}(x)$ anywhere, so $k_{co}$ is always a constant. In this chapter that is, in Chapter 3 we use $k_{co}(x)$, but there we have no need to speak about the constant directly. In order to be consistant we need to invent a seperate name for the constant and the function. Using a function here is a bad idea anyway, as that could give the impression that the analyical solution holds for more than a linear function.}
+%\K{Man trenger ikke \r{a} bruke notasjonen $k_{co}(x)$, men man burde vel tydelig si hvordan reaksjonsraten avhenger av x, at man i denne seksjonen tar for seg tilfellet der reaksjonsraten fra \r{a}pen til lukket er konstant og reaksjonsraten fra lukket til \r{a}pen er $k_{co}x$. N\r{a} m\r{a} man lese dette av (\ref{xdep1}) og (\ref{xdep2}).}
+|----c-------------c------------------------|
+|$v_d $    | 1 $\rm{ms^{-1}}$               |
+|$v_r $    | 0.1 $\rm{ms^{-1}}$             |
+|$c_0 $    | 0.1 $\rm{\mu M}$               |
+|$c_1 $    | 1000 $\rm{\mu M}$              |
+|$k_{co} $ | 0.1 $\rm{ms^{-1} \mu M^{-1}}$  |
+|$k_{oc} $ | 1 $\rm{ms^{-1}}$               |
+|-------------------------------------------|
+Parameter values for the model (\ref{xdep1}) and (\ref{xdep2}) .\label{tab:xdep}
+
+As mentioned above, one way to model the increased open probability
+is to define
+\begin{equation}
+k_{co,\mu}=\mu k_{co}, \label{severity}
+\end{equation}
+where $\mu$ is referred to as the mutation severity index. This is a
+CO-mutation (see page \pageref{com}) and it does not affect the mean open
+time. The parameter $\mu=1$ denotes the wild type case and larger values of
+$\mu$ indicate more severe mutations. Basically, since $k_{co,\mu}>k_{co} $
+for $\mu>1$, the mutation will lead to an increased probability of being in the
+open state.
+
+%\G{In this section we let open rate depend on $x$. (And in the next we do not..)}
+The system governing the open and closed probability densities now takes the
+form
+\begin{align}
+\frac{\partial\rho_{o}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{o}\rho_{o}\right)   &  =\mu k_{co}\, x \rho_{c}-k_{oc}\rho_{o},\label{xdep1}\\
+\frac{\partial\rho_{c}}{\partial t}+\frac{\partial}{\partial x}\left(
+a_{c}\rho_{c}\right)   &  =k_{oc}\rho_{o}-\mu k_{co}\, x\rho_{c},\label{xdep2}
+\end{align}
+where, as above, we have
+\begin{align}
+a_{o}  &  =v_{r}(c_{1}-x)+v_{d}(c_{0}-x),\label{fluxes222}\\
+a_{c}  &  =v_{d}(c_{0}-x).\nonumber
+\end{align}
+Note that in this model the opening rate depends on the concentration $x$.
+\begin{figure}[h]
+\centering \vbox{
+\includegraphics[width=1.0\linewidth]{1D/mutation.pdf}
+}\caption{ Upper panel: Wild type open (left) and closed (right) probability density
+functions computed using Monte Carlo simulations (histogram) and by solving
+the probability density system (red line). The integral of the open probability density
+function is 0.811 (0.189 for the closed state probability density function).
+Lower panel: Similar figure as for the mutant case ($\mu=3$). The integral of the open
+probability density function is 0.962 (0.038 for the closed state probability
+density function).}
+\label{1D/mutation}
+\end{figure}
+
+In Figure \ref{1D/mutation}, we show the results of Monte Carlo simulations (histograms) and
+solutions of the probability density system (\ref{xdep1}) and (\ref{xdep2}) (red solid line) for the wild type case ($\mu=1$) and mutant case ($\mu
+=3$). As above, we see that these two computational approaches give more or
+less the same answer. It is more interesting to observe the effect of the
+mutation. We see that the mutation tends to shift the open probability density
+function toward the upper boundary, where the function becomes very large.
+This shows that, in the case of mutation, it is very likely to have a high
+concentration \textit{and} an open channel---much more likely than in the
+wild type case.
+
+The statistical characteristics introduced above are given in Table
+\ref{stat1D}. We note that the total open probability $\pi_{o}$ increases from
+0.811 for the wild type to 0.962 for the mutant. Also, we note that the expected
+concentration, $E_{o}$, for open channels is given by 81.91 $\mu$M for the wild type and
+87.95 $\mu$M for the mutant. The standard deviation, on the other hand, is
+significantly reduced (by a factor of three) in the mutant case compared to the
+wild type. The probability of being in the closed state decreases by a factor
+of five in the mutant case compared to the wild type, whereas the expected
+concentration is doubled and the standard deviation is reduced by a factor of seven.
+
+
+
+
+|---l----------r-----------r-----------r------------r-----------r--------r------------|
+|Case      | $\pi_{o}$ | $E_{o}$ | $\sigma_{o}$ | $\pi_{c}$ | $E_{c}$ | $\sigma_{c}$  |
+|Wild type | 0.811     | 81.91   | 9.50         | 0.189     | 43.04   | 35.26         |
+|Mutant    | 0.962     | 87.95   | 3.20         | 0.038     | 84.34   | 4.85          |
+|-------------------------------------------------------------------------------------|
+Statistical properties of the wild type and mutant cases.
+\label{stat1D}
+
+
+
+
+\subsection{How does the mutation severity index influence the probability
+density function of the open state?}
+
+We have seen a few examples indicating how changes in the reaction rates
+$k_{co}$ and $k_{oc}$ change the probability density functions. Since we are
+able to solve the stationary case analytically, this issue can be studied in
+great detail. Let us start by recalling that we model the effect of the
+mutation by introducing a severity index $\mu$. The stationary model is then
+\begin{align}
+\frac{\partial}{\partial x}\left(  a_{o}\rho_{o}\right)   &  =\mu k_{co}\, x
+\rho_{c}-k_{oc}\rho_{o},\label{steadystate11}\\
+\frac{\partial}{\partial x}\left(  a_{c}\rho_{c}\right)   &  =k_{oc}\rho
+_{o}-\mu k_{co}\, x \rho_{c}, \label{steadystate12}
+\end{align}
+where we recall that $\mu=1$ is the wild type case. We discussed above how to
+solve the steady state model analytically
+(see Section \ref{sec:analytical}, page \pageref{sec:analytical}) 
+and we can use the analytical
+solution to investigate how the mutation affects the probability density
+functions. 
+%\K{zzz Jeg synes det hadde v\ae rt fint om det her ble referert til  seksjonen der den analytiske l\o sningen ble utledet (section \ref{sec:analytical} page \pageref{sec:analytical})} 
+Since the steady state open probability density function is given
+by the solution of
+\[
+\rho_{o}^{\prime}=-\alpha(x)\rho_{o}
+\]
+with
+\[
+\alpha(x)=\frac{\mu k_{co}\, x}{v_{d}(c_{0}-x)}-\frac{v_{p}-k_{oc}}{v_{p}(c_{+}-x)},
+\]
+where
+\[
+v_{p}=v_{r}\frac{c_{1}-c_{0}}{c_{+}-c_{0}},
+\]
+we have solutions of the form
+\begin{equation}
+\rho_{o,\mu}(x)=K_{\mu}e^{\frac{\mu k_{co}\,x}{v_{d}}}(c_{+}-x)^{\frac{k_{oc}
+}{v_{p}}-1}(x-c_{0})^{\frac{c_{0}\mu k_{co}}{v_{d}}}, \label{rho_o}
+\end{equation}
+where $K_{\mu}$ is a constant given by the somewhat complicated
+expression\thinspace
+\[
+1/K_{\mu}=(c_{+}-c_{0})^{a+b}e^{a}\Gamma(a)\Gamma(b)({}_{1}\!F_{1}
+(a,a+b,c)+k_{oc}\frac{v_{p}-v_{d}}{v_{d}v_{p}}{}_{1}\!F_{1}(a,a+b+1,c)).
+\]
+Here ${}_{1}\!F_{1}$ is Kummer's regularized hypergeometric function and
+\[
+a=c_{0}\mu k_{co}/v_{d},b=k_{oc}/v_{p},c=(c_{+}-c_{0})\mu k_{co}/v_{d}.
+\] 
+It is useful to consider the ratio of the mutant solution to the wild type
+solution and we find that
+\[
+\frac{\rho_{o,\mu}(x)}{\rho_{o,1}(x)}=\frac{K_{\mu}}{K_{1}}e^{\frac{\left(
+\mu-1\right)  xk_{co}}{v_{d}}}(x-c_{0})^{\frac{\left(  \mu-1\right)
+c_{0}k_{co}}{v_{d}}}.
+\]
+In Figure \ref{1D:ratio}, we graph this relation as a function of the
+severity index $\mu$ and the concentration $x.$ We observe that, close to the
+maximum concentration, the open probability density function of the mutant 
+is much larger than for the wild type.
+
+FIGURE: [fig/1D_ratio.pdf, width=500 frac=0.8] Contours of the function $\frac{\rho_{o,\mu}(x)}{\rho_{o,1}(x)}$. Note that the open probability density function
+of the mutant is much greater than the open probability density function
+of the wild type for large values of the concentration and for large values of the mutation severity index $\mu$. label{1D:ratio}\subsection{Boundary layers}
+
+As seen in both the numerical and analytical solutions above, the probability
+density functions may have singularities at the endpoints. It is easily seen
+from (ref{rho_o}) that $\rho_{o,\mu}$ has a singularity at
+the endpoint $x=c_{+}$ whenever
+\[
+\frac{k_{oc}}{v_{p}}<1.
+\]
+Similarly, we find that the closed probability density function is given by
+
+
+
+\[
+\rho_{c,\mu}(x)=K_{\mu}\frac{v_{p}}{v_{d}}e^{\frac{\mu xk_{co}}{v_{d}}}
+(c_{+}-x)^{\frac{k_{oc}}{v_{p}}}(x-c_{0})^{\frac{\mu c_{0}k_{co}}{v_{d}}-1},
+\]
+which has a singularity at $x=c_{0}$ whenever
+\[
+\frac{\mu c_{0}k_{co}}{v_{d}}<1.
+\]
+
+
+\bigskip
+
+\section[Statistical properties of the mutation]{Statistical properties as functions of the mutation severity index}
+
+|---c--------------c-------------|
+|$v_d $    | 0.1 $\rm{ms^{-1}}$  |
+|$v_r $    | 1.0 $\rm{ms^{-1}}$  |
+|$c_0 $    | 0 $\rm{mM}$         |
+|$c_1 $    | 1 $\rm{mM}$         |
+|$k_{co} $ | 1 $\rm{ms^{-1}}$    |
+|$k_{oc} $ | 1 $\rm{ms^{-1}}$    |
+|--------------------------------|
+Parameter values for the model (\ref{asde1D100}) and (\ref{M100}) (copied from Table \ref{tab:nodrug}). \label{tab:nodrug_again}
+
+We have seen, using numerical computations and analytical considerations, how
+the mutation severity index changes the probability density functions. In this
+section, we shall look with more detail into how the index changes the
+statistical properties of the probability density functions. Again, we consider a case where
+the rates $k_{oc}$ and  $k_{co}$ are constants.
+
+
+
+\subsection{Probabilities}
+
+We recall that the open probability, defined as
+\begin{equation}
+\pi_{o}=\int_{\Omega}\rho_{o}dx, \label{open100}
+\end{equation}
+evolves as
+\begin{equation}
+\pi_{o}(t)=\frac{k_{co}}{k_{co}+k_{oc}}\left(  1-e^{-\left(  k_{co}
++k_{oc}\right)  t}\right)
+\end{equation}
+for wild type parameters in the case of $\pi_{o}(0)=0$. If we introduce the mutation severity index in the
+Markov model (see (\ref{severity})), we find that the open probability evolves as
+\begin{equation}
+\pi_{o,\mu}(t)=\frac{\mu k_{co}}{\mu k_{co}+k_{oc}}\left(  1-e^{-\left(  \mu
+k_{co}+k_{oc}\right)  t}\right)
+\end{equation}
+and thus the mutant case shows faster convergence toward a higher probability
+than the wild type case. In Figure \ref{1D:pi_mu}, we show the graphs of $\pi_{o}$ and
+$\pi_{o,\mu}$ in the case of $\mu=3$ and $\mu=10;$ the other parameters are given in Table \ref{tab:nodrug_again}.
+
+FIGURE: [fig/1D_pi_mu.pdf, width=500 frac=0.8] The open probability $\pi_o$ defined by $(\ref{open100})$  with $\mu=1$ (wild type), $\mu=3$, and $\mu=10$. The mutation
+increases the equilibrium open probability and reduces the time to reach equilibrium.}
+\bigskip
+
+
+\subsection{Expected calcium concentrations label{1D:pi_mu}We defined the expected calcium concentrations in the case of open and
+closed channels as
+\begin{equation}
+E_{o}=\frac{1}{\pi_{o}}\int_{\Omega}x\rho_{o}dx\text{ and }E_{c}=\frac{1}
+{\pi_{c}}\int_{\Omega}x\rho_{c}dx.
+\end{equation}
+Recall that $\pi_{o}$ and $\pi_{c},$ are given by explicit formulas
+and that we introduced
+\begin{equation}
+e_{o}=E_{o}\pi_{o}\text{ and }e_{c}=E_{c}\pi_{c}. \label{eoec_def3}
+\end{equation}
+For constant rates $k_{oc}$ and $k_{co}$, the expectations can be found by solving
+the system of ordinary differential equations
+\begin{align}
+e_{o}^{\prime}  & =\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}+k_{co}
+e_{c}-\left(  v_{r}+v_{d}+k_{oc}\right)  e_{o}, \label{eo3333}\\
+e_{c}^{\prime}  & =v_{d}c_{0}\pi_{c}+k_{oc}e_{o}-\left(  v_{d}+k_{co}\right)
+e_{c}, \label{ec3333}
+\end{align}
+and then computing
+\[
+E_o(t)=\frac{e_o(t)}{\pi_o(t)}\text{ and }
+E_c(t)=\frac{e_c(t)}{\pi_c(t)}.
+\]
+
+In Figure \ref{1D:E_mu}, we show the expected values of the calcium concentration for
+wild type data when the channel is open (solid, red) and closed (solid, blue),
+as well as mutant-type data $(\mu=3)$ when the channel is open (dotted, red) and
+closed (dotted, blue). In the computation using mutant data, we simply replace
+$k_{co}$ with $\mu k_{co}$. However, keep in mind that this affects the formulas defining the 
+probabilities $\pi_{o}$ and $\pi_{c}$ as well.
+
+FIGURE: [fig/1D_E_mu.pdf, width=500 frac=0.8] Expected values of the concentration for wild type (dotted lines) and mutant (solid lines) cases as a function of time. In the mutant case, we used $\mu=3$. label{1D:E_mu}\bigskip
+
+
+\subsection{Expected calcium concentrations in equilibrium}
+
+As explained above, the equilibrium version of the expected concentrations
+$E_{o}$ and $E_{c}$ can be found by solving the following $2\times2$ linear
+system of equations:
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}
+k_{oc}+v_{r}+v_{d} & -\mu k_{co}\\
+-k_{oc} & \mu k_{co}+v_{d}
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}
+e_{o}\\
+e_{c}
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}
+\left(  v_{r}c_{1}+v_{d}c_{0}\right)  \pi_{o}\\
+v_{d}c_{0}\pi_{c}
+\end{array}
+\right)  \label{expectation1001}
+\end{equation}
+and then computing
+\[
+E_{o}=\frac{e_{o}}{\pi_{o}}\text{ and }E_{c}=\frac{e_{c}}{\pi_{c}},
+\]
+where $\pi_{o}$ and $\pi_{c}$ are equilibrium probabilities given by $\left(
+\ref{eq_po})\text{ and (}\ref{eq_pc}\right)  ,$
+\begin{align}
+\pi_{o} &  =\frac{\mu k_{co}}{k_{oc}+\mu k_{co}}, \label{200}\\
+\pi_{c} &  =\frac{k_{oc}}{k_{oc}+\mu k_{co}}. \label{201}
+\end{align}
+In Figure \ref{1D:E_mu_ss}, we plot the expectations as a function of the
+mutation severity index. The red line represents the expected value of the
+calcium concentration when the channel is open and the blue line represents
+the expected value of the calcium concentration when the channel is closed.
+Here, we use the parameters given in Table \ref{tab:nodrug_again}. The graphs
+start at $\mu=1$, which represents the wild type case.
+
+FIGURE: [fig/1D_E_mu_ss.pdf, width=500 frac=0.8] Steady state of $E_o$ and $E_c$ as a function of the mutation severity index. label{1D:E_mu_ss}\bigskip 
+\subsection{What happens as $\mu\longrightarrow \infty$?}
+When the mutation severity index goes to infinity, we force the
+channel to be open more or less all the time. If we consider the stochastic
+model
+\[
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x})
+\]
+as $\mu\longrightarrow\infty,$ we know that the channel is generally
+open, so we have $\bar{\gamma}(t)\approx1.$  Therefore, we obtain the model
+\[
+\bar{x}^{\prime}(t)\approx v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x}).
+\]
+As we have seen earlier, the equilibrium version of this equation is given by
+\[
+x=c_{+}=\frac{v_{r}c_{1}+v_{d}c_{0}}{v_{r}+v_{d}}\approx0.91\text{ mM}
+\]
+and this is what we see from the graphs of Figure \ref{1D:E_mu_ss}.
+
+We can also see this from system (ref{expectation1001}). For the parameters given
+in Table \ref{tab:nodrug_again}, we have
+\[ \pi_{o}=\frac{\mu}{1+\mu}  \text{ and }  \pi_{c}=\frac{1}{1+\mu}\]
+and therefore the 
+%It follows from (ref{200}) and (ref{201}) that,
+%for large values of $\mu,$ we have $\pi_{o}\approx 1$ and $\pi_{c}\approx1/\mu$
+%and, therefore, using the parameters listed in Table \ref{tab:nodrug_again}, 
+system (ref{expectation1001}) takes the form
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}
+2.1 & -\mu\\
+-1 & \mu+0.1
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}
+e_{o}\\
+e_{c}
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}
+\frac{\mu}{1+\mu}\\
+0
+\end{array}
+\right)  ,
+\end{equation}
+which, in terms of $E_{o}$ and $E_{c}$, reads
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}
+2.1 & -\mu \frac{\pi_c}{\pi_o}\\
+-\pi_o & (\mu+0.1)\pi_c
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}
+E_{o}\\
+E_{c}
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}
+1\\
+0
+\end{array}
+\right)  .
+\end{equation}
+If we let $\mu\longrightarrow\infty,$ we obtain the system
+\begin{equation}
+\left(
+\begin{array}
+[c]{cc}
+2.1 & -1\\
+-1 & 1
+\end{array}
+\right)  \left(
+\begin{array}
+[c]{c}
+E_{o}\\
+E_{c}
+\end{array}
+\right)  =\left(
+\begin{array}
+[c]{c}
+1\\
+0
+\end{array}
+\right)  
+\end{equation}
+and the solution
+\[
+E_{o}=E_{c}\approx 0.91 \text{ mM}.
+\]
+
+\bigskip
+
+
+\section{Statistical properties of open and closed state blockers}
+\label{stat1Ddrg}
+
+We have seen above that open and closed state theoretical blockers can significantly reduce the effect of the mutation. Computations have shown that closed state blockers repair the effect of the mutation as the parameter $k_{bc}$ goes to infinity. This effect is also shown by a direct mathematical argument. For the open state blocker, we have seen that fairly good results can be obtained when the parameters of the drug are optimized, but perfect results can probably not be obtained for a CO-mutation because of the change of the mean open time described above.
+In this section, we present the statistical properties of the two types of drugs. The properties are presented in Table \ref{stat_drug}. In the table we observe that the total open probability (see Section \ref{statistics}, page  \pageref{statistics}) of the open state in the wild type case is 0.811. This increases to 0.962 for the mutant case ($\mu=3$). When the closed state blocker is applied and the factor $k_{bc}$ is increased, we see that the open probability is repaired by the drug. The same effect holds for the expected concentration $E_o$ of the open state; it is completely repaired by the closed state blocker for large values of $k_{bc}$. This also holds for the standard deviation. For the open state blocker, we do not obtain a sufficient effect by increasing $k_{bo}$, but when both parameters of the drug are optimized, the open probability and the expected concentration of the open state are almost completely repaired. The open state blocker is, however, unable to repair the standard deviation. 
+
+
+\begin{table}  \begin{center}
+\begin{tabular}{|l|r|r|r|} \hline
+|--l-------r-------r-----------r-------------|
+|Case  | $\pi_o$ | $E_o$ | $\sigma_o$  |
+|Closed blocker, $k_{bc}$=10 | 0.739 | 82.47 | 10.59  |
+|Closed blocker, $k_{bc}$=100 | 0.805 | 81.97 | 9.66  |
+|Closed blocker, $k_{bc}$=1000 | 0.811 | 81.91 | 9.52 |
+|Open blocker, $k_{bo}$=1      | 0.935 | 86.85 | 6.45  |
+|Open blocker, $k_{bo}$=10     | 0.936 | 85.97 | 4.89  |
+|Open blocker, $k_{bo}$=100 | 0.936 | 85.80 | 3.44 |
+|Optimized open blocker     | 0.817 | 80.09 & 13.10  |
+|Wild type, no drug         | 0.811 | 81.91 | 9.50  |
+|Mutant, no drug            | 0.962 | 87.95 | 3.20 |
+|-------------------------------------------------------|
+\end{tabular} \end{center}
+\caption{Statistical properties of the closed and open state blockers. \label{stat_drug}}
+\end{table}
+
+
+\section[Stochastic simulations]{Stochastic simulations using optimal drugs}
+\label{ffgg100}
+
+We derived closed state and open state blockers with the parameters summarized in Table \ref{tab:drug}. 
+In Figure \ref{1D:block_mc}, we show the solutions of the stochastic model 
+\begin{equation}
+\bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x})
+\label{asde1D1000}
+\end{equation}
+ computed 
+using the scheme 
+\begin{equation}
+x_{n+1}=x_{n}+\Delta t\left( \gamma_{n}v_{r}(c_{1}-x_{n})+v_{d}(c_{0}
+-x_{n})\right) \label{sde1D_scheme_200},
+\end{equation}
+%\K{zzz Jeg regner med at det egentlig skal refereres til (\ref{sde1D_scheme}) her?}
+where
+ the dynamics of the stochastic function $\gamma$ are given by the Markov model. 
+ The wild type solution is given in the upper-left part of the solution and we observe significantly larger 
+ variations than for the solution in the mutant case (upper right). 
+ The effect of the mutation is well repaired by both drugs. 
+ Note that since a random number is used in every time step, the solutions will never coincide, no matter how good the drug is. This illustrates the difficulty of comparing stochastic solutions and shows that comparison using probability density functions and derived statistics is much easier.
+
+
+FIGURE: [fig/1D_block_mc.pdf, width=500 frac=0.8] Simulations based on the stochastic model (\ref{asde1D1000}) computed 
+using scheme (\ref{sde1D_scheme_200}). 
+%\K{zzz Jeg regner med at det egentlig skal refereres til (\ref{sde1D_scheme}) her?}. 
+In the mutant case, we use $\mu=3$. The parameters specifying the drugs
+are given in Table \ref{tab:drug}. 
+%\A{\bf xxx Glenn: Is there something wrong with parameters here? We have mu=3, and then we should have kcb=(mu-1) kbc, so kcb=2 kbc. But we use kcb=200 and kbc=1000? . }
+ label{1D:block_mc}%\sidebar[0.4]{l}{
+
+
+\section{Notes}
+
+\begin{enumerate}
+\item The mean open time will be introduced and analyzed in Chapter \ref{mot_chapter}. In the present chapter, we have just used the very basic properties.
+\item The statistical properties discussed in this chapter are taken from Williams et al. \cite{Williams2008}.
+\end{enumerate}
+
+%\K{zzz Jeg tror det mangler noen enheter i disse plottene:  2.5, 2.7, 2.8, 3.3, 3.4, 4.2, 4.3, 4.6, 4.7, 5.9, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 9.3, 9.7, 10.1, 10.2, 10.3, 11.3, 11.4, 11.7, 12.3, 12.6, 13.2, 13.3, 13.4, 13.6, 13.7, 13.8, 13.9, 13.10, 13.13, 13.14, 14.5, 14.8}
+
+
+%\G{\\
+%5.9, 6.1, 6.2, 6.3, 6.6, $\mu$ M, fixed \\
+%Toy problems with somewhat arbitrary units:\\
+%4.2, 4.6, 4.7: Consentration in unit interval (mM). OK as is?\\
+%10.1, 10.2, 10.3, 11.3, 11.4: voltage in unit interval. OK as is?\\
+%6.4, 6.5, 9.3,  9.7, 11.7: time constants (always 1/ms): fix?  \\ \ \\
+%The other figures are of pdfs, which are dimensionless, so OK. \\
+%}
+

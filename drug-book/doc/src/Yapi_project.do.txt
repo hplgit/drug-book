@@ -1,0 +1,44 @@
+Aslak and Glenn have just a published a book about drug modeling. The
+manuscript is written in LaTeX, but they want to translate this to
+DocOnce such that the book can be produced in responsive HTML formats
+for phones and tablets. Parts of the book can than also be translated
+to Matlab notebooks.
+
+Start familiarizing yourself a bit with DocOnce by browsing the
+tutorial: http://hplgit.github.io/doconce/doc/pub/tutorial/tutorial.html
+
+I have started preparing the .tex files for translation to doconce and
+written scripts to deal with some specific constructions that Aslak and
+Glenn have in their files. For standard latex commands, I rely on the
+command doconce latex2doconce. However, this command fails miserably
+already on the second file. The reason is seemingly that there are
+many tables that need to be translated first (these tables fool the
+latex2doconce translator).
+
+To make progress, we should now
+
+ o Yapi: translate all `\graytable` and standard tables to doconce manually.
+   One may experiment with `doconce latex2doconce` for tables that are
+   quite standard, but tables are hard to parse, so be prepared for
+   manual translation. Basic DocOnce syntax for tables: http://hplgit.github.io/doconce/doc/pub/manual/manual.html#___sec29
+ o HP: Find all figures with hbox that need special combination of image
+   files with ImageMagick. Manual translation to FIGURE environment.
+ o HP: Run `latex2doconce` to see if this is feasible. If not,
+   Yapi: translate the rest of the tables.
+ o Yapi: Find all tikz figures, copy each of them to a separate file, run
+   latex on the file to create a standard image file in PNG and PDF format,
+   and make a corresponding FIGURE (doconce) command in the `.do.txt` file.
+
+-----
+
+Installation of doconce:
+Clone https://github.com/hplgit/doconce and run setup.py.
+
+Installation of dependencies: On Debian, you can run
+https://raw.githubusercontent.com/hplgit/doconce/master/doc/src/manual/install_doconce.sh
+
+
+
+
+
+
