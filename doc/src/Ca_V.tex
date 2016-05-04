@@ -55,17 +55,17 @@ Cytosol, $c_0$ & Dyad, $\bar{x}(t)$ & JSR, $\bar{y}(t)$ & NSR, $c_1$ \ \ \ \ \  
 
 \section[Stochastic release model parameterized by $V$]{Stochastic release model parameterized by the transmembrane potential}
 
-\graytable{l}{
-{|c|c|} \hline
-$v_d $ & 1 $\rm{ms^{-1}}$\\ \hline
-$v_r $ & 0.1 $\rm{ms^{-1}}$\\ \hline
-$v_s $ & 0.01 $\rm{ms^{-1}}$\\ \hline
-$c_0 $ & 0.1 $\rm{\mu M}$\\ \hline
-$c_1 $ & 1000 $\rm{\mu M}$ \\ \hline
-$c_e $ & 1800 $\rm{\mu M}$ \\ \hline
-}{Values of parameters used in simulations in this chapter.
+|--c---------------c-------------|
+|$v_d $ | 1 $\rm{ms^{-1}}$       |
+|$v_r $ | 0.1 $\rm{ms^{-1}}$     |
+|$v_s $ | 0.01 $\rm{ms^{-1}}$    |
+|$c_0 $ | 0.1 $\rm{\mu M}$       |
+|$c_1 $ | 1000 $\rm{\mu M}$      |
+|$c_e $ | 1800 $\rm{\mu M}$      |
+|--------------------------------|     
+Values of parameters used in simulations in this chapter.
 %${\ }^*$Unless otherwise stated.
-\label{tab:param2DV}}
+\label{tab:param2DV}
 
 
 
@@ -126,14 +126,16 @@ constant through the channel, the flux is given by
 J_{l}=\frac{D}{L}\frac{2F}{RT}\frac{x-c_{e}e^{-\frac{2FV}{RT}}}{1-e^{-\frac
 {2FV}{RT}}}V, \label{GHK}
 \end{equation}
-\graytable{l}{
-{|c|c|} \hline
-$F$ & $96485.3$ C mol$^{-1}$\\ \hline
-$R$ & $8.3145$ J mol$^{-1}$K$^{-1}$\\\hline
-$T$ & 310 K\\\hline
-$V_0$ & 13.357 mV\\ \hline
-$\frac{D}{L}$&0.02 ms$^{-1}$\\ \hline
-}{Parameters in (\ref{GHK}).\label{FRT}}
+
+|--c-----------------c------------------------|
+|$F$          | $96485.3$ C mol$^{-1}$        |
+|$R$          | $8.3145$ J mol$^{-1}$K$^{-1}$ |
+|$T$          | 310 K                         |
+|$V_0$        | 13.357 mV                     |
+|$\frac{D}{L}$|0.02 ms$^{-1}$                 |
+|---------------------------------------------|
+Parameters in (\ref{GHK}).\label{FRT}
+
 which is referred to as the GHK flux (see Keener and Sneyd \cite{KeenerSneyd}). Here $D$ is
 Fick's diffusion constant, $F$ is Faraday's constant, $R$ is the gas constant,
 and $T$ is the absolute temperature.
@@ -539,19 +541,20 @@ The simulation results are shown in Figure \ref{cicr:Vdep}  and summarized in Ta
 
 FIGURE: [fig/cicr_Vdep.pdf, width=500 frac=0.8] Probability density functions for different voltages. The LCC is more prone to being open (last two columns) when the voltage is close to $V=5$ mV, that is, where $l_{\infty}(V)$ is close to its maximum. Black corresponds to $10^{-3}$ for $\rho_{cc}$ and to $10^{-6}$ for the other three distributions. label{cicr:Vdep}
 
-\begin{table}  \begin{center}
-\begin{tabular}{|r|r|r|r|r|} \hline
- $V$ & $\pi_{cc}$ & $\pi_{co}$ & $\pi_{oc}$ & $\pi_{oo}$ \\ \hline
-20 & 0.978 & 0.015 & 0.005 & 0.001 \\ \hline
-0 & 0.959 & 0.032 & 0.007 & 0.003 \\ \hline
--20 & 0.982 & 0.015 & 0.002 & 0.001 \\ \hline
--40 & 0.993 & 0.006 & 0.000 & 0.000 \\ \hline
-\end{tabular} \end{center}
-\caption{Probability of being in the four states for different voltages. Recall that the probabilities are computed
+
+
+|--r---------r-----------r-----------r-----------r-------------|
+|$V$ | $\pi_{cc}$ | $\pi_{co}$ | $\pi_{oc}$ | $\pi_{oo}$       |
+|20  |      0.978 | 0.015      | 0.005      | 0.001            |
+|0   |      0.959 | 0.032      | 0.007      | 0.003            |
+|-20 |      0.982 | 0.015      | 0.002      | 0.001            |
+|-40 |      0.993 | 0.006      | 0.000      | 0.000            |
+|--------------------------------------------------------------|
+Probability of being in the four states for different voltages. Recall that the probabilities are computed
 using  (\ref{probability}) at page \pageref{probability} where the probability density functions are numerical solutions
-of the system (\ref{eq:pdfoo})-(\ref{eq:pdfco}).}
+of the system (\ref{eq:pdfoo})-(\ref{eq:pdfco}).
 \label{tab:stat2DV}
-\end{table}
+
 
 
 
@@ -651,15 +654,15 @@ FIGURE: [fig/cicr_mut_XYV80.pdf, width=500 frac=0.8] This figure shows how the e
 
 \chapter[Numerical drugs for CICR]{Numerical drugs for calcium-induced calcium release}
 
-\graytable{l}{
-{|c|c|} \hline
-$v_d $ & 1 $\rm{ms^{-1}}$\\ \hline
-$v_r $ & 0.1 $\rm{ms^{-1}}$\\ \hline
-$v_s $ & 0.01 $\rm{ms^{-1}}$\\ \hline
-$c_0 $ & 0.1 $\rm{\mu M}$\\ \hline
-$c_1 $ & 1000 $\rm{\mu M}$ \\ \hline
-}{Values of parameters used in simulations in this chapter.
-\label{tab:cicr_again}}
+|----c--------------c--------------|
+|$v_d $ | 1 $\rm{ms^{-1}}$         |
+|$v_r $ | 0.1 $\rm{ms^{-1}}$       |
+|$v_s $ | 0.01 $\rm{ms^{-1}}$      |
+|$c_0 $ | 0.1 $\rm{\mu M}$         |
+|$c_1 $ | 1000 $\rm{\mu M}$        |
+|----------------------------------|
+Values of parameters used in simulations in this chapter.
+\label{tab:cicr_again}
 
 
 In the previous chapter, we developed models of calcium-induced calcium release (CICR) in terms of both a stochastic release model and a model of the probability density functions of the states involved in the stochastic release model. The models incorporated the effects of mutations in both the ryanodine receptors (RyRs) and the L-type calcium channels (LCCs).
@@ -925,21 +928,21 @@ In Table \ref{ryr_ob},  we report on the performance of the open and closed stat
 
 
 
-\begin{table}  \begin{center}
-\begin{tabular}{|c|r|r|r|r|} \hline
-&WT & MT & Optimal closed blocker & Optimal open blocker \\ \hline
-$10^3\times\pi_{oo}$&2.75 & 5.11 & 2.74 & 0.81 \\ \hline
-$E^x_{oo}$&51.87 & 45.62 & 51.92 & 52.46 \\ \hline
-$E^y_{oo}$&751.76 & 544.30 & 751.99 & 713.89 \\ \hline
-\end{tabular} \end{center}
-\caption{Properties of the probability density function ($\rho_{oo}$) of being in the state OO with $\mu=3$ (and  $\eta=1$). The closed state blocker works fine in the sense that it is well suited for repairing a CO-mutation of the RyR.
+
+|------c----------------r------r-------------r-----------------------r---------------|
+|x                   |WT    | MT     | Optimal closed blocker | Optimal open blocker |
+|$10^3\times\pi_{oo}$|2.75  | 5.11   | 2.74                   | 0.81                 |
+|$E^x_{oo}$          |51.87 | 45.62  | 51.92                  | 52.46                |
+|$E^y_{oo}$          |751.76| 544.30 | 751.99                 | 713.89               |
+|------------------------------------------------------------------------------------|
+Properties of the probability density function ($\rho_{oo}$) of being in the state OO with $\mu=3$ (and  $\eta=1$). The closed state blocker works fine in the sense that it is well suited for repairing a CO-mutation of the RyR.
 The  open state blocker is unable to completely repair the effect of the mutation. The open state blocker is found using Matlab's {\it Fminsearch},
 with a cost function defined to minimize the difference between the wild type and the mutation when the drug is applied.
 In this table, WT and MT mean wild type and mutant, respectively, and  $V=0$ mV is used in the simulations.
 %{\bf xxx Glenn:Something is wrong since the integral of $\rho_{oo}$ larger than one.}
 %\G{These were scaled by 1000, now noted in the table.}
-} \label{ryr_ob}
-\end{table}
+ \label{ryr_ob}
+
 
 
 
