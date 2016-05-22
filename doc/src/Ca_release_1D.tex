@@ -192,18 +192,24 @@ Therefore, by induction, we have $c_{0}\leqslant x_{n}\leqslant c_{+}$ for all t
 
 
 \subsection{Stochastic simulations}
+\label{stochsim}
+% |--c---------------------------c--------------------|
+% |$v_d $       | 1 $\rm{ms^{-1}}$                    |
+% |$v_r $       | 0.1 $\rm{ms^{-1}}$                  |
+% |$c_0 $       | 0.1 $\rm{\mu M}$                    |
+% |$c_1 $       | 1000 $\rm{\mu M}$                   |
+% |$k_{co}(x) $ | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
+% |$k_{oc} $    | 1 $\rm{ms^{-1}}$                    |
+% |---------------------------------------------------|
 
-|--c-----------c------------------------------------|
-|$v_d $       | 1 $\rm{ms^{-1}}$                    |
-|$v_r $       | 0.1 $\rm{ms^{-1}}$                  |
-|$c_0 $       | 0.1 $\rm{\mu M}$                    |
-|$c_1 $       | 1000 $\rm{\mu M}$                   |
-|$k_{co}(x) $ | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
-|$k_{oc} $    | 1 $\rm{ms^{-1}}$                    |
-|---------------------------------------------------|
+|---------c----------------c-----------------c------------------c-------------------------c-------------------------------c----------|
+|$v_d $            | $v_r $            | $c_0 $           | $c_1 $            | $k_{co}(x) $                        | $k_{oc} $      |
+|--------c-----------------c-----------------c------------------c-------------------------c-------------------------------c----------|
+| 1 $\rm{ms^{-1}}$ |0.1 $\rm{ms^{-1}}$ | 0.1 $\rm{\mu M}$ | 1000 $\rm{\mu M}$ | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |1 $\rm{ms^{-1}}$|
+|------------------------------------------------------------------------------------------------------------------------------------|
+
 Parameter values for model (\ref{sde1D}) used in the computations
-presented in Figures \ref{1D:mc_ca} and \ref{1D:mc_state}. \label{tab:1Dsode}
-
+presented in Figures \ref{1D:mc_ca} and \ref{1D:mc_state}. %\label{tab:1Dsode}
 We use the scheme (\ref{sde1D_scheme}) to compute the concentration governed by the model  (\ref{sde1D}),
 using the parameters given in Table \ref{tab:1Dsode}.
 %$v_d =1\rm{ms^{-1}}$,  $c_0=0.1 \rm{\mu M}$, $v_r=0.1\rm{ms^{-1}}$, $c_1=1000\rm{\mu M}$, 
@@ -1149,17 +1155,23 @@ In this system, the mutation severity is given by $\mu$ and the drug is characte
 
 
 \subsection{Numerical simulations with the theoretical closed state blocker}
+\label{numsimtheoretical}
+% |-----------c-----------------------------------------------------c----------------------|
+% |$v_d $                                            | 1 $\rm{ms^{-1}}$                    |
+% |$v_r $                                            | 0.1 $\rm{ms^{-1}}$                  |
+% |$c_0 $                                            | 0.1 $\rm{\mu M}$                    |
+% |$c_1 $                                            | 1000 $\rm{\mu M}$                   |
+% |$k_{co}(x) $                                      | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
+% |$k_{oc} $                                         | 1 $\rm{ms^{-1}}$                    |
+% |----------------------------------------------------------------------------------------|
+|---------c------------------c-----------------c---------------------c----------------------c--------------------------c---------------|
+| $v_d$            | $v_r$              | $c_0$            | $c_1$             | $k_{co}(x)$                        | $k_{oc}$         |
+|---------c------------------c-----------------c---------------------c----------------------c--------------------------c---------------|
+| 1 $\rm{ms^{-1}}$ | 0.1 $\rm{ms^{-1}}$ | 0.1 $\rm{\mu M}$ | 1000 $\rm{\mu M}$ | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|--------------------------------------------------------------------------------------------------------------------------------------|
 
-|-----------c-----------------------------------------------------c----------------------|
-|$v_d $                                            | 1 $\rm{ms^{-1}}$                    |
-|$v_r $                                            | 0.1 $\rm{ms^{-1}}$                  |
-|$c_0 $                                            | 0.1 $\rm{\mu M}$                    |
-|$c_1 $                                            | 1000 $\rm{\mu M}$                   |
-|$k_{co}(x) $                                      | $0.1x$ $\rm{ms^{-1}\, \mu M^{-1}} $ |
-|$k_{oc} $                                         | 1 $\rm{ms^{-1}}$                    |
-|----------------------------------------------------------------------------------------|
-Parameter values for the undrugged case.\label{tab:1Drepeat}
 
+Parameter values for the undrugged case.%\label{tab:1Drepeat}
 We consider a mutation characterized by $\mu=3$ and we apply closed state blockers (see reaction scheme (\ref{closed_drg})) with
 parameters  satisfying the relation
 (\ref{kcb}). In Figure \ref{1D/drug_mc}, we show the results of these simulations using the Monte Carlo approach: The lower panel of the figure is the same as the upper panel, except that we focus on concentrations ranging from 80 $\mu$M  to 91 $\mu$M . We observe significant differences between the wild type solution and the solution representing the mutation. Furthermore, we observe that the drug works quite well.  Similar results are given in Figure \ref{1D/drug_pdf}, where the computations are based on the probability density approach: Here the lower panel focuses on very high concentrations ranging from 89 $\mu$M  to 91 $\mu$M. We also see that the closed state drug improves as the value of $k_{bc}$ increases. In fact, the result seems to indicate that the drug is asymptotically perfect in the sense that the solution converges toward the wild type solution when $k_{bc}\rightarrow \infty$.
@@ -1425,7 +1437,7 @@ FIGURE: [fig/1D_best_drug.pdf, width=500 frac=0.8] Comparison of the best open s
 %The statistical properties of the solutions are given in Table \ref{stat_drug}. As $k_{bc}$ increases, we see %that all statistical properties of the solutions are converging towards the wild type numbers.
 
 \section{CO-mutations does not change the mean open time}
-
+\lable{co-mutation}
 To understand why the closed state blocker is much better than the open state blocker for CO-mutations, it is useful to recall that the mean open time of the Markov model
 \begin{equation}
 C\underset{\mu k_{co}}{\overset{k_{oc}}{\leftrightarrows}}O \label{Markov111}
@@ -1448,15 +1460,20 @@ the mean open time is changed and reads
 \[ \tau_o=\frac{1}{k_{oc}+k_{ob}}. \]
 With a closed state blocker used to repair a CO-mutation, the mean open time is kept constant, as it should, but it is changed using an open state blocker. Consequently, it is hard to see how to derive an efficient open state blocker for a CO-mutation.
 
-|-------c---------------c-----------------|
-|$k_{ob} $     | 0.28 $\rm{ms^{-1}}$      |
-|$k_{bo} $     | 1.63 $\rm{ms^{-1}}$      |
-|$k_{cb} $     | 2000 $\rm{ms^{-1}}$      |
-|$k_{bc} $     | 1000 $\rm{ms^{-1}}$      |
-|-----------------------------------------|
+% |-------c---------------c-----------------|
+% |$k_{ob} $     | 0.28 $\rm{ms^{-1}}$      |
+% |$k_{bo} $     | 1.63 $\rm{ms^{-1}}$      |
+% |$k_{cb} $     | 2000 $\rm{ms^{-1}}$      |
+% |$k_{bc} $     | 1000 $\rm{ms^{-1}}$      |
+% |-----------------------------------------|
+|----------c----------------------c--------------------c-------------------c-------------|
+| $k_{ob}$             | $k_{bo}$            | $k_{cb}$            | $k_{bc}$            |
+|----------c----------------------c--------------------c-------------------c-------------|
+|  0.28 $\rm{ms^{-1}}$ | 1.63 $\rm{ms^{-1}}$ | 2000 $\rm{ms^{-1}}$ | 1000 $\rm{ms^{-1}}$ |
+|----------------------------------------------------------------------------------------|
 %\end{tabular} %\end{center}
 %\captionof{table}
-Parameter values for the drugs used in Figure \ref{1D:best_drug}. \label{tab:drug}
+Parameter values for the drugs used in Figure \ref{1D:best_drug}. %\label{tab:drug}
 \clearpage
 
 \section{Notes}

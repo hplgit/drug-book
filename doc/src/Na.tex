@@ -262,7 +262,7 @@ severity index.}
 
 
 \section{Stochastic model of the sodium channel}
-
+\label{stockmodchannel}
 
 
 
@@ -272,16 +272,22 @@ given by
 \begin{equation}
 Cv^{\prime}=-g_{L}\left(  v-V_{L}\right)  -\gamma g_{Na}(v-V_{Na}), \label{sv1}
 \end{equation}
+% 
+% |--c-----------------c-------------------|
+% |$C$        |  $1$ $\mu\text{F/cm}^{2}$  |
+% |$g_L$      | $1/10 \text{ mS/cm}^{2}$   |
+% |$g_{Na}$   | $1\text{ mS/cm}^{2}$       |
+% |$V_L$      | $-85\text{ mV}$            |
+% |$V_{Na}$   | $45\text{ mV}$             |
+% |--------------------------------------  |
 
-|--c-----------------c-------------------|
-|$C$        |  $1$ $\mu\text{F/cm}^{2}$  |
-|$g_L$      | $1/10 \text{ mS/cm}^{2}$   |
-|$g_{Na}$   | $1\text{ mS/cm}^{2}$       |
-|$V_L$      | $-85\text{ mV}$            |
-|$V_{Na}$   | $45\text{ mV}$             |
-|--------------------------------------  |
-Values of the parameters used in model \ref{sv1}.\label{scoef}
+|--------------c------------------------c-----------------------c------------------c---------------c-----------|
+|$C$                       |$g_L$                   |$g_{Na}$            |$V_L$           |$V_{Na}$            |
+|--------------c------------------------c-----------------------c------------------c----------------c----------|
+| $1$ $\mu\text{F/cm}^{2}$ |$1/10 \text{ mS/cm}^{2}$|$1\text{ mS/cm}^{2}$|$-85\text{ mV}$ | $45\text{ mV}$     |
+|--------------------------------------------------------------------------------------------------------------|
 
+Values of the parameters used in model \ref{sv1}.%\label{scoef}
 where $C$ is the capacitance of the membrane, $V_{L}$ is the resting potential
 of the leakage current, and $V_{Na}$ is the resting potential of the sodium
 channel. The parameters are listed in Table \ref{scoef}.
@@ -408,7 +414,7 @@ state $C_{0},$ and so on.
 %\G{This was correct in the code.}
 
 \subsection{Model parameterization}
-
+\label{modelparam}
 To carry out numerical computations comparing the properties
 of the  wild type and the mutant sodium channel, we need to define
 the rates involved in the model described in Figure \ref{mtreac}. We use the 
@@ -432,6 +438,7 @@ inactivated state to either the open or the closed state. More specifically, we 
 
 |---r-------r------------------r-----------------r-------------|
 |$ab$ | $V_{ab}$ (mV) | $s_{ab}$ (1/mV) |  $\tau_{ab}$ (ms)    |
+|-----------r------------------r-----------------r-------------|
 |$co$ | -60           | 0.1             |  0.01                |
 |$oi$ | -120          | 0.05            |  3                   |
 |$ic$ | -80           | -0.15           |  10                  |
@@ -483,6 +490,7 @@ from the wild type solution.
 
 |--r---------------r-------------r---------------r-----------r--------r------r-----------|
 |$\mu$  |$\pi_o\times 100 $ | $\pi_c$ | $\pi_i\times 100$ | $E_o$ | $E_c$ | $E_i$        |
+|--r---------------r-------------r---------------r-----------r--------r------r-----------|
 |1      | 0.0067            | 0.9951  | 0.4834            | -50.8 | -84.9 | -83.5        |
 |3      | 0.0080            |0.9982   | 0.1765            | -41.1 | -84.9 | -79.6        |
 |10     | 0.0162            | 0.9989  | 0.0942            | -13.4 | -84.9 | -57.0        |
@@ -636,7 +644,7 @@ states $BO,BI,BC_{0},BC_{1},BC_{2}$, and $BC_{3}$.}
 
 
 \subsection{Numerical experiments using the blocker of the inactivated state}
-
+\label{numexp}
 We have seen that a blocker of the inactivated state is a promising
 candidate for repairing the mutation described in Figure \ref{mtreac}. The drug
 is characterized by (ref{drg_inac}), so we have
@@ -659,23 +667,25 @@ and, finally, the mutant case with the drug given by (\ref{kbi10}) with
 $k_{bi} = 0.001\text{ ms}^{-1}$. A small value of $k_{bi}$ was used to
 see a difference between the drugged case and the WT case. label{NaM:pdf_drug}\begin{table}  \begin{center}
 \begin{tabular}{|r|r|r|r|} \hline
-$k_{bi}$ & $\pi_o\times 10^3 $ & $E_o$ & $\sigma_o$ \\ \hline
-WT & 0.067 & -50.794 & 46.828 \\ \hline
-MT & 1.534 & 12.991 & 26.831 \\ \hline
-$10^{-6}$ & 1.341 & 12.940 & 26.913 \\ \hline
-$10^{-5}$ & 1.180 & 12.487 & 27.634 \\ \hline
-$10^{-4}$ & 0.556 & 8.240 & 33.343 \\ \hline
-$10^{-3}$ & 0.135 & -16.903 & 49.326 \\ \hline
-0.01 & 0.070 & -47.563 & 48.205 \\ \hline
-0.1 & 0.067 & -50.729 & 46.869 \\ \hline
-1 & 0.067 & -50.791 & 46.830 \\ \hline
-\end{tabular} \end{center}
-\caption{The open probability, $\pi_o$, the expected value of the transmembrane potential, $E_o$, and the
+|------r---------------r----------------r-----------r-----|
+|$k_{bi}$     | $\pi_o\times 10^3$ | $E_o$   | $\sigma_o$ |
+|------r---------------r----------------r-----------r-----|
+|WT           | 0.067              |-50.794  | 46.828     |
+|MT           | 1.534              | 12.991  | 26.831     |
+|$10^{-6}$    | 1.341              | 12.940  | 26.913     |
+|$10^{-5}$    | 1.180              | 12.487  | 27.634     |
+|$10^{-4}$    | 0.556              | 8.240   | 33.343     |
+|$10^{-3}$    | 0.135              | -16.903 | 49.326     |
+|0.01         | 0.070              | -47.563 | 48.205     |
+|0.1          | 0.067              | -50.729 | 46.869     |
+|1            | 0.067              | -50.791 | 46.830     |
+|---------------------------------------------------------|
+
+The open probability, $\pi_o$, the expected value of the transmembrane potential, $E_o$, and the
 standard deviation, $\sigma_o$, for increasing values of $k_{bi}$. For large values of $k_{bi}$, the statistical properties 
 of the mutant are completely repaired by the drug. 
-}
-\label{kbi_stat}
-\end{table}
+
+%\label{kbi_stat}
 
 \subsection{The late sodium current is removed by the inactivated state blocker}
 

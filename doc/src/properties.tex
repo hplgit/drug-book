@@ -1,6 +1,6 @@
 
 \chapter{Properties of probability density functions}
-
+\label{properties}
 
 
 The physical processes we study in this text are modeled using models including stochastic terms. Direct numerical simulations based on such stochastic models give results that are hard to interpret and it is therefore common to run many simulations and compute the average, and we have also seen that we can derive models governing the probability density functions. These are powerful tools that provide insight in the processes. In this chapter we will see that it is useful to have specific numbers that characterize
@@ -102,18 +102,23 @@ the characteristics analytically.  We will therefore start by considering such a
 
 
 \section{Constant rate functions}
-|---c-------------------c----------------|
-|$v_d $    | 0.1 $\rm{ms^{-1}}$          |
-|$v_r $    | 1.0 $\rm{ms^{-1}}$          |
-|$c_0 $    | 0 $\rm{mM}$                 |
-|$c_1 $    | 1 $\rm{mM}$                 |
-|$k_{co} $ | 1 $\rm{ms^{-1}}$            |
-|$k_{oc} $ | 1 $\rm{ms^{-1}}$            |
-|----------------------------------------|
+\label{consrate}
+% |---c-------------------c----------------|
+% |$v_d $    | 0.1 $\rm{ms^{-1}}$          |
+% |$v_r $    | 1.0 $\rm{ms^{-1}}$          |
+% |$c_0 $    | 0 $\rm{mM}$                 |
+% |$c_1 $    | 1 $\rm{mM}$                 |
+% |$k_{co} $ | 1 $\rm{ms^{-1}}$            |
+% |$k_{oc} $ | 1 $\rm{ms^{-1}}$            |
+% |----------------------------------------|
+|-----------------------------------------------------------------------------------------------------------|
+| $v_d$              | $v_r$              | $c_0$       | $c_1$       | $k_{co}$         | $k_{oc} $        |
+| 0.1 $\rm{ms^{-1}}$ | 1.0 $\rm{ms^{-1}}$ | 0 $\rm{mM}$ | 1 $\rm{mM}$ | 1 $\rm{ms^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|-----------------------------------------------------------------------------------------------------------|
+
 Parameter values for the model of (\ref{asde1D100}) and (\ref{M100}).
 %\K{zzz $v_d$ og $v_r$ m\r{a} vel ha benevning $\rm{ms^{-1}}$ (istedenfor  $\rm{\mu M/ms}$) i Table \ref{tab:nodrug}, Table \ref{tab:xdep} og Table \ref{tab:nodrug_again} for at enhetene skal g\r{a} opp?}
-\label{tab:nodrug}
-
+%\label{tab:nodrug}
 We consider the system (ref{pdf1000}) and (ref{pdf1001}) in the
 special case that both $k_{oc}$ and $k_{co}$ are constants (independent of the concentration $x$). If we integrate
 (ref{pdf1000}) and (ref{pdf1001}) over the interval $\Omega$, we obtain the system
@@ -354,7 +359,7 @@ which compares well with our observations in Figure \ref{1D/E}.
 \bigskip
 
 \section{Markov model of a mutation}
-
+\label{markovmodmutation}
 Mutations may change the release mechanism and thus seriously alter the
 function of the calcium-induced calcium release. Mutations in the RyR2
 gene can lead to changes in the receptor function, increasing the open
@@ -363,16 +368,22 @@ probability.
 %\K{zzz Jeg synes det hadde v\ae rt fint om man spesifiserte et sted at  vi n\r{a} har $k_{co}(x) = k_{co}x$ (eller $\mu k_{co}x$)}
 %\G{I now tried to not use $k_{co}(x)$ anywhere, so $k_{co}$ is always a constant. In this chapter that is, in Chapter 3 we use $k_{co}(x)$, but there we have no need to speak about the constant directly. In order to be consistant we need to invent a seperate name for the constant and the function. Using a function here is a bad idea anyway, as that could give the impression that the analyical solution holds for more than a linear function.}
 %\K{Man trenger ikke \r{a} bruke notasjonen $k_{co}(x)$, men man burde vel tydelig si hvordan reaksjonsraten avhenger av x, at man i denne seksjonen tar for seg tilfellet der reaksjonsraten fra \r{a}pen til lukket er konstant og reaksjonsraten fra lukket til \r{a}pen er $k_{co}x$. N\r{a} m\r{a} man lese dette av (\ref{xdep1}) og (\ref{xdep2}).}
-|----c-------------c------------------------|
-|$v_d $    | 1 $\rm{ms^{-1}}$               |
-|$v_r $    | 0.1 $\rm{ms^{-1}}$             |
-|$c_0 $    | 0.1 $\rm{\mu M}$               |
-|$c_1 $    | 1000 $\rm{\mu M}$              |
-|$k_{co} $ | 0.1 $\rm{ms^{-1} \mu M^{-1}}$  |
-|$k_{oc} $ | 1 $\rm{ms^{-1}}$               |
-|-------------------------------------------|
-Parameter values for the model (\ref{xdep1}) and (\ref{xdep2}) .\label{tab:xdep}
+% |----c-------------c------------------------|
+% |$v_d $    | 1 $\rm{ms^{-1}}$               |
+% |$v_r $    | 0.1 $\rm{ms^{-1}}$             |
+% |$c_0 $    | 0.1 $\rm{\mu M}$               |
+% |$c_1 $    | 1000 $\rm{\mu M}$              |
+% |$k_{co} $ | 0.1 $\rm{ms^{-1} \mu M^{-1}}$  |
+% |$k_{oc} $ | 1 $\rm{ms^{-1}}$               |
+% |-------------------------------------------|
+|---------c-------------------c---------------c------------------c----------------------c-----------------------------c-----------|
+| $v_d$            | $v_r$              | $c_0$            | $c_1$             | $k_{co}$                      | $k_{oc}$         |
+|---------c-------------------c---------------c------------------c----------------------c-----------------------------c-----------|
+| 1 $\rm{ms^{-1}}$ | 0.1 $\rm{ms^{-1}}$ | 0.1 $\rm{\mu M}$ | 1000 $\rm{\mu M}$ | 0.1 $\rm{ms^{-1} \mu M^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|---------------------------------------------------------------------------------------------------------------------------------|
 
+
+Parameter values for the model (\ref{xdep1}) and (\ref{xdep2}) .%\label{tab:xdep}
 As mentioned above, one way to model the increased open probability
 is to define
 \begin{equation}
@@ -438,11 +449,12 @@ concentration is doubled and the standard deviation is reduced by a factor of se
 
 |---l----------r-----------r-----------r------------r-----------r--------r------------|
 |Case      | $\pi_{o}$ | $E_{o}$ | $\sigma_{o}$ | $\pi_{c}$ | $E_{c}$ | $\sigma_{c}$  |
+|---l----------r-----------r-----------r------------r-----------r--------r------------|
 |Wild type | 0.811     | 81.91   | 9.50         | 0.189     | 43.04   | 35.26         |
 |Mutant    | 0.962     | 87.95   | 3.20         | 0.038     | 84.34   | 4.85          |
 |-------------------------------------------------------------------------------------|
 Statistical properties of the wild type and mutant cases.
-\label{stat1D}
+% \label{stat1D}
 
 
 
@@ -536,17 +548,22 @@ which has a singularity at $x=c_{0}$ whenever
 \bigskip
 
 \section[Statistical properties of the mutation]{Statistical properties as functions of the mutation severity index}
+\label{statprop}
+% |---c--------------c-------------|
+% |$v_d $    | 0.1 $\rm{ms^{-1}}$  |
+% |$v_r $    | 1.0 $\rm{ms^{-1}}$  |
+% |$c_0 $    | 0 $\rm{mM}$         |
+% |$c_1 $    | 1 $\rm{mM}$         |
+% |$k_{co} $ | 1 $\rm{ms^{-1}}$    |
+% |$k_{oc} $ | 1 $\rm{ms^{-1}}$    |
+% |--------------------------------|
+|---------c---------------------c----------------c-------------c--------------c-------------------c---------|
+| $v_d$              | $v_r$              | $c_0$       | $c_1$       | $k_{co}$         | $k_{oc}$         |
+|---------c---------------------c----------------c-------------c--------------c-------------------c---------|
+| 0.1 $\rm{ms^{-1}}$ | 1.0 $\rm{ms^{-1}}$ | 0 $\rm{mM}$ | 1 $\rm{mM}$ | 1 $\rm{ms^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|-----------------------------------------------------------------------------------------------------------|
 
-|---c--------------c-------------|
-|$v_d $    | 0.1 $\rm{ms^{-1}}$  |
-|$v_r $    | 1.0 $\rm{ms^{-1}}$  |
-|$c_0 $    | 0 $\rm{mM}$         |
-|$c_1 $    | 1 $\rm{mM}$         |
-|$k_{co} $ | 1 $\rm{ms^{-1}}$    |
-|$k_{oc} $ | 1 $\rm{ms^{-1}}$    |
-|--------------------------------|
-Parameter values for the model (\ref{asde1D100}) and (\ref{M100}) (copied from Table \ref{tab:nodrug}). \label{tab:nodrug_again}
-
+Parameter values for the model (\ref{asde1D100}) and (\ref{M100}) (copied from the Table in Section \ref{sec:consrate} ) %\ref{tab:nodrug}). %\label{tab:nodrug_again}
 We have seen, using numerical computations and analytical considerations, how
 the mutation severity index changes the probability density functions. In this
 section, we shall look with more detail into how the index changes the
@@ -769,6 +786,7 @@ In this section, we present the statistical properties of the two types of drugs
 
 |-------------l-------------------r---------r----------r-------|
 |Case                          | $\pi_o$ | $E_o$ | $\sigma_o$  |
+|-------------l-------------------r---------r----------r-------|
 |Closed blocker, $k_{bc}$=10   | 0.739   | 82.47 | 10.59       |
 |Closed blocker, $k_{bc}$=100  | 0.805   | 81.97 | 9.66        |
 |Closed blocker, $k_{bc}$=1000 | 0.811   | 81.91 | 9.52        |
@@ -779,14 +797,16 @@ In this section, we present the statistical properties of the two types of drugs
 |Wild type, no drug            | 0.811   | 81.91 | 9.50        |
 |Mutant, no drug               | 0.962   | 87.95 | 3.20        |
 |--------------------------------------------------------------|
-Statistical properties of the closed and open state blockers. \label{stat_drug}
+
+
+Statistical properties of the closed and open state blockers. %\label{stat_drug}
 
 
 
 \section[Stochastic simulations]{Stochastic simulations using optimal drugs}
 \label{ffgg100}
 
-We derived closed state and open state blockers with the parameters summarized in Table \ref{tab:drug}. 
+We derived closed state and open state blockers with the parameters summarized from the Table in Section \ref{sec:co-mutation}. %\ref{tab:drug}. 
 In Figure \ref{1D:block_mc}, we show the solutions of the stochastic model 
 \begin{equation}
 \bar{x}^{\prime}(t)=\bar{\gamma}(t)v_{r}(c_{1}-\bar{x})+v_{d}(c_{0}-\bar{x})

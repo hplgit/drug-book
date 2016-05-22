@@ -948,7 +948,7 @@ state drug. Similar results are shown for the other states.  label{cicr:ryr_cbI}
 expected concentrations of the dyad ($x$) and the JSR ($y$). The wild type is denoted by $\circ$ and the RyR mutation index $\mu$ increases from one to three along the solid line. In the dashed line, we keep $\mu=3$ and increase the value of $k^r_{bc}$ from 0 $\rm{ms^{-1}}$ to 100 $\rm{ms^{-1}}$. We observe that as $k^r_{bc}$  increases, the
 expected concentrations are completely repaired. The experiment is carried out for the case of $V=0$ mV. label{cicr:ryr_cbXY}
 \subsection{The open state blocker does not work as well as the closed state blocker for CO-mutations in RyR}
-\label{openRyR}
+\label{open}
 %\K{zzz Kanskje denne underseksjonen heller burde st\r{a} under forrige seksjon
 %siden den handler om RyR-mutasjoner?}
 %\{I moved it}

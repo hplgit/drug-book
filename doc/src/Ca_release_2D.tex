@@ -242,6 +242,7 @@ channel is open. This will be illustrated in numerical simulations below.
 %{\bf Glenn: Look for exactly this property in the MC simulations.}
 
 \subsection{Numerical scheme for the 2D release model}
+\label{numscheme2d}
 
 To perform 2D stochastic simulations, we use the numerical scheme
 \begin{align}
@@ -251,16 +252,21 @@ y_{n+1}  &  =y_{n}+\Delta t\left(  \gamma_{n}v_{r}\left(  x_{n}-y_{n}\right)
 +v_{s}\left(  c_{1}-y_{n}\right)  \right)  , \label{nc2}
 \end{align}
 
-|-----c-----------------c--------------|
-|$v_d $      | 1 $\rm{ms^{-1}}$        |
-|$v_r $      | 0.1 $\rm{ms^{-1}}$      |
-|$v_s $      | 0.01 $\rm{ms^{-1}}$     |
-|$c_0 $      | 0.1 $\rm{\mu M}$        |
-|$c_1 $      | 1000 $\rm{\mu M}$       |
-|$k_{co} $   | 1 $\rm{ms^{-1}}$        |    
-|$k_{oc} $   | 1 $\rm{ms^{-1}}$        |
-|--------------------------------------|
-Values of parameters used in 2D simulations based on the scheme (\ref{nc1}) and (\ref{nc2}). \label{tab:param2D}
+% |-----c-----------------c--------------|
+% |$v_d $      | 1 $\rm{ms^{-1}}$        |
+% |$v_r $      | 0.1 $\rm{ms^{-1}}$      |
+% |$v_s $      | 0.01 $\rm{ms^{-1}}$     |
+% |$c_0 $      | 0.1 $\rm{\mu M}$        |
+% |$c_1 $      | 1000 $\rm{\mu M}$       |
+% |$k_{co} $   | 1 $\rm{ms^{-1}}$        |    
+% |$k_{oc} $   | 1 $\rm{ms^{-1}}$        |
+% |--------------------------------------|
+|---------c---------------------c--------------------c-------------------c-------------------c-------------c---------------------c----------|
+| $v_d$            | $v_r$              | $v_s$               | $c_0$             | $c_1$            | $k_{co}$         | $k_{oc}$          | 
+|---------c---------------------c--------------------c-------------------c-------------------c-------------c---------------------c----------|
+| 1 $\rm{ms^{-1}}$ | 0.1 $\rm{ms^{-1}}$ | 0.01 $\rm{ms^{-1}}$ |  0.1 $\rm{\mu M}$ | 1000 $\rm{\mu M}$ | 1 $\rm{ms^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|-------------------------------------------------------------------------------------------------------------------------------------------|
+Values of parameters used in 2D simulations based on the scheme (\ref{nc1}) and (\ref{nc2}). %\label{tab:param2D}
 where $\gamma$ is computed according to the Markov model given by the reaction scheme
 
 \begin{equation}
@@ -450,12 +456,17 @@ and the boundary conditions are again defined to ensure that there is
 no flux of probability out of the domain (see page \pageref{bc}).
 
 \subsection{Numerical method for computing the probability density functions in 2D}
-
-|--------c-------------c---------------|
-|$\Delta t $ | 0.001 $\rm{ms}$         |
-|$\Delta x $ | 0.92 $\rm{\mu M}$       |
-|$\Delta y $ | 9.3 $\rm{\mu M}$        |
-|--------------------------------------|
+\label{numethodprob}
+% |--------c-------------c---------------|
+% |$\Delta t $ | 0.001 $\rm{ms}$         |
+% |$\Delta x $ | 0.92 $\rm{\mu M}$       |
+% |$\Delta y $ | 9.3 $\rm{\mu M}$        |
+% |--------------------------------------|
+|-------c---------------------c------------------c---------|
+| $\Delta t$       | $\Delta x$         | $\Delta y$       |
+|-------c---------------------c------------------c---------|
+|  0.001 $\rm{ms}$ |  0.92 $\rm{\mu M}$ | 9.3 $\rm{\mu M}$ |
+|----------------------------------------------------------|
 Discretization parameters.
 
 To solve the system $(\ref{eq:pdf21})$ and $(\ref{eq:pdf22})$, we need to
@@ -557,7 +568,7 @@ when $k_{oc}$ is increased from one to three. The expected dyad concentration ($
 
 
 \subsection{Increasing the open to closed reaction rate in 2D}
-
+\label{inopclrate2d}
 In 1D, we observed that if we increased the reaction rate $k_{oc}$  from open to closed, the steady state probability density functions changed considerably (see page \pageref{increasingkoc}). We observed that the open probability decreased and the closed probability increased significantly. In Figure \ref{2D:koc3}, we study the same effect in 2D and again we observe that the open probability density function is considerably decreased when $k_{oc}$ is increased from one to three. The statistics of the solutions are given in Table \ref{tab:more_open} and we note that the total open probability is reduced considerably 
 when $k_{oc}$ is increased from one to three. The expected dyad concentration ($x$) does not change very much, but the expected JSR concentration ($y$) increases significantly and this observation holds for both open and closed channels. 
 
@@ -570,22 +581,26 @@ when $k_{oc}$ is increased from one to three. The expected dyad concentration ($
 
 \fig{2D/koc3}
 
-|-----c--------c-----------c----------c--------------c-------------c-----------|
-|$k_{oc}$ | $\pi_o $ | $E_{x_o}$ | $E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$ |
-|1        |    0.430 | 12.63     | 202.4     | 4.948          |  46.27         |
-|3        |    0.221 | 13.23     | 339.2     | 6.723          |  56.88         |
-|----c---------c-----------c----------c--------------c-------------c-----------|
+|-----r--------r-----------r----------r--------------r-------------r-----------|
+| $k_{oc}$ | $\pi_o $ | $E_{x_o}$ | $E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$|
+|------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------|
+| 1        |0.430     | 12.63     | 202.4     | 4.948          |  46.27        |
+| 3        |0.221     | 13.23     | 339.2     | 6.723          |  56.88        |
+|------------------------------------------------------------------------------|
 
-|-----c--------c-----------c----------c--------------c-------------c-----------|
-|$k_{oc}$ | $\pi_c$ |$E_{x_c}$ | $E_{y_c}$ | $\sigma_{x_c}$ | $\sigma_{y_c}$   |
-|1        | 0.570   | 5.12     | 218.2     | 4.842          |  49.90           |
-|3        | 0.779   |5.95      | 348.0     |5.563           |  57.22           |
+|-----r--------r-----------r----------r--------------r--------------r----------|
+| $k_{oc}$ | $\pi_c$ |$E_{x_c}$ | $E_{y_c}$ | $\sigma_{x_c}$ | $\sigma_{y_c}$  |
+|------------------------------------------------------------------------------|
+|------------------------------------------------------------------------------|
+| 1        | 0.570   |5.12      |218.2     |4.842           |49.90             |
+| 3        | 0.779   |5.95      |348.0     |5.563           |57.22             |
 |------------------------------------------------------------------------------|
 
 Statistical properties of the probability density functions 
 for $k_{oc}=1 \text{ ms}^{-1}$ and  $k_{oc}=3 \text{ ms}^{-1}$
 
-\label{tab:more_open}
+%\label{tab:more_open}
 
 
 \section{Notes}
@@ -595,22 +610,31 @@ for $k_{oc}=1 \text{ ms}^{-1}$ and  $k_{oc}=3 \text{ ms}^{-1}$
 \end{enumerate}
 
 \chapter{Computing theoretical drugs in the two-dimensional case}
+\label{comptheo2d}
+% |---c-------------c----------------|
+% |$v_d $      | 1 $\rm{ms^{-1}}$    |
+% |$v_r $      | 0.1 $\rm{ms^{-1}}$  |
+% |$v_s $      | 0.01 $\rm{ms^{-1}}$ |
+% |$c_0 $      | 0.1 $\rm{\mu M}$    |
+% |$c_1 $      | 1000 $\rm{\mu M}$   |
+% |$k_{co} $   | 1 $\rm{ms^{-1}}$    |
+% |$k_{oc} $   | 1 $\rm{ms^{-1}}$    |
+% |$\Delta t $ | 0.001 $\rm{ms}$     |
+% |$\Delta x $ | 0.92 $\rm{\mu M}$   |
+% |$\Delta y $ | 9.3 $\rm{\mu M}$    |  
+% |----------------------------------|
+|--------c----------------------c--------------------c-------------------c------------------c--------------c------------------c------------|
+| $v_d$            | $v_r$              | $v_s$               | $c_0$            | $c_1$             | $k_{co}$         | $k_{oc}$         |
+|--------c----------------------c--------------------c-------------------c------------------c--------------c------------------c------------|
+| 1 $\rm{ms^{-1}}$ | 0.1 $\rm{ms^{-1}}$ | 0.01 $\rm{ms^{-1}}$ | 0.1 $\rm{\mu M}$ | 1000 $\rm{\mu M}$ | 1 $\rm{ms^{-1}}$ | 1 $\rm{ms^{-1}}$ |
+|------------------------------------------------------------------------------------------------------------------------------------------|
 
-|---c-------------c----------------|
-|$v_d $      | 1 $\rm{ms^{-1}}$    |
-|$v_r $      | 0.1 $\rm{ms^{-1}}$  |
-|$v_s $      | 0.01 $\rm{ms^{-1}}$ |
-|$c_0 $      | 0.1 $\rm{\mu M}$    |
-|$c_1 $      | 1000 $\rm{\mu M}$   |
-|$k_{co} $   | 1 $\rm{ms^{-1}}$    |
-|$k_{oc} $   | 1 $\rm{ms^{-1}}$    |
-|$\Delta t $ | 0.001 $\rm{ms}$     |
-|$\Delta x $ | 0.92 $\rm{\mu M}$   |
-|$\Delta y $ | 9.3 $\rm{\mu M}$    |  
-|----------------------------------|
-Parameters reused from the previous chapter (i.e., Table \ref{tab:param2D}). \label{tab:param2D_again} 
-
-
+|--------c----------------------c--------------------c--------|
+| $\Delta t$       | $\Delta x$         | $\Delta y$          |
+|--------c----------------------c--------------------c--------|
+| 0.001 $\rm{ms}$  | 0.92 $\rm{\mu M}$  | 9.3 $\rm{\mu M}$    |
+|-------------------------------------------------------------|
+Parameters reused from the previous chapter (i.e., Table from section \ref{subsec:numscheme2d} %\ref{tab:param2D}). %\label{tab:param2D_again} 
 Let us briefly recall the difficulty we want to overcome with the
 theoretical drug. The difficulty is that in the prototypical reaction
 defined by the Markov model
@@ -638,6 +662,7 @@ the closed state, which means that $k_{ob}=0$, or blockers associated with the o
 
 
 \section[Effect of the mutation in 2D]{Effect of the mutation in the two-dimensional case}
+\label{effmutation2d}
 
 When the effect of the mutation is taken into account, the probability density functions are governed by the system 
 \begin{align}
@@ -668,11 +693,13 @@ of both the dyad and the junctional sarcoplasmic reticulum (JSR) decrease consid
 
 |--l------------c----------c----------c---------------c-----------------c------|
 |Case      | $\pi_o$ | $E_{x_o}$ | $E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$ |
+|--l------------c----------c----------c---------------c-----------------c------|
 |Wild type | 0.430   | 12.63     | 202.4     | 4.948          | 46.27          |
 |Mutant    | 0.743   | 9.64      | 131.7     | 2.419          | 18.90          |
 |------------------------------------------------------------------------------| 
+
 Properties of the open probability density function in the
-wild type and mutant cases. \label{tab:wtmt_tab_2D}
+wild type and mutant cases. %\label{tab:wtmt_tab_2D}
 
 
 
@@ -787,6 +814,7 @@ k_{ob}=0.3225\text{ ms}^{-1}, \text{  } k_{bo}=0.3346\text{ ms}^{-1}. \label{opt
 \end{equation}
 
 \subsubsection{Does the optimal theoretical drug change with the severity of the mutation?}
+\label{optimaltheodrug}
 One issue here is to see if the drug changes with the mutation severity
 index. Numerical experiments show that 
 the optimal drug does change. In Figure \ref{2D:mu10}, we show the case in which $\mu=10$ and the optimum has shifted compared to  Figure \ref{2D:mu3}.
@@ -804,6 +832,7 @@ The statistical properties of the solutions for 2D release are summarized in Tab
 %\rule{0pt}{4mm} $k_{bc}$ 
 |---------------l--------------------------------c---------c---------------c-------------c----------c------------|
 |Case                                        | $\pi_o$ | $E_{x_o}$ |$E_{y_o}$ | $\sigma_{x_o}$ | $\sigma_{y_o}$  |
+|---------------l--------------------------------c---------c---------------c-------------c----------c------------|
 |Closed blocker,\ $k_{bc}$= 0.01             | 0.547   | 10.55     | 144.2    | 4.726          |  58.93          |
 |Closed blocker,\ $k_{bc}$=0.1               | 0.465   | 13.60     | 188.9    | 5.890          |  73.66          |
 |Closed blocker,\ $k_{bc}$=1                 | 0.422   | 13.69     | 205.7    | 5.231          |  53.08          |
@@ -814,7 +843,7 @@ The statistical properties of the solutions for 2D release are summarized in Tab
 |----------------------------------------------------------------------------------------------------------------|
 
 Statistical properties of the open probability density function in the mutant case when a blocker is applied.  For the mutant case, we use $\mu=3$.
-\label{tab:drg_tab_2D}
+%\label{tab:drg_tab_2D}
 
 
 

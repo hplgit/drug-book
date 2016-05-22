@@ -38,7 +38,7 @@ theoretical drugs and see how they should be defined in order to repair the effe
 the CICR process in the vicinity of the dyad. The reason for this is that electrical diffusion waves travel much faster than concentration waves. %Therefore we will conclude our analysis of voltage-gated ion channels by adding many of them together and study the whole cell effect of the theoretical drugs we propose. This will be done in Chapter \ref{ap}, but first we will spend some time studying single channels.
 
 \section[Stochastic model]{Stochastic model of the transmembrane potential}
-
+\section{stockmodpot}
 The transmembrane potential is defined to be the difference between the
 intracellular potential $v_{i}$ and the extracellular potential $v_{e}$:
 \begin{equation}
@@ -54,15 +54,21 @@ Cv^{\prime}=-g_{L}\left(  v-V_{L}\right)  -g_{i}(v-V_{i}), \label{v1}
 where $C$ is the capacitance of the membrane, $V_{L}$ is the resting potential
 of the leakage current, and $V_{i}$ is the resting potential of the ion
 channel. In our computations, we will consider an example\footnote{Here, the choice of the parameter $V_i$ may seem a bit strange, but we will see below that it will lead to a very simple computational domain for the probability density functions.} 
-with the parameters listed in Table \ref{11on10}.
+with the parameters listed in the Table below, which the values of the parameters used in the model \ref{v1}.
 
-|--c----------------c----------------|
-|$C$     |  $1$ $\mu\text{F/cm}^{2}$ |
-|$g_L$   | $1/10 \text{ mS/cm}^{2}$  |
-|$V_L$   | $0\text{ mV}$             |
-|$V_{i}$ | $11/10\text{ mV}$         |
-|------------------------------------|
- Values of the parameters used in the model \ref{v1}.\label{11on10}}
+% |--c----------------c----------------|
+% |$C$     |  $1$ $\mu\text{F/cm}^{2}$ |
+% |$g_L$   | $1/10 \text{ mS/cm}^{2}$  |
+% |$V_L$   | $0\text{ mV}$             |
+% |$V_{i}$ | $11/10\text{ mV}$         |
+% |------------------------------------|
+
+|---------------c-----------------------c-----------------c---------------c----------|
+|$C$                      |$g_L$                   |$V_L$         |$V_{i}$           |
+|---------------c-----------------------c-----------------c---------------c----------|
+|$1$ $\mu\text{F/cm}^{2}$ |$1/10 \text{ mS/cm}^{2}$|$0\text{ mV}$ |$11/10\text{ mV}$ |
+|------------------------------------------------------------------------------------|
+ 
 %\begin{align*}
 %C  &  =1 \text{ } \mu\text{F/cm}^{2},\\
 %g_{L}  &  =\frac{1}{10}\text{ mS/cm}^{2},\\
@@ -382,6 +388,7 @@ For the case $\mu=0.5$ the optimization did not find any open state blockers tha
  $k_{bo}=0.37\text{ ms}^{-1}$ and  $k_{ob}=0.21\text{ ms}^{-1}$  and, for  $\mu=3$, we used  $k_{bo}=0.45 \text{ ms}^{-1}$ and $k_{ob}=0.35\text{ ms}^{-1}$. In all cases, we used the closed state blocker characterized by $k_{bc}=100\text{ ms}^{-1}$ and $k_{cb}=\left(  \mu-1\right)  k_{bc}$.  label{V:ob}\bigskip
 
 \subsection{Statistical properties of the theoretical drugs}
+\label{statpropdrug}
 
 To further compare the properties of the drugs, it is useful
 to use the statistical properties introduced above. We recall that the
@@ -407,13 +414,14 @@ Both the open and closed state blockers are able to significantly reduce the eff
 Figure \ref{V:ob}. However, the closed state blocker is slightly better at this than the optimal open state blocker.
 
 |--l------------r-----r---------r-----r--------|
-| x         |WT    | MT    | CB    | OB        |
+| ' '       s|WT    | MT    | CB    | OB       |
+|----------------------------------------------|
 |$\pi_o$    |0.500 | 0.750 | 0.500 | 0.478     |
 |$E_o$      |0.922 | 0.969 | 0.922 | 0.919     |
 |$\sigma_o$ |0.076 | 0.031 | 0.076 | 0.088     |
 |----------------------------------------------|
 Statistics of the open probability density functions in the case of $\mu=3$. The closed state blocker is given by
-$k_{bc}=100\text{ ms}^{-1}$ and $k_{cb}=\left(  \mu-1\right)  k_{bc}$ and the open state blocker is given by $k_{bo}=0.45\text{ ms}^{-1}$ and $k_{ob}=0.35\text{ ms}^{-1}$.  \label{Vstat}
+$k_{bc}=100\text{ ms}^{-1}$ and $k_{cb}=\left(  \mu-1\right)  k_{bc}$ and the open state blocker is given by $k_{bo}=0.45\text{ ms}^{-1}$ and $k_{ob}=0.35\text{ ms}^{-1}$.\label{Vstat}
 
 
 
